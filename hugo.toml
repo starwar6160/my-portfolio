@@ -4,15 +4,12 @@ title = 'Senior Backend Architect'
 theme = 'PaperMod'
 
 defaultContentLanguage = 'en'
-defaultContentLanguageInSubdir = true
-relativeURLs = true
-canonifyURLs = false
+defaultContentLanguageInSubdir = false
 
 [languages]
     [languages.en]
         languageCode = 'en-us'
         languageName = 'English'
-        contentDir = 'content/en'
         weight = 1
         [languages.en.params]
             title = 'Senior Backend Architect'
@@ -24,7 +21,6 @@ canonifyURLs = false
     [languages.ja]
         languageCode = 'ja-jp'
         languageName = '日本語'
-        contentDir = 'content/ja'
         weight = 2
         [languages.ja.params]
             title = 'シニアバックエンドアーキテクト'
