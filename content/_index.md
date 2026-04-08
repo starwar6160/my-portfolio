@@ -42,3 +42,7 @@ I provide maximum engineering ROI by solving complex, mission-critical architect
 - **50x Throughput Boost**: Re-engineered synchronous pipelines into async batch-upsert architectures (70s → 1.5s).
 - **92% Memory Reduction**: Optimized crypto engines for extreme embedded constraints (120KB → 9.3KB).
 - **Rescue Mission**: Restored paralyzed grid operations in zero-documentation environments.
+
+---
+> [!TIP]
+> **View Technical Proof**: [Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments](/projects/sm9-low-level)

@@ -156,6 +156,20 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The Challenge: The “Terror” of IBC on Bare Metal In 2013, implementing the SM9 (Identity-Based Cryptography) standard on an ARM Cortex-M3 (STM32F2) was considered a “mission impossible” by many. Unlike standard ECC, SM9 requires Pairing-friendly curves, which involve massive field expansions (mapping 256-bit coordinates to 1536-bit structures).
+Standard cryptographic libraries (OpenSSL, MIRACL) were designed for servers, not for embedded systems where every byte of RAM is a precious resource. My task was to take a “bloated” implementation and squeeze it into the &lt;8KB RAM constraints required for a secure USBKey and an Offline ATM Dynamic Lock system.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-01 00:00:00 +0000 UTC'>April 1, 2026</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
+  <a class="entry-link" aria-label="post link to Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments" href="https://portfolio.st6160.click/projects/sm9-low-level/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">ETL Performance Optimization: 70s to 1.5s
     </h2>
   </header>

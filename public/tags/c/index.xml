@@ -6,8 +6,15 @@
     <description>Recent content in C on Senior Backend Architect</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Oct 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://portfolio.st6160.click/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments</title>
+      <link>https://portfolio.st6160.click/projects/sm9-low-level/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/projects/sm9-low-level/</guid>
+      <description>A technical deep dive into the 2013-2014 implementation of Identity-Based Cryptography (SM9) on resource-constrained microcontrollers, achieving bank-grade security under 10KB of peak memory.</description>
+    </item>
     <item>
       <title>Kernel Surgery: Stripping Linux 3.6.1 to 3.0MB</title>
       <link>https://portfolio.st6160.click/projects/kernel-surgery/</link>

@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Optimization on Senior Backend Architect</title>
-    <link>https://portfolio.st6160.click/tags/optimization/</link>
-    <description>Recent content in Optimization on Senior Backend Architect</description>
+    <title>Cryptography on Senior Backend Architect</title>
+    <link>https://portfolio.st6160.click/tags/cryptography/</link>
+    <description>Recent content in Cryptography on Senior Backend Architect</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://portfolio.st6160.click/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://portfolio.st6160.click/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments</title>
       <link>https://portfolio.st6160.click/projects/sm9-low-level/</link>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://portfolio.st6160.click/projects/sm9-low-level/</guid>
       <description>A technical deep dive into the 2013-2014 implementation of Identity-Based Cryptography (SM9) on resource-constrained microcontrollers, achieving bank-grade security under 10KB of peak memory.</description>
-    </item>
-    <item>
-      <title>ETL Performance Optimization: 70s to 1.5s</title>
-      <link>https://portfolio.st6160.click/cases/etl-optimization/</link>
-      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://portfolio.st6160.click/cases/etl-optimization/</guid>
-      <description>Re-architecting a Spring Boot ETL pipeline to achieve 50x throughput gain using high-performance Batch Upserts and Strategy Patterns.</description>
     </item>
   </channel>
 </rss>

@@ -16,6 +16,13 @@
       <description>Professional dossier of a 20-year veteran active coder specializing in high-performance infrastructure and cryptographic security.</description>
     </item>
     <item>
+      <title>Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments</title>
+      <link>https://portfolio.st6160.click/projects/sm9-low-level/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/projects/sm9-low-level/</guid>
+      <description>A technical deep dive into the 2013-2014 implementation of Identity-Based Cryptography (SM9) on resource-constrained microcontrollers, achieving bank-grade security under 10KB of peak memory.</description>
+    </item>
+    <item>
       <title>Technical Whitepaper: Deterministic Computing</title>
       <link>https://portfolio.st6160.click/docs/technical-whitepaper/</link>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
