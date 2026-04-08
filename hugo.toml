@@ -3,19 +3,39 @@ languageCode = 'en-us'
 title = 'Senior Backend Architect'
 theme = 'PaperMod'
 
+defaultContentLanguage = 'en'
+
+[languages]
+    [languages.en]
+        languageCode = 'en-us'
+        languageName = 'English'
+        contentDir = 'content/en'
+        weight = 1
+        [languages.en.params]
+            title = 'Senior Backend Architect'
+            description = 'High-Performance Infrastructure & Cryptographic Security'
+            [languages.en.params.homeInfoParams]
+                Title = "Senior Backend Architect"
+                Content = "20-year veteran active coder specializing in mission-critical infrastructure, cryptographic security, and distributed systems."
+
+    [languages.ja]
+        languageCode = 'ja-jp'
+        languageName = '日本語'
+        contentDir = 'content/ja'
+        weight = 2
+        [languages.ja.params]
+            title = 'シニアバックエンドアーキテクト'
+            description = '高性能インフラストラクチャ & 暗号セキュリティ'
+            [languages.ja.params.homeInfoParams]
+                Title = "シニアバックエンドアーキテクト"
+                Content = "ミッションクリティカルなインフラ、暗号セキュリティ、分散システムを専門とする20年の経験を持つ現役のターミナルコーダー。"
+
 [params]
     env = 'production'
-    title = 'Senior Backend Architect'
-    description = 'High-Performance Infrastructure & Cryptographic Security'
     author = 'Zhou Wei'
     
-    # Disable profileMode to show the content of _index.md
     [params.profileMode]
         enabled = false
-    
-    [params.homeInfoParams]
-        Title = "Senior Backend Architect"
-        Content = "20-year veteran active coder specializing in mission-critical infrastructure, cryptographic security, and distributed systems."
 
     [[params.socialIcons]]
         name = "github"
