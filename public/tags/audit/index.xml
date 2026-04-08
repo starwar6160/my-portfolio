@@ -15,5 +15,12 @@
       <guid>https://portfolio.st6160.click/cases/toyoko-inn-audit/</guid>
       <description>External performance auditing of a massive reservation system (143.9B JPY scale), identifying 800M JPY in potential salvageable revenue through architectural optimization.</description>
     </item>
+    <item>
+      <title>Deep Dive: Architectural Failures in a Fractionated RWA Protocol</title>
+      <link>https://portfolio.st6160.click/cases/web3-rwa-audit/</link>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/cases/web3-rwa-audit/</guid>
+      <description>A post-mortem of a P0 architectural audit in Tokyo, revealing how amateur engineering practices can lead to protocol-level insolvency in fractionated Real-World Asset protocols.</description>
+    </item>
   </channel>
 </rss>

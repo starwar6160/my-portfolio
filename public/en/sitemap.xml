@@ -106,10 +106,16 @@
     <loc>https://portfolio.st6160.click/tags/concurrency/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://portfolio.st6160.click/cases/web3-rwa-audit/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://portfolio.st6160.click/tags/evm/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://portfolio.st6160.click/tags/go/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://portfolio.st6160.click/tags/rwa/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://portfolio.st6160.click/tags/sre/</loc>
@@ -130,6 +136,9 @@
                 hreflang="en-us"
                 href="https://portfolio.st6160.click/projects/"
                 />
+  </url><url>
+    <loc>https://portfolio.st6160.click/tags/web3/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://portfolio.st6160.click/projects/web3-indexer/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
