@@ -1,6 +1,6 @@
 baseURL = 'https://portfolio.st6160.click/'
 languageCode = 'en-us'
-title = 'Senior Backend Architect'
+title = 'Home'
 theme = 'PaperMod'
 
 defaultContentLanguage = 'en'
@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = false
         languageName = 'English'
         weight = 1
         [languages.en.params]
-            title = 'Senior Backend Architect'
+            title = 'Home'
             description = 'High-Performance Infrastructure & Cryptographic Security'
             [languages.en.params.homeInfoParams]
                 Title = "Senior Backend Architect"
@@ -51,7 +51,8 @@ defaultContentLanguageInSubdir = false
     author = 'Zhou Wei'
     
     [params.label]
-        link = "https://demo2.st6160.click/"
+        text = "Home"
+        link = "/"
 
     [params.profileMode]
         enabled = false

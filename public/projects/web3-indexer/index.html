@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Web3 Indexer: Go Engine Architecture | Senior Backend Architect</title>
+<title>Web3 Indexer: Go Engine Architecture | Home</title>
 <meta name="keywords" content="Go, EVM, Blockchain, Concurrency, SRE">
 <meta name="description" content="Re-engineering a high-availability EVM blockchain indexer from TypeScript to Go, achieving 10x throughput and 99.9% data durability.">
 <meta name="author" content="Zhou Wei">
@@ -71,7 +71,7 @@
     }
 
 </script><meta property="og:url" content="https://portfolio.st6160.click/projects/web3-indexer/">
-  <meta property="og:site_name" content="Senior Backend Architect">
+  <meta property="og:site_name" content="Home">
   <meta property="og:title" content="Web3 Indexer: Go Engine Architecture">
   <meta property="og:description" content="Re-engineering a high-availability EVM blockchain indexer from TypeScript to Go, achieving 10x throughput and 99.9% data durability.">
   <meta property="og:locale" content="en_us">
@@ -120,8 +120,8 @@
   "keywords": [
     "Go", "EVM", "Blockchain", "Concurrency", "SRE"
   ],
-  "articleBody": "Web3 Indexer: Industrial-Grade Go Engine This project involved evolving a high-availability EVM blockchain data indexing engine from a TypeScript prototype into a robust, industrial-grade production system using Golang.\nCore Challenges Precision Risk: TypeScript’s handling of uint256 large integers was prone to critical precision loss. Concurrency Bottlenecks: The single-threaded Node.js event loop struggled to handle thousands of concurrent RPC requests. Resilience Issues: Unstable RPC nodes (Rate limits, 5xx errors) frequently caused data collection gaps. Deployment Complexity: Large image sizes (~200MB) and complex dependency management slowed down CI/CD. Architectural Solutions 1. High-Level Architecture Overview [User/DApp] ⮕ [EVM RPC Node] ⮕ [Your Go Indexer] ⮕ [PostgreSQL] ⮕ [Grafana/API] The system operates as a high-performance bridge between raw blockchain state and queryable relational data.\n2. Native EVM Support Project Source: starwar6160/my-portfolio (Internal demo engine) Re-engineered the entire pipeline in Go using the holiman/uint256 library. This ensures memory-level compatibility with EVM math, eliminating precision truncation risks.\n2. Three-Stage Decoupled Pipeline I designed a highly scalable architectural pattern:\nFetcher: Concurrent RPC data retrieval. Sequencer: Corrects out-of-order data streams. Processor: Atomic database persistence and validation. 3. Deterministic Concurrency Model Leveraged Goroutines and Buffered Channels to implement Backpressure Control. This prevented memory overflows during massive catch-up synchronization by dynamically throttling the Fetcher based on Processor latency.\n4. SRE \u0026 Resilience Engineering Failover Connection Pool: Implemented a multi-node proxy with Exponential Backoff logic. Traffic Shaping: Used Token Bucket algorithms for precise RPC rate limiting. Reorg Self-Healing: Designed an automatic rollback mechanism based on ParentHash validation to handle chain reorganizations gracefully. Key Outcomes 10x Throughput Boost: The Go engine supported 50+ concurrent synchronization routines on a single instance. Ultra-Lightweight Deployment: Reduced Docker image size from ~200MB to ~20MB through multi-stage builds and zero-dependency binaries. High Availability: Maintained 99.9% data durability even when operating under unstable public RPC endpoints. Commercial Value Delivered In decentralized finance, data ingestion latency and inaccuracy translate directly into user financial loss and catastrophic brand mistrust. By guaranteeing 99.9% data durability and precision, this architecture safeguards the integrity of trading algorithms and prevents multi-million dollar clearing discrepancies. Additionally, slashing the deployment bloat enables the engineering team to iterate rapidly, maintaining agility in a hyper-competitive market while significantly reducing cloud hosting costs.\n",
-  "wordCount" : "364",
+  "articleBody": "Web3 Indexer: Industrial-Grade Go Engine This project involved evolving a high-availability EVM blockchain data indexing engine from a TypeScript prototype into a robust, industrial-grade production system using Golang.\nCore Challenges Precision Risk: TypeScript’s handling of uint256 large integers was prone to critical precision loss. Concurrency Bottlenecks: The single-threaded Node.js event loop struggled to handle thousands of concurrent RPC requests. Resilience Issues: Unstable RPC nodes (Rate limits, 5xx errors) frequently caused data collection gaps. Deployment Complexity: Large image sizes (~200MB) and complex dependency management slowed down CI/CD. Architectural Solutions 1. High-Level Architecture Overview [User/DApp] ⮕ [EVM RPC Node] ⮕ [Your Go Indexer] ⮕ [PostgreSQL] ⮕ [Grafana/API] The system operates as a high-performance bridge between raw blockchain state and queryable relational data.\n2. Native EVM Support Project Source: starwar6160/my-portfolio (Internal demo engine) Re-engineered the entire pipeline in Go using the holiman/uint256 library. This ensures memory-level compatibility with EVM math, eliminating precision truncation risks.\n2. Three-Stage Decoupled Pipeline I designed a highly scalable architectural pattern:\nFetcher: Concurrent RPC data retrieval. Sequencer: Corrects out-of-order data streams. Processor: Atomic database persistence and validation. 3. Deterministic Concurrency Model Leveraged Goroutines and Buffered Channels to implement Backpressure Control. This prevented memory overflows during massive catch-up synchronization by dynamically throttling the Fetcher based on Processor latency.\n4. SRE \u0026 Resilience Engineering Failover Connection Pool: Implemented a multi-node proxy with Exponential Backoff logic. Traffic Shaping: Used Token Bucket algorithms for precise RPC rate limiting. Architectural Deep Dive: Reliability at Scale To support the high-stakes RWA (Real-World Asset) market, the indexer must guarantee data eventual consistency and sub-second latency.\n1. Chain Reorganization (Reorg) Self-Healing Blockchain state is not final; deep reorgs can invalidate previously indexed data.\nParentHash Recursive Validation: The sequencer continuously validates the ParentHash chain. If a mismatch is detected at height H, the system triggers an emergency rollback. Atomic Rollback Vector: Leverages PostgreSQL Transactions to delete all data from blocks ≥ H. Thanks to Foreign Key cascades, this automatically cleanses the Transfers and Metadata tables, maintaining a perfect ledger state. 2. High-Concurrency Synchronization Engine Traditional polling creates “thundering herd” problems. I implemented a push-pull hybrid model:\ngRPC Stream Integration: For real-time indexing, the fetcher utilizes gRPC streams to receive block manifests instantly, bypassing the RTT (Round Trip Time) of standard HTTP polling. Adaptive Worker Pools: Batch historical synchronization is managed via a Semaphore-based Worker Pool. It dynamically modulates the number of concurrent fetchers based on RPC latency and 429 (Too Many Requests) signals. LRU Metadata Caching: Frequently accessed contract ABIs and block headers are cached in an LRU (Least Recently Used) cache, reducing database I/O by 40% during backfilling operations. Key Outcomes 10x Throughput Boost: The Go engine supported 50+ concurrent synchronization routines on a single instance. Ultra-Lightweight Deployment: Reduced Docker image size from ~200MB to ~20MB through multi-stage builds and zero-dependency binaries. High Availability: Maintained 99.9% data durability even when operating under unstable public RPC endpoints. Commercial Value Delivered In decentralized finance, data ingestion latency and inaccuracy translate directly into user financial loss and catastrophic brand mistrust. By guaranteeing 99.9% data durability and precision, this architecture safeguards the integrity of trading algorithms and prevents multi-million dollar clearing discrepancies. Additionally, slashing the deployment bloat enables the engineering team to iterate rapidly, maintaining agility in a hyper-competitive market while significantly reducing cloud hosting costs.\n",
+  "wordCount" : "545",
   "inLanguage": "en",
   "datePublished": "2026-03-20T00:00:00Z",
   "dateModified": "2026-03-20T00:00:00Z",
@@ -135,7 +135,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Senior Backend Architect",
+    "name": "Home",
     "logo": {
       "@type": "ImageObject",
       "url": "https://portfolio.st6160.click/favicon.ico"
@@ -148,7 +148,7 @@
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://demo2.st6160.click/" accesskey="h" title="Senior Backend Architect (Alt + H)">Senior Backend Architect</a>
+            <a href="/" accesskey="h" title="Home (Alt + H)">Home</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -252,7 +252,21 @@ Re-engineered the entire pipeline in Go using the <code>holiman/uint256</code> l
 <ul>
 <li><strong>Failover Connection Pool</strong>: Implemented a multi-node proxy with <strong>Exponential Backoff</strong> logic.</li>
 <li><strong>Traffic Shaping</strong>: Used <strong>Token Bucket</strong> algorithms for precise RPC rate limiting.</li>
-<li><strong>Reorg Self-Healing</strong>: Designed an automatic rollback mechanism based on <code>ParentHash</code> validation to handle chain reorganizations gracefully.</li>
+</ul>
+<h2 id="architectural-deep-dive-reliability-at-scale">Architectural Deep Dive: Reliability at Scale<a hidden class="anchor" aria-hidden="true" href="#architectural-deep-dive-reliability-at-scale">#</a></h2>
+<p>To support the high-stakes RWA (Real-World Asset) market, the indexer must guarantee data eventual consistency and sub-second latency.</p>
+<h3 id="1-chain-reorganization-reorg-self-healing">1. Chain Reorganization (Reorg) Self-Healing<a hidden class="anchor" aria-hidden="true" href="#1-chain-reorganization-reorg-self-healing">#</a></h3>
+<p>Blockchain state is not final; deep reorgs can invalidate previously indexed data.</p>
+<ul>
+<li><strong>ParentHash Recursive Validation</strong>: The sequencer continuously validates the <code>ParentHash</code> chain. If a mismatch is detected at height <em>H</em>, the system triggers an emergency rollback.</li>
+<li><strong>Atomic Rollback Vector</strong>: Leverages <strong>PostgreSQL Transactions</strong> to delete all data from blocks ≥ <em>H</em>. Thanks to Foreign Key cascades, this automatically cleanses the <code>Transfers</code> and <code>Metadata</code> tables, maintaining a perfect ledger state.</li>
+</ul>
+<h3 id="2-high-concurrency-synchronization-engine">2. High-Concurrency Synchronization Engine<a hidden class="anchor" aria-hidden="true" href="#2-high-concurrency-synchronization-engine">#</a></h3>
+<p>Traditional polling creates &ldquo;thundering herd&rdquo; problems. I implemented a push-pull hybrid model:</p>
+<ul>
+<li><strong>gRPC Stream Integration</strong>: For real-time indexing, the fetcher utilizes gRPC streams to receive block manifests instantly, bypassing the RTT (Round Trip Time) of standard HTTP polling.</li>
+<li><strong>Adaptive Worker Pools</strong>: Batch historical synchronization is managed via a <strong>Semaphore-based Worker Pool</strong>. It dynamically modulates the number of concurrent fetchers based on RPC latency and 429 (Too Many Requests) signals.</li>
+<li><strong>LRU Metadata Caching</strong>: Frequently accessed contract ABIs and block headers are cached in an <strong>LRU (Least Recently Used) cache</strong>, reducing database I/O by 40% during backfilling operations.</li>
 </ul>
 <h2 id="key-outcomes">Key Outcomes<a hidden class="anchor" aria-hidden="true" href="#key-outcomes">#</a></h2>
 <ul>
@@ -279,7 +293,7 @@ Re-engineered the entire pipeline in Go using the <code>holiman/uint256</code> l
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://portfolio.st6160.click/">Senior Backend Architect</a></span> · 
+        <span>&copy; 2026 <a href="https://portfolio.st6160.click/">Home</a></span> · 
 
     <span>
         Powered by
