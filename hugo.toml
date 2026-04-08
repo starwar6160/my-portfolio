@@ -1,4 +1,4 @@
-baseURL = 'https://starwar6160.github.io/my-portfolio/'
+baseURL = 'https://st6160.click/'
 languageCode = 'en-us'
 title = 'Senior Backend Architect'
 theme = 'PaperMod'
@@ -9,9 +9,12 @@ theme = 'PaperMod'
     description = 'High-Performance Infrastructure & Cryptographic Security'
     author = 'Zhou Wei'
     
-    [params.homeInfoParams]
-        Title = "Portfolio: Senior Backend Architect"
-        Content = "20-year veteran active coder specializing in mission-critical infrastructure."
+    [params.profileMode]
+        enabled = true
+        title = "Senior Backend Architect"
+        subtitle = "20-year veteran active coder specializing in mission-critical infrastructure, cryptographic security, and distributed systems."
+        imageWidth = 120
+        imageHeight = 120
 
     [[params.socialIcons]]
         name = "github"
