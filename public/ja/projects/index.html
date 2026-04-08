@@ -1,308 +1,56 @@
-<!DOCTYPE html>
-<html lang="ja" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>技術プロジェクト | Home</title>
-<meta name="keywords" content="">
-<meta name="description" content="大規模分散システム、カーネル、暗号技術の実装実績。">
-<meta name="author" content="Zhou Wei">
-<link rel="canonical" href="https://portfolio.st6160.click/ja/projects/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.4ef2299ae814559c4055cd3d15919aff78737e44fa7af337c506246832ba458a.css" integrity="sha256-TvIpmugUVZxAVc09FZGa/3hzfkT6evM3xQYkaDK6RYo=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://portfolio.st6160.click/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://portfolio.st6160.click/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://portfolio.st6160.click/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://portfolio.st6160.click/apple-touch-icon.png">
-<link rel="mask-icon" href="https://portfolio.st6160.click/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://portfolio.st6160.click/ja/projects/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://portfolio.st6160.click/projects/">
-<link rel="alternate" hreflang="ja" href="https://portfolio.st6160.click/ja/projects/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://portfolio.st6160.click/ja/projects/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="技術プロジェクト">
-  <meta property="og:description" content="大規模分散システム、カーネル、暗号技術の実装実績。">
-  <meta property="og:locale" content="ja_jp">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="技術プロジェクト">
-  <meta name="twitter:description" content="大規模分散システム、カーネル、暗号技術の実装実績。">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "技術プロジェクト",
-      "item": "https://portfolio.st6160.click/ja/projects/"
-    }
-  ]
-}
-</script>
-</head>
-<body class="list" id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="Home (Alt + H)">Home</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-                    <ul class="lang-switch"><li>|</li>
-                        <li>
-                            <a href="https://portfolio.st6160.click/" title="English"
-                                aria-label="English">En</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://demo2.st6160.click/" title="Web3 Indexer Demo">
-                    <span>Web3 Indexer Demo</span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                </a>
-            </li>
-            <li>
-                <a href="https://portfolio.st6160.click/ja/cases" title="Case Studies">
-                    <span>Case Studies</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://portfolio.st6160.click/ja/projects" title="Tech Projects">
-                    <span class="active">Tech Projects</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://portfolio.st6160.click/ja/docs" title="Docs">
-                    <span>Docs</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    技術プロジェクト
-  </h1>
-  <div class="post-description">
-    大規模分散システム、カーネル、暗号技術の実装実績。
-  </div>
-</header>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">8KB RAM環境におけるSM9(IBC)暗号の実装
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>挑戦：ベアメタル上におけるIBCの「恐怖」 2013年当時、ARM Cortex-M3 (STM32F2) 上で SM9 (Identity-Based Cryptography) 規格を実装することは、多くのエンジニアにとって「不可能」と考えられていました。標準的なECCとは異なり、SM9は**ペアリング（Pairing-friendly curves）**を必要とし、256ビットの座標を1536ビットの構造に拡張する大規模な体拡大（Field Expansion）を伴うためです。
+<!doctype html><html lang=ja dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>技術プロジェクト | Home</title><meta name=keywords content><meta name=description content="大規模分散システム、カーネル、暗号技術の実装実績。"><meta name=author content="Zhou Wei"><link rel=canonical href=https://portfolio.st6160.click/ja/projects/><link crossorigin=anonymous href=/assets/css/stylesheet.4ef2299ae814559c4055cd3d15919aff78737e44fa7af337c506246832ba458a.css integrity="sha256-TvIpmugUVZxAVc09FZGa/3hzfkT6evM3xQYkaDK6RYo=" rel="preload stylesheet" as=style><link rel=icon href=https://portfolio.st6160.click/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://portfolio.st6160.click/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://portfolio.st6160.click/favicon-32x32.png><link rel=apple-touch-icon href=https://portfolio.st6160.click/apple-touch-icon.png><link rel=mask-icon href=https://portfolio.st6160.click/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://portfolio.st6160.click/ja/projects/index.xml title=rss><link rel=alternate hreflang=en href=https://portfolio.st6160.click/projects/><link rel=alternate hreflang=ja href=https://portfolio.st6160.click/ja/projects/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://portfolio.st6160.click/ja/projects/"><meta property="og:site_name" content="Home"><meta property="og:title" content="技術プロジェクト"><meta property="og:description" content="大規模分散システム、カーネル、暗号技術の実装実績。"><meta property="og:locale" content="ja_jp"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="技術プロジェクト"><meta name=twitter:description content="大規模分散システム、カーネル、暗号技術の実装実績。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"技術プロジェクト","item":"https://portfolio.st6160.click/ja/projects/"}]}</script></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=/ accesskey=h title="Home (Alt + H)">Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li><li><a href=https://portfolio.st6160.click/ title=English aria-label=English>En</a></li></ul></div></div><ul id=menu><li><a href=https://demo2.st6160.click/ title="Web3 Indexer Demo"><span>Web3 Indexer Demo</span>&nbsp;
+<svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://portfolio.st6160.click/ja/cases title="Case Studies"><span>Case Studies</span></a></li><li><a href=https://portfolio.st6160.click/ja/projects title="Tech Projects"><span class=active>Tech Projects</span></a></li><li><a href=https://portfolio.st6160.click/ja/docs title=Docs><span>Docs</span></a></li></ul></nav></header><main class=main><header class=page-header><h1>技術プロジェクト</h1><div class=post-description>大規模分散システム、カーネル、暗号技術の実装実績。</div></header><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>8KB RAM環境におけるSM9(IBC)暗号の実装</h2></header><div class=entry-content><p>挑戦：ベアメタル上におけるIBCの「恐怖」 2013年当時、ARM Cortex-M3 (STM32F2) 上で SM9 (Identity-Based Cryptography) 規格を実装することは、多くのエンジニアにとって「不可能」と考えられていました。標準的なECCとは異なり、SM9は**ペアリング（Pairing-friendly curves）**を必要とし、256ビットの座標を1536ビットの構造に拡張する大規模な体拡大（Field Expansion）を伴うためです。
 標準的な暗号ライブラリ（OpenSSL, MIRACL）はサーバー向けに設計されており、RAMの1バイトが貴重な組込みシステムには適していません。私の任務は、肥大化した実装を徹底的に削ぎ落とし、セキュアUSBKeyやオフラインATMダイナミックロックシステムに求められる 8KB RAM以下 の制約内に収めることでした。
 1. 外科的アーキテクチャ：「メタデータの肥大化」の除去 2013年の監査で最初に発見したのは、メモリフットプリントの70%がアルゴリズムそのものではなく、インフラストラクチャによるものだということでした。
 ASN.1 形式のデコード: ヒープ空間を大量に消費する要因。 OpenSSL への依存: マイクロコントローラには不要な数千行のコード。 戦略：「純粋アルゴリズム」の抽出 私は実装をベアメタルCプリミティブへと絞り込む作業を主導しました。複雑なASN.1を廃止し、Protobuf または静的な固定サイズ構造へと切り替えました。これにより「メモリドリフト」のリスクを排除し、ヒープのフットプリントを60%以上削減しました。
 2. メモリの制御：mralloc.c によるブレークスルー 8KBの制限を達成するために、標準の malloc に頼ることはできませんでした。私は基盤となる MIRACL メモリアロケータ（mralloc.c）を改造し、ピーク時のヒープ使用量を厳密に統計・追跡する機能を組み込みました。
-/* * 2014年 8KB RAM最適化作業からのスニペット * 目的: ECDH/SM9 鍵交換におけるピークメモリの制限 */ static size_t peak_memory_usage = 0; static size_t current_usage = 0; void* mr_alloc(size_t size) { current_usage &#43;= size; if (current_usage &gt; peak_memory_usage) { peak_memory_usage = current_usage; } // リソース制約のあるターゲットに対する厳格な執行 if (peak_memory_usage &gt; MAX_RAM_BUDGET_BYTES) { log_critical(&#34;メモリ制限違反！ 予算を超過しました: %zu&#34;, peak_memory_usage); return NULL; } return standard_malloc(size); } 結果: 徹底的な洗練の結果、フルスタックのECDHでピーク時のアロケーションを 9,300バイト まで抑えることに成功しました。「科学者」としての視点を持ってメモリを外科的に管理することで、汎用ライブラリを遥かに凌駕する性能を引き出せることを証明しました。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-04-01 00:00:00 +0000 UTC'>2026年4月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
-  <a class="entry-link" aria-label="post link to 8KB RAM環境におけるSM9(IBC)暗号の実装" href="https://portfolio.st6160.click/ja/projects/sm9-low-level/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Web3 Indexer: Goによる高信頼アーキテクチャ
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Web3 Indexer: 産業級のGoエンジン このプロジェクトは、TypeScriptで構築された高可用性EVMブロックチェーン・データインデックスエンジンのプロトタイプを、**Go（Golang）**を用いて堅牢な産業級プロダクションシステムへと進化させたものです。
+/* * 2014年 8KB RAM最適化作業からのスニペット * 目的: ECDH/SM9 鍵交換におけるピークメモリの制限 */ static size_t peak_memory_usage = 0; static size_t current_usage = 0; void* mr_alloc(size_t size) { current_usage += size; if (current_usage > peak_memory_usage) { peak_memory_usage = current_usage; } // リソース制約のあるターゲットに対する厳格な執行 if (peak_memory_usage > MAX_RAM_BUDGET_BYTES) { log_critical("メモリ制限違反！ 予算を超過しました: %zu", peak_memory_usage); return NULL; } return standard_malloc(size); } 結果: 徹底的な洗練の結果、フルスタックのECDHでピーク時のアロケーションを 9,300バイト まで抑えることに成功しました。「科学者」としての視点を持ってメモリを外科的に管理することで、汎用ライブラリを遥かに凌駕する性能を引き出せることを証明しました。
+...</p></div><footer class=entry-footer><span title='2026-04-01 00:00:00 +0000 UTC'>2026年4月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to 8KB RAM環境におけるSM9(IBC)暗号の実装" href=https://portfolio.st6160.click/ja/projects/sm9-low-level/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>VC6 連結器手術：20年の時を越えるABI互換性の担保</h2></header><div class=entry-content><p>VC6 連結器手術：レガシー近代化の極致 「技術的負債」への対処とは、しばしば20年以上も手つかずのシステムと対峙することを意味します。本プロジェクトでは、レガシーな銀行インフラ（Windows XP / Visual C++ 6.0）において、現代的な暗号化要件と旧時代のABI（Application Binary Interface）制約が衝突する中での「外科的介入」を実施しました。
+1. 衝突：LNK2005とシンボル競合の解消 ミッションは、大規模な再配布パッケージ（MSVCRT.DLL）の導入や、システム全体のクラッシュを招くSxS（Side-by-Side）マニフェストエラーを引き起こすことなく、現代的な暗号アルゴリズムをレガシーなATMシステムに注入することでした。
+VC6とVS2015という異なる時代のコンパイラによる静的・動的ライブラリが混在すると、連結器（Linker）は重複するシンボル（LNK2005）で停止します。私は以下のシンボル・ハイジャック戦略を実装しました：
+最終リンクフェーズで標準の MSVCRT.LIB および LIBCMT.LIB を明示的に無視（Ignore）。 必要なシンボルを手動で再結合し、レガシーなランタイムと現代的なペイロード間の競合を解消。 これにより、バイナリを「外科的に」軽量化し、配布サイズを1.3MBからわずか230KBに圧縮しました。 2. 連結器ハイジャックと『生贄のペイロード』 Windows XP上で断続的なクラッシュを引き起こしていた脆弱なSxSマニフェスト・チェックを回避するため、ペイロードのデリバリー構造を再設計しました：
+完全静的リンク: /MT（スタティックCRT）を強制し、不要なシンボルを削除することで、外部依存関係を完全に排除。 マイクロ・ペイロード・アーキテクチャ: 現代的なセキュリティロジックを、極限まで最適化された33KBのDLLにカプセル化。 UPX圧縮の解除: 一部のレガシー端末のセキュリティフィルタがUPX圧縮ファイルをフラグ立てしていることを突き止め、圧縮を解除。生のバイナリ密度に頼ることで、ネットワークフィルタの透過率を100%に向上させました。 3. バージョン391における『幽霊デッドロック』の解決 並行処理テスト中、ログもクラッシュも残さずUIがフリーズする「不可視のデッドロック」が発生しました。
+バージョン履歴の二分探索を実施し、グローバルな send_mutex を導入した特定のコミット（バージョン391）に原因を特定。バックグラウンドのHID受信スレッドとフロントエンドの送信スレッドが、共有の G_PUSH_STRING バッファを巡って競合状態（Race Condition）に陥っていることを突き止めました。
+同期処理をスレッド親和性（Thread-Affinity）を持つキューにリファクタリングし、コア部分を安定版（バージョン376）にロールバックすることで、レガシーな通信スタックに決定論的な安定性を取り戻しました。
+主な成果 時を越える互換性: ホストOSを不安定にさせることなく、VC6と現代的なC++ロジックの間の20年の溝を埋めました。 外科的デプロイ: 連結器の手動制御により、デプロイリスクとバイナリサイズを80%以上削減。 本番環境の救済: 長年「断続的なクラッシュ」に悩まされていた国内銀行の端末ネットワークを完全に安定化させました。 [!TIP] エンジニアリングの哲学: ホストシステムのソースコードが歴史の彼方に失われているとき、**連結器（Linker）**はアーキテクチャ・ガバナンスのための最も強力な武器となります。20年前のシステムを再起動させることなくアップグレードできたとき、それは真のシニア・エンジニアリングの証明となります。</p></div><footer class=entry-footer><span title='2026-04-01 00:00:00 +0000 UTC'>2026年4月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to VC6 連結器手術：20年の時を越えるABI互換性の担保" href=https://portfolio.st6160.click/ja/projects/vc6-linker-surgery/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>USB HIDプロトコル：127バイトの『幽霊』と消えた先頭バイトの解決</h2></header><div class=entry-content><p>USB HIDプロトコル・エンジニアリング：64バイトの制約を超えて 電子暗号錠などの高セキュリティ・ハードウェアを設計する際、物理レイヤー（USB HID）の厳格な制約は、現代的なデータ形式（JSON/XML）としばしば衝突します。本プロジェクトでは、USB HIDのための独自の**断片化・再構成（F&amp;R）**プロトコルの構築と、OSドライバ・スタックに潜む致命的なバグの解決を行いました。
+1. 断片化・再構成（F&amp;R）プロトコルの設計 USB HIDは物理的に64バイトのパケット（レポート）に制限されています。700バイトを超えるセキュリティ・マニフェストを転送するため、アプリケーション・レイヤーに以下のプロトコルを実装しました：
+6バイトの制御ヘッダー: Total Length (16-bit): 再構成後の論理メッセージの総サイズ。 Current Offset (16-bit): グローバル・バッファ内での現在の断片の位置。 Block Index (16-bit): 到着順序を検証するためのシーケンス番号。 58バイトのペイロード: 各フレームは最大58バイトの実データを運び、100%決定論的なパケット組み立てを保証します。 当初は8ブロックに制限されていましたが、バッファを12ブロックに拡張し、マルチスレッド環境での競合を防ぐためにセッション・ハンドルを導入。高負荷なストレス・テスト下でもデータの整合性を維持しました。
+2. 「生贄のバイト」ハック：Windowsドライバとの戦い 大手国有インフラ企業との統合テスト中に、「メッセージの先頭バイトが消失する」という不可解な現象に直面しました。ホストが6バイトのヘッダーを送信しても、MCU側では常に5バイトしか受信できないという状態でした。
+根本原因 WindowsのHIDドライバ・スタックを深く調査した結果、隠された仕様が判明しました。OSは制御転送の第0バイトをReport IDとして解釈します。独自のファームウェアでReport IDを定義していなかったため、ドライバがヘッダーの最初の1バイトを勝手に「飲み込んで」いたのです。
+解決策：65バイト・バッファ ファームウェアの修正が困難な状況であったため、ホスト側で「外科的」な解決策を講じました：
+ホストの送信バッファを64から65バイトに拡張。 第0バイトにダミーとなる 0x00 バイトを配置。 Windowsドライバがこの 0x00 をReport IDとして「消費」することで、実際の64バイトのデータ構造（第1バイトから開始）は無傷でハードウェアに届き、完璧なデータアライメントが実現しました。 3. 「127バイトの幽霊」：ASN.1 エンコーディングの越境 また、ある大手銀行のレガシー端末から取得した14MBの16進数ダンプを詳細に解析した際、断続的な認証失敗の原因となっていた「幽霊バグ」を特定しました。
+プロトコル・スタックのバイナリ・リバースエンジニアリングを通じて、ASN.1 長さフィールドのオーバーフローが127バイトの境界で発生していることを突き止めました。BER/DERエンコーディングでは、127バイトを超える長さは複数バイト形式を必要としますが、レガシーなミドルウェアがこの長さビットを誤って切り捨てていたため、127バイトを超える全ペイロードの復号に失敗していたのです。
+ミドルウェア内にカスタム・プロトコル・バリデーターを実装し、これらの不正なASN.1構造を正規化してからコアロジックに渡すことで、銀行のホスト側ソフトウェアを書き換えることなくシステムを安定化させました。
+主な成果 100%のデータ整合性: OSとハードウェアの境界線上で、700バイト超のセキュアコマンドのゼロパケットロスを達成。 レガシー・システムの救済: 10年間「原因不明」とされていた国内大手銀行の端末エラーを、127バイトの境界条件の特定により解決。 事業への貢献 (ROI): ハードウェアの回収やファームウェアの大規模更新を回避し、ホスト側のハックとバリデーターの実装のみで数億円規模の損失を防ぎました。 [!TIP] アーキテクトの視点: 低レイヤー・エンジニアリングにおいて、「真実」はコードではなくドライバの中に隠れていることがあります。ハードウェアとソフトウェアの意見が食い違うとき、アーキテクトはデジタル考古学者のように深層を掘り下げなければなりません。</p></div><footer class=entry-footer><span title='2026-03-27 00:00:00 +0000 UTC'>2026年3月27日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to USB HIDプロトコル：127バイトの『幽霊』と消えた先頭バイトの解決" href=https://portfolio.st6160.click/ja/projects/usb-hid-protocol/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Web3 Indexer: Goによる高信頼アーキテクチャ</h2></header><div class=entry-content><p>Web3 Indexer: 産業級のGoエンジン このプロジェクトは、TypeScriptで構築された高可用性EVMブロックチェーン・データインデックスエンジンのプロトタイプを、**Go（Golang）**を用いて堅牢な産業級プロダクションシステムへと進化させたものです。
 核心的な課題 (Core Challenges) 精度のリスク: TypeScriptにおける uint256 大整数の扱いは、致命的な精度損失のリスクを抱えていた。 並行処理のボトルネック: Node.jsのシングルスレッドなイベントループでは、数千件の同時RPCリクエストの処理が困難。 レジリエンスの問題: 不安定なRPCノード（レート制限、5xxエラー）によるデータ欠落の頻発。 データ不整合: 頻繁に発生する「链の再編成（Reorg）」に対するロールバック機能の欠如。 アーキテクチャ・ソリューション 1. ネイティブなEVMサポート Project Source: starwar6160/web3-indexer-go holiman/uint256 ライブラリを使用してパイプライン全体をGoで再構築。これにより、EVMの算術演算とメモリレベルでの互換性を確保し、精度の問題を根本的に解消しました。
 2. スケールに応じた信頼性（Architectural Deep Dive） RWA（Real-World Asset）市場を支えるためには、データの「最終的な整合性」と「サブ秒の低レイテンシ」が不可欠です。
 链の再編成 (Reorg) への自己修復機能 ブロックチェーンの状態は確定（Finality）まで流動的です。
 ParentHash 形式の再帰バリデーション: シーケンサーは常に ParentHash チェーンの連続性を検証します。高さ H で不一致が検知された場合、システムは即座に緊急ロールバックを発動します。 アトミックなロールバック・ベクトル: PostgreSQLのトランザクションを活用し、高さ H 以上の全データを削除します。外部キーの「カスケード削除」により、関連する Transfers 表なども自動的に洗浄され、完璧な元帳状態を維持します。 高並列同期エンジン 従来のポーリング方式は「サンダリング・ハード（押し寄せ）」問題を引き起こします。本システムではプッシュ・プル・ハイブリッドモデルを実装しました。
 gRPC Stream の統合: リアルタイムのインデックス作成にはgRPCストリームを使用し、HTTPポーリングの往復（RTT）を介さず即座にブロック情報を受信します。 適応型ワーカープール: 信号量（Semaphore）ベースのワーカープールにより、RPCのレイテンシや 429 エラーに応じて、並列実行数を動的に調整します。 LRU によるメタデータ・キャッシュ: 頻繁に参照されるコントラクトのABIやブロックヘッダーを LRUキャッシュ に保持し、バックフィル時のDB I/Oを40%削減しました。 期待される成果 (Key Outcomes) 10倍のスループット向上: 単一インスタンスで50以上の並列同期ルーチンを安定してサポート。 デプロイの軽量化: Dockerイメージサイズを 200MB から 約20MB へと大幅削減（マルチステージビルドと依存関係ゼロのバイナリ）。 高可用性: 公開RPCエンドポイントが不安定な環境下でも、99.9%のデータ耐久性を維持。 日本市場における価値 (Business Value) 分散型金融（DeFi）やRWAにおいて、データの取り込み遅延や不正確さは、ユーザーの直接的な経済的損失やブランドへの致命的な不信感につながります。このアーキテクチャは、99.9%のデータ耐久性と精度を保証することで、トレーディング・アルゴリズムの整合性を守り、数百万ドル規模の清算不一致を未然に防ぎます。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-20 00:00:00 +0000 UTC'>2026年3月20日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
-  <a class="entry-link" aria-label="post link to Web3 Indexer: Goによる高信頼アーキテクチャ" href="https://portfolio.st6160.click/ja/projects/web3-indexer/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">カーネル・サージェリー：eBPFとCによる低遅延ネットワークの極限
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>プロジェクトの核心：標準カーネルの限界を超えて 現代の高頻度取引（HFT）や超大規模分散システムにおいて、標準的なLinuxカーネルのデフォルト設定は「汎用的すぎて遅い」という課題があります。私の仕事は、カーネルを単なる「OS」としてではなく、精密なランタイム環境として再構築することです。
+...</p></div><footer class=entry-footer><span title='2026-03-20 00:00:00 +0000 UTC'>2026年3月20日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to Web3 Indexer: Goによる高信頼アーキテクチャ" href=https://portfolio.st6160.click/ja/projects/web3-indexer/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>物理エントロピー：CPUジッタによる確定論的攻撃の打破</h2></header><div class=entry-content><p>物理エントロピー vs 確定論的攻撃 150億ドル規模のデジタル資産が扱われるWeb3の世界では、秘密鍵の強度はそのエントロピー（不確実性）の質に完全に依存します。ソフトウェアベースの疑似乱数生成器（PRNG）や、予測可能なシステムクロックのみに依存することは、重大な脆弱性となります。本プロジェクトでは、CPUハードウェアから直接マイクロ物理ジッタを採取する**「ソフトウェア定義TRNG（真数乱数生成器）」**の設計に焦点を当てました。
+1. RDTSCジッタ：『不正確さ』をノイズに変える RDTSC（Read Time Stamp Counter）は、586時代から存在するCPUティック（時鐘周期）を読み取るための命令です。現代の周波数スケーリングやマルチコア・スケジューリングの影響で、精密な計時用としては「不正確」とされがちですが、この「非決定性」こそが、暗号学的には完璧な物理ノイズ源となります。
+ビットレベルの抽出 厳格なエントロピー監査を通じて、上位32ビット（EDX）は非常に安定しており、予測可能であることを特定しました。私の実装では、実行速度のナノ秒レベルの変動やハードウェア割り込みのタイミングを捉える**下位32ビット（EAX）**のみを厳選して抽出します。
+非決定性の誘発 サンプリングの周期性を打破するため、意図的に sleep(0) (または yield) 命令を注入します。これによりOSのスレッド・コンテキストスイッチを強制的に誘発させ、CPUスケジューラの挙動やハードウェア状態の遷移から、予測不可能なエントロピーを取り込みます。
+2. RDRANDと『ゼロトラスト』ハイブリッドモデル Intel Ivy Bridge以降のx86プラットフォームでは、CPU内部の熱ノイズを採取する RDRAND 命令（Secure Key）を利用しました。
+防御の多層化 (Defense-in-Depth) ハードウェアレベルのバックドアの可能性に関する研究を踏まえ、「単一のエントロピーソースを盲信しない」という重要なアーキテクト判断を下しました。私のシステムでは以下のハイブリッドモデルを採用しています：
+RDRAND: 高品質な物理ベースとして採取。 RDTSCジッタ: スタック状態の断片とともに混合。 SHA-256/SM3 雪崩効果パイプライン: 全ストリームをこの「蒸留機」に通して一様分布化。 この暗号学的「漂白（Whitening）」により、万が一仮想化環境やTEE（信頼実行環境）で特定のインフラソースが制限（エントロピー枯渇）されたとしても、最終的なシードの数学的な非決定性を保証します。
+3. 実利的なインパクト このエントロピー採取エンジンは、150億ドル級の秘密鍵衝突リスクを防御するために設計されました。障害点を「予測可能なソフトウェア・シード」から「カオスな物理状態」へとシフトさせることで、攻撃コストを「計算可能」な範囲から「物理的に不可能」な領域へと押し上げました。
+特定のWeb3プロトコル監査において、本アーキテクチャは標準的な /dev/urandom 呼び出しを、よりレジリエントな多源エントロピー・プールに置き換え、侵害された仮想マシン環境下でも秘密鍵の生成安全性を確保しました。
+[!IMPORTANT] エンジニアリングの教訓: 高い価値を守るセキュリティにおいて、「信頼せず、常に検証せよ」という原則は鉄則です。ハードウェアレベルのノイズを積み重ねることは、暗号プロトコルの構造的な崩壊に対する究極の防御策となります。</p></div><footer class=entry-footer><span title='2026-03-11 00:00:00 +0000 UTC'>2026年3月11日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to 物理エントロピー：CPUジッタによる確定論的攻撃の打破" href=https://portfolio.st6160.click/ja/projects/physical-entropy-rdtsc/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>カーネル・サージェリー：eBPFとCによる低遅延ネットワークの極限</h2></header><div class=entry-content><p>プロジェクトの核心：標準カーネルの限界を超えて 現代の高頻度取引（HFT）や超大規模分散システムにおいて、標準的なLinuxカーネルのデフォルト設定は「汎用的すぎて遅い」という課題があります。私の仕事は、カーネルを単なる「OS」としてではなく、精密なランタイム環境として再構築することです。
 実施した「外科手術（Surgery）」の内容 1. eBPFによる非侵襲的な「レントゲン」監視 システムのパフォーマンス低下が起きた際、従来の監視ツール自体が負荷（オーバーヘッド）となり、真因を隠してしまうことがあります。
 解決策: カスタムのeBPFプログラムを開発し、コンテキストスイッチ、ディスクI/O、ネットワークスタックのレイテンシをカーネル空間で直接フック。 成果: 0.1%以下のオーバーヘッドで、マイクロ秒単位のスタックトレースを可視化。 2. ネットワーク・スタックの極限最適化 パケットがNICに到着してからアプリケーションに届くまでのわずかなミリ秒が、システム全体のボトルネックとなります。
 実施内容: XDP (Express Data Path) によるパケットの早期フィルタリング。 Zero-copy IPC によるバッファコピーの排除。 カーネル・バイパス技術の導入により、パケット処理のレイテンシを従来の1/10に削減。 3. ハードウェア・アフィニティとアイソレーション マルチコア・プロセッサにおいて、OSのスケジューラによるプロセス移動はキャッシュミスを引き起こします。
 実施内容: cpusets と cgroups を活用し、クリティカルなパスを特定の物理コアにアイソレート（隔離）。 成果: ジッター（遅延のばらつき）を排除し、予測可能な「決定論的」なパフォーマンスを実現。 技術的な成果 (Technical Outcome) 200nsの通信レイテンシ: 一部のプロセス間通信（IPC）において、レイテンシを200ナノ秒まで圧縮。 データ処理効率の倍増: 同じハードウェアリソースで、処理可能な同時接続数を3倍に向上。 ダウンタイムのゼロ化: 稼働中のシステムを停止させることなく、eBPFを使用してライブで診断と最適化を実施。 日本市場における戦略的価値 (Strategic Value) 確実な安定性 (Reliability): 障害が発生してから直すのではなく、カーネルレベルでマージンを稼ぐことで、突発的なスパイク耐性を強化。 インフラ投資の最大化 (ROI): ハードウェアを増設するのではなく、ソフトウェアの効率を極限まで高めることで、物理的な運用コストを最小化。 ミッションクリティカルな品質: 銀行、電力網、通信インフラ等、一瞬の停止も許されない「日本の品質」に応えるための究極のチューニングを提供。 [!CAUTION] 警告: カーネルのチューニングは「劇薬」です。深い理解なしに行えばシステムを破壊しますが、正しく行えば物理の限界を超える武器になります。
-あなたのインフラの「真の能力」を解き放ちませんか？
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-01 00:00:00 +0000 UTC'>2026年3月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
-  <a class="entry-link" aria-label="post link to カーネル・サージェリー：eBPFとCによる低遅延ネットワークの極限" href="https://portfolio.st6160.click/ja/projects/kernel-surgery/"></a>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://portfolio.st6160.click/ja/">Home</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
-</html>
+あなたのインフラの「真の能力」を解き放ちませんか？</p></div><footer class=entry-footer><span title='2026-03-01 00:00:00 +0000 UTC'>2026年3月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to カーネル・サージェリー：eBPFとCによる低遅延ネットワークの極限" href=https://portfolio.st6160.click/ja/projects/kernel-surgery/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>オフライン要塞化：Linuxカーネルの外科的カスタマイズ</h2></header><div class=entry-content><p>オフライン要塞化：カーネルの外科的補強 高度なセキュリティが求められるエアギャップ（オフライン）環境（例：国家レベルのインフラ設備）において、「市販の」オペレーティングシステムは肥大化しすぎており、不必要に広い攻撃対象領域（Attack Surface）を抱えています。本プロジェクトでは、ミッションクリティカルなハードウェア展開のために、Linux環境を最小限の構成にまで削ぎ落とす「カーネル手術」を実施しました。
+1. 戦略：徹底的なストリッピング（剥離） 標準的なディストリビューション（CentOS/Ubuntu等）を起点とし、特定のハードウェア制御ロジックと暗号サービスに不可欠なもの以外のすべてを排除することをミッションとしました。
+localmodconfig と依存関係の監査 まず localmodconfig ツールを活用し、稼働中のハードウェアによってロードされているドライバのみを特定しました。その後、以下の外科的削除を手動で実施しました：
+不要なファイルシステム: NTFS, Fat32、およびエアギャップ環境でも悪用される可能性のあるネットワークプロトコル（SCTP, DCCP等）を排除。 汎用ハードウェアサポート: 本番端末には存在し得ない数千ものデバイスドライバを削除。 デバッグ機能のオーバーヘッド: KPROBES, FTRACE, KGDB を無効化し、パフォーマンスの最大化と、リバースエンジニアリングのためのフックを排除。 2. 起動レイテンシと決定論 緊急対応シナリオにおいて、数秒の差が重要になります。外科的なカスタマイズにより、起動時間を60%削減しました。さらに重要なのは、不要なバックグラウンド・カーネルスレッドやハードウェア・ポーリングによる「ジッタ（ゆらぎ）」を排除したことで、暗号エンジンの**運用の決定論（Operational Determinism）**を高めたことです。
+オフライン環境でのツールチェーン・ブートストラップ インターネットアクセスが皆無の環境下で、ローカルなツールチェーンのブートストラップを構築しました。静的コンパイルされたGoバイナリを利用することで、レガシーなターゲットシステムにおけるライブラリ依存関係の死結を回避。グローバルなパッケージマネージャを介さずに、要塞化されたアプリケーション環境をカスタムカーネル上に構築しました。
+3. 成果：「正規軍」水準のエンジニアリング この「正規軍」グレードのエンジニアリングにより、単に速いだけでなく、数学的に防御しやすいカーネルが誕生しました。稼働中のカーネルイメージ内のコード行数を40%以上削減することで、ゼロデイ脆弱性のリスクを大幅に低減し、ミニマリズムに基づく「信頼の起点（Root of Trust）」を確立しました。
+主要メトリクス カーネルサイズ: 標準的な～120MBから15MB以下へ。 起動時間: 45秒から12秒へとフラット化。 セキュリティ姿勢: 不要なシステムコール・パスとカーネルモジュールの80%を排除。 [!IMPORTANT] アーキテクトの評決: セキュリティにおいて「Less is More（少ないほど豊か）」は真実です。カーネルは楽しむための機能セットではなく、管理すべき脆弱性の集合体です。真の要塞化は「Deleteキー」から始まります。</p></div><footer class=entry-footer><span title='2026-03-01 00:00:00 +0000 UTC'>2026年3月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to オフライン要塞化：Linuxカーネルの外科的カスタマイズ" href=https://portfolio.st6160.click/ja/projects/kernel-hardening/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://portfolio.st6160.click/ja/>Home</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>

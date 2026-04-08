@@ -1,400 +1,61 @@
-<!DOCTYPE html>
-<html lang="ja" dir="auto" data-theme="auto">
-
-<head>
-	<meta name="generator" content="Hugo 0.160.0"><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Home</title>
-
-<meta name="description" content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。">
-<meta name="author" content="Zhou Wei">
-<link rel="canonical" href="https://portfolio.st6160.click/ja/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.4ef2299ae814559c4055cd3d15919aff78737e44fa7af337c506246832ba458a.css" integrity="sha256-TvIpmugUVZxAVc09FZGa/3hzfkT6evM3xQYkaDK6RYo=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://portfolio.st6160.click/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://portfolio.st6160.click/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://portfolio.st6160.click/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://portfolio.st6160.click/apple-touch-icon.png">
-<link rel="mask-icon" href="https://portfolio.st6160.click/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://portfolio.st6160.click/ja/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://portfolio.st6160.click/">
-<link rel="alternate" hreflang="ja" href="https://portfolio.st6160.click/ja/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="https://portfolio.st6160.click/ja/">
-  <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="シニア・バックエンド・アーキテクト ポートフォリオ">
-  <meta property="og:description" content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。">
-  <meta property="og:locale" content="ja_jp">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="シニア・バックエンド・アーキテクト ポートフォリオ">
-  <meta name="twitter:description" content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Home",
-  "url": "https://portfolio.st6160.click/ja/",
-  "description": "高性能インフラストラクチャ \u0026 暗号セキュリティ",
-  "logo": "https://portfolio.st6160.click/favicon.ico",
-  "sameAs": [
-      "https://github.com/starwar6160", "https://www.linkedin.com/in/zhouwei6160/?locale=en", "https://medium.com/@zhouwei6160", "https://zenn.dev/zhouwei6160", "https://x.com/st22102"
-  ]
-}
-</script>
-</head>
-<body class="list" id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="Home (Alt + H)">Home</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-                    <ul class="lang-switch"><li>|</li>
-                        <li>
-                            <a href="https://portfolio.st6160.click/" title="English"
-                                aria-label="English">En</a>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://demo2.st6160.click/" title="Web3 Indexer Demo">
-                    <span>Web3 Indexer Demo</span>&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                </a>
-            </li>
-            <li>
-                <a href="https://portfolio.st6160.click/ja/cases" title="Case Studies">
-                    <span>Case Studies</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://portfolio.st6160.click/ja/projects" title="Tech Projects">
-                    <span>Tech Projects</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://portfolio.st6160.click/ja/docs" title="Docs">
-                    <span>Docs</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<div class="post-content"><h1 id="シニアバックエンドアーキテクト--プリンシパルエンジニア">シニア・バックエンド・アーキテクト / プリンシパル・エンジニア<a hidden class="anchor" aria-hidden="true" href="#シニアバックエンドアーキテクト--プリンシパルエンジニア">#</a></h1>
-<p>行政的なマネジメント業務に埋もれることなく、複雑かつミッションクリティカルなアーキテクチャのボトルネックを直接解決することで、エンジニアリング投資利益率（ROI）を最大化します。暗号セキュリティ、分散システム、およびベアメタル・パフォーマンスの境界線で活動しています。</p>
-<h2 id="インフラを支える3つの柱">インフラを支える3つの柱<a hidden class="anchor" aria-hidden="true" href="#インフラを支える3つの柱">#</a></h2>
-<h3 id="柱-1-暗号セキュリティ-cryptographic-security">柱 1: 暗号セキュリティ (Cryptographic Security)<a hidden class="anchor" aria-hidden="true" href="#柱-1-暗号セキュリティ-cryptographic-security">#</a></h3>
-<ul>
-<li><strong>手作り暗号プリミティブ</strong>: 8KB以下のRAM環境下で、ECC、SM2/SM3/SM4/SM9をスクラッチから実装。</li>
-<li><strong>閾値秘密分散 (Threshold Secret Sharing)</strong>: (5,3) シャミアの秘密分散法およびKDFベースの鍵多様化。</li>
-<li><strong>サイドチャネル攻撃耐性</strong>: タイミング攻撃を防ぐための定数時間（Constant-time）実行パスの実装。</li>
-</ul>
-<h3 id="柱-2-高性能インフラストラクチャ-high-performance-infrastructure">柱 2: 高性能インフラストラクチャ (High-Performance Infrastructure)<a hidden class="anchor" aria-hidden="true" href="#柱-2-高性能インフラストラクチャ-high-performance-infrastructure">#</a></h3>
-<ul>
-<li><strong>決定論的コンピューティング</strong>: VM実行の最適化とバイトコードレベルのパフォーマンスチューニング。</li>
-<li><strong>カーネル・サージェリー</strong>: Linuxカーネル・チューニング（eBPF, Cgroups）およびサブマイクロ秒のIPC（200ns）。</li>
-<li><strong>ストレージ・エンジニアリング</strong>: 107億件のレコードを処理するハイパースケール・クラスターの最適化。</li>
-</ul>
-<h3 id="柱-3-分散システム--並行処理-distributed-systems--concurrency">柱 3: 分散システム &amp; 並行処理 (Distributed Systems &amp; Concurrency)<a hidden class="anchor" aria-hidden="true" href="#柱-3-分散システム--並行処理-distributed-systems--concurrency">#</a></h3>
-<ul>
-<li><strong>復旧力の高いコントロールプレーン</strong>: Go + Neo4j ルーティングエンジンにより、帯域幅を90%削減。</li>
-<li><strong>レスキュー・エンジニアリング</strong>: 麻痺したプラットフォームを安定化させ、「分散モノリス」の危機を打破。</li>
-</ul>
-<h2 id="技術レキシコン-technical-lexicon">技術レキシコン (Technical Lexicon)<a hidden class="anchor" aria-hidden="true" href="#技術レキシコン-technical-lexicon">#</a></h2>
-<ul>
-<li><strong>専門分野</strong>: C/C++, Go, Assembly, Linux Kernel, eBPF, Cryptography (SMシリーズ).</li>
-<li><strong>インフラ</strong>: Docker, Kubernetes, CI/CD Hardening, Zero-Copy IPC.</li>
-<li><strong>AIツール</strong>: 自律型コードベース監査 (Claude Code / DeepSeek / Gemini).</li>
-</ul>
-<hr>
-<h2 id="エンジニアリングハイライト-engineering-highlights">エンジニアリング・ハイライト (Engineering Highlights)<a hidden class="anchor" aria-hidden="true" href="#エンジニアリングハイライト-engineering-highlights">#</a></h2>
-<ul>
-<li><strong>50倍の再定義</strong>: 同期処理パイプラインを非同期バッチアップサート（70秒 → 1.5秒）に再設計。</li>
-<li><strong>92%のメモリ削減</strong>: 極限の埋め込み制約（120KB → 9.3KB）に対応した暗号エンジンの最適化。</li>
-<li><strong>レスキュー・ミッション</strong>: ドキュメント皆無の環境下で、停止した電力網運用のシステムを復旧。</li>
-</ul>
-<hr>
-<blockquote>
-<p>[!TIP]
-<strong>技術実証 (Technical Proof)</strong>: <a href="/ja/projects/sm9-low-level/">8KB RAM環境におけるSM9(IBC)暗号の実装</a></p>
-</blockquote>
-
-
-</div>
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <h1>シニアバックエンドアーキテクト</h1>
-    </header>
-    <div class="entry-content">
-        ミッションクリティカルなインフラ、暗号セキュリティ、分散システムを専門とする20年の経験を持つ現役のターミナルコーダー。
-    </div>
-    <footer class="entry-footer">
-        <div class="social-icons" >
-    <a href="https://github.com/starwar6160" target="_blank" rel="noopener noreferrer me"
-        title="Github">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-    </a>
-    <a href="https://www.linkedin.com/in/zhouwei6160/?locale=en" target="_blank" rel="noopener noreferrer me"
-        title="Linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
-    </a>
-    <a href="https://medium.com/@zhouwei6160" target="_blank" rel="noopener noreferrer me"
-        title="Medium">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76.000000 76.000000" fill="currentColor" stroke-width="2"
-    preserveAspectRatio="xMidYMid meet">
-    <g transform="translate(0.000000,76.000000) scale(0.100000,-0.100000)">
-        <path
-            d="M0 380 l0 -380 380 0 380 0 0 380 0 380 -380 0 -380 0 0 -380z m334 85 c30 -63 57 -115 59 -115 2 0 16 30 31 68 15 37 37 88 49 115 l20 47 76 0 76 -1 -27 -20 -28 -21 0 -151 c0 -150 0 -151 27 -179 l27 -28 -109 0 -109 0 27 28 c26 27 27 32 26 143 0 131 3 134 -71 -58 -24 -62 -48 -113 -53 -113 -6 0 -17 16 -24 35 -7 19 -36 83 -64 142 l-52 108 -3 -98 c-3 -97 -2 -99 28 -133 16 -19 30 -39 30 -44 0 -6 -31 -10 -70 -10 -45 0 -70 4 -70 11 0 6 14 27 30 46 30 33 30 35 30 151 0 116 0 118 -31 155 l-30 37 75 0 76 0 54 -115z" />
-    </g>
-</svg>
-    </a>
-    <a href="https://zenn.dev/zhouwei6160" target="_blank" rel="noopener noreferrer me"
-        title="Zenn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-</svg>
-    </a>
-    <a href="https://x.com/st22102" target="_blank" rel="noopener noreferrer me"
-        title="Twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-    </path>
-</svg>
-    </a>
-</div>
-
-    </footer>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">ディープダイブ：RWAトークン化プロトコルにおけるアーキテクチャの欠陥
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>はじめに 2026年第1四半期、私は東京を拠点とするコンプライアンス重視のWeb3スタートアップから、緊急のアーキテクチャ監査の依頼を受けました。このプロジェクトは、現物資産をERC-1155トークンとして分割し、不動産市場に革命を起こすことを目的としていました。
-表面上、プラットフォームは洗練されたUIを備え、一見「MVP（最小実行可能製品）」として機能しているように見えました。しかし、その内部構造は「紙の防弾チョッキ」のようなものでした。見た目は堅牢ですが、保護すべき数百万ドルのTVL（預かり資産）を守る能力は根本的に欠如していました。
-私が発見したのは単なるいくつかのバグではなく、論理ミス一つが即座に財務的破綻に直結する分野における、**エンジニアリング・ディシプリン（規律）**の構造的な欠如でした。
-1. 「1ユニット」価格の脆弱性（プロトコルレベルの破綻） 最も深刻なP0脆弱性は、AssetFactory.solコントラクトの主要な購入関数に存在しました。このロジックは、ユーザーが不動産の分割所有権を購入できるように設計されていました。
-脆弱性の内容 コントラクトは、1ユニットあたりの「価格（cost）」を正しく取得していました。しかし、根本的な乗算処理、つまり「総支払額が要求された数量に見合っているか」のチェックを怠っていました。
-攻撃シナリオの図解 [ 攻撃者 ] ⮕ purchase(propertyId=1, amount=10,000) を呼び出し │ ▼ [ AssetFactory.sol ] │ ├─ 取得: ユニット単価 = 0.1 ETH │ ├─ チェック: msg.value == ユニット単価? (✅ 0.1 ETH が提供された) │ ⚠️ 警告: 単価 × 数量 (1,000 ETHが必要) のチェックを失念！ │ ├─ 状態: トランザクション承認 ✅ │ └─ アクション: 10,000ユニットを攻撃者にミント ⮕ [在庫が枯渇] 単価1ビット分のコストを支払うだけで、攻撃者は高価値不動産資産の全在庫を奪い取ることが可能でした。これは、文脈（意図）を理解できない自動AIスキャナーが見落としがちな、人間のアーキテクトが数秒で見抜くべき「ビジネスロジックの破綻」の典型例です。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-20 00:00:00 +0000 UTC'>2026年3月20日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
-  <a class="entry-link" aria-label="post link to ディープダイブ：RWAトークン化プロトコルにおけるアーキテクチャの欠陥" href="https://portfolio.st6160.click/ja/cases/web3-rwa-audit/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">東横INN：全国規模のシステム監査とセキュリティ強化
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>プロジェクト概要 本プロジェクトは、日本全国に数百の拠点を展開する東横INNの基幹インフラに対する包括的なセキュリティ監査および設計の最適化です。
-20年以上の歴史を持つシステムを現代のサイバー脅威から守るため、単なるパッチ当てではなく、アーキテクチャ・レベルでの脆弱性特定と、現場のオペレーションを停滞させない実利的なセキュリティ対策の導入が求められました。
-課題 (The Bottlenecks) 分散型インフラの脆弱性: 全国の各ホテルに分散するエッジデバイスと中央サーバー間の通信における中間者攻撃（MitM）のリスク。 ログの断片化: 複数のレガシー・サブシステムから生成される非構造化ログにより、インシデントの予兆検知が困難な状態。 ダウンタイムの許容不可: 24時間365日稼働する宿泊予約システムにおいて、セキュリティ更新に伴うシステム停止は事業損失に直結する。 実施したアーキテクチャ戦略 1. データの整合性を担保する「ハッシュチェーン」の導入 改ざん検知を確実なものにするため、バッチ処理における整合性検証システムを設計しました。各データチャンクを暗号学的に連結するハッシュチェーン構造を導入することで、万が一データベースが直接侵害された場合でも、不正な変更を即座に特定可能にしました。
-2. 「正規軍（Regular Army）」基準のコード監査 場当たり的な修正（Bricklaying）を排除し、決定論的な計算モデルを追求しました。
-全てのシェルスクリプトおよびCプリミティブに対する静的/動的解析の実施。 認証フローにおける非決定論的な動作（レースコンディション）の徹底的な排除。 3. ハードウェア・アンカーを活用したセキュリティ（提案） 将来的な拡張性を見据え、物理的なハードウェア・トークン（安全チップ）を根拠とした信頼の起点（Root of Trust）の構築を提言しました。
-日本市場における事業価値 (Business Value) 「信頼」というブランド資産の保護: 日本のホスピタリティ産業において、顧客データの漏洩は金銭的損失以上の壊滅的なブランド毀損を招きます。本監査により、そのリスクを構造的に低減しました。 法規制への適合 (Compliance)：個人情報保護法（APPI）を含む国内の厳格なセキュリティ基準をクリアし、将来的なIT監査に対する確固たる技術基盤を提供。 持続可能な保守性: 属人的な管理から、コードとポリシーに基づく自動検証へと移行することで、長期的な運用コストの削減を実現しました。 [!TIP] アーキテクトの視点: セキュリティとは、ビジネスのスピードを落とす「ブレーキ」ではなく、より速く安全に走るための「サスペンション」であるべきです。
-エンタープライズ級のレガシーシステム要塞化についてご相談を承ります。
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-15 00:00:00 +0000 UTC'>2026年3月15日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
-  <a class="entry-link" aria-label="post link to 東横INN：全国規模のシステム監査とセキュリティ強化" href="https://portfolio.st6160.click/ja/cases/toyoko-inn-audit/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">ETL最適化：バッチ処理を70秒から1.5秒へ（50倍の高速化）
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>プロジェクト背景 ある大規模金融データ処理システムにおいて、増大するトランザクション量により既存のETL（抽出・変換・格納）プロセスが限界に達していました。1つのバッチ処理に70秒を要しており、データ同期の遅延がビジネスの意思決定を阻害する重大なリスクとなっていました。
-私のミッションは、システムのコードを1行ずつ「解剖」し、ボトルネックを根本から排除して、リアルタイムに近いパフォーマンスを実現することでした。
-課題 (Technical Bottlenecks) 同期的な「1件ずつ」の処理: 従来のループ処理が、1件の挿入ごとにデータベースのラウンドトリップを待機していた。 データベースのロック競合: 頻繁な小規模アクセスのため、インデックスの書き換えによるデッドロックが多発。 非効率なメモリ管理: 大量データ読み込み時にGC（ガベージコレクション）が頻発し、CPU時間の30%を消費。 採用したアーキテクチャ・ソリューション 1. 「非同期バッチ・アップサート」への転換 同期処理を完全に廃止し、Worker Poolモデルを採用しました。
-特定の時間、または件数のしきい値に達するまでメモリ内のバッファにデータを蓄積。 PostgreSQLの INSERT ... ON CONFLICT (UPSERT) を活用し、1回のトランザクションで数千件を処理。 これにより、ネットワークのオーバーヘッドを99%削減しました。 2. メモリ再利用とゼロコピーの徹底 ガベージコレクションの負荷を抑えるため、Goの sync.Pool を使用してバッファを再利用。
-データのデコードプロセスにおいてメモリアロケーションを極限まで抑え、大容量データ処理時でも低遅延を維持。 3. 可観測性 (Observability) の導入 単に速くするだけでなく、常に安定して動作することを保証しました。
-Prometheus &#43; Grafanaによるカスタム・メトリクスの導入。 各ステージのレイテンシを可視化し、将来的なボトルネックの予兆を事前に把握可能に。 事業における成果 (Business Results) 劇的なスループット向上: 処理時間が 70秒から1.5秒 へ。エンジニアリングによる50倍のパフォーマンス改善を達成。 インフラコストの最適化: 以前は10台必要だった処理ノードを2台に集約。クラウドサーバーの運用コストを大幅に削減。 データ鮮度の向上: ビジネスサイドは、ほぼリアルタイムのデータに基づいて意思決定を行えるようになり、市場への反応速度が向上。 [!TIP] 黄金律: 高性能インフラとは、リソースを「追加」することではなく、既存リソースの「無駄」を数学的に削ぎ落とすことによって完成します。
-あなたのシステムのパフォーマンス限界を突破しませんか？
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-10 00:00:00 +0000 UTC'>2026年3月10日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
-  <a class="entry-link" aria-label="post link to ETL最適化：バッチ処理を70秒から1.5秒へ（50倍の高速化）" href="https://portfolio.st6160.click/ja/cases/etl-optimization/"></a>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2026 <a href="https://portfolio.st6160.click/ja/">Home</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
-</html>
+<!doctype html><html lang=ja dir=auto data-theme=auto><head><meta name=generator content="Hugo 0.160.0"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Home</title><meta name=description content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。"><meta name=author content="Zhou Wei"><link rel=canonical href=https://portfolio.st6160.click/ja/><link crossorigin=anonymous href=/assets/css/stylesheet.4ef2299ae814559c4055cd3d15919aff78737e44fa7af337c506246832ba458a.css integrity="sha256-TvIpmugUVZxAVc09FZGa/3hzfkT6evM3xQYkaDK6RYo=" rel="preload stylesheet" as=style><link rel=icon href=https://portfolio.st6160.click/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://portfolio.st6160.click/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://portfolio.st6160.click/favicon-32x32.png><link rel=apple-touch-icon href=https://portfolio.st6160.click/apple-touch-icon.png><link rel=mask-icon href=https://portfolio.st6160.click/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://portfolio.st6160.click/ja/index.xml title=rss><link rel=alternate hreflang=en href=https://portfolio.st6160.click/><link rel=alternate hreflang=ja href=https://portfolio.st6160.click/ja/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta property="og:url" content="https://portfolio.st6160.click/ja/"><meta property="og:site_name" content="Home"><meta property="og:title" content="シニア・バックエンド・アーキテクト ポートフォリオ"><meta property="og:description" content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。"><meta property="og:locale" content="ja_jp"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="シニア・バックエンド・アーキテクト ポートフォリオ"><meta name=twitter:description content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"Home","url":"https://portfolio.st6160.click/ja/","description":"高性能インフラストラクチャ \u0026 暗号セキュリティ","logo":"https://portfolio.st6160.click/favicon.ico","sameAs":["https://github.com/starwar6160","https://www.linkedin.com/in/zhouwei6160/?locale=en","https://medium.com/@zhouwei6160","https://zenn.dev/zhouwei6160","https://x.com/st22102"]}</script></head><body class=list id=top><header class=header><nav class=nav><div class=logo><a href=/ accesskey=h title="Home (Alt + H)">Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li><li><a href=https://portfolio.st6160.click/ title=English aria-label=English>En</a></li></ul></div></div><ul id=menu><li><a href=https://demo2.st6160.click/ title="Web3 Indexer Demo"><span>Web3 Indexer Demo</span>&nbsp;
+<svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://portfolio.st6160.click/ja/cases title="Case Studies"><span>Case Studies</span></a></li><li><a href=https://portfolio.st6160.click/ja/projects title="Tech Projects"><span>Tech Projects</span></a></li><li><a href=https://portfolio.st6160.click/ja/docs title=Docs><span>Docs</span></a></li></ul></nav></header><main class=main><div class=post-content><h1 id=シニアバックエンドアーキテクト--プリンシパルエンジニア>シニア・バックエンド・アーキテクト / プリンシパル・エンジニア<a hidden class=anchor aria-hidden=true href=#シニアバックエンドアーキテクト--プリンシパルエンジニア>#</a></h1><p>行政的なマネジメント業務に埋もれることなく、複雑かつミッションクリティカルなアーキテクチャのボトルネックを直接解決することで、エンジニアリング投資利益率（ROI）を最大化します。暗号セキュリティ、分散システム、およびベアメタル・パフォーマンスの境界線で活動しています。</p><h2 id=インフラを支える3つの柱>インフラを支える3つの柱<a hidden class=anchor aria-hidden=true href=#インフラを支える3つの柱>#</a></h2><h3 id=柱-1-暗号セキュリティ-cryptographic-security>柱 1: 暗号セキュリティ (Cryptographic Security)<a hidden class=anchor aria-hidden=true href=#柱-1-暗号セキュリティ-cryptographic-security>#</a></h3><ul><li><strong>手作り暗号プリミティブ</strong>: 8KB以下のRAM環境下で、ECC、SM2/SM3/SM4/SM9をスクラッチから実装。</li><li><strong>閾値秘密分散 (Threshold Secret Sharing)</strong>: (5,3) シャミアの秘密分散法およびKDFベースの鍵多様化。</li><li><strong>サイドチャネル攻撃耐性</strong>: タイミング攻撃を防ぐための定数時間（Constant-time）実行パスの実装。</li></ul><h3 id=柱-2-高性能インフラストラクチャ-high-performance-infrastructure>柱 2: 高性能インフラストラクチャ (High-Performance Infrastructure)<a hidden class=anchor aria-hidden=true href=#柱-2-高性能インフラストラクチャ-high-performance-infrastructure>#</a></h3><ul><li><strong>決定論的コンピューティング</strong>: VM実行の最適化とバイトコードレベルのパフォーマンスチューニング。</li><li><strong>カーネル・サージェリー</strong>: Linuxカーネル・チューニング（eBPF, Cgroups）およびサブマイクロ秒のIPC（200ns）。</li><li><strong>ストレージ・エンジニアリング</strong>: 107億件のレコードを処理するハイパースケール・クラスターの最適化。</li></ul><h3 id=柱-3-分散システム--並行処理-distributed-systems--concurrency>柱 3: 分散システム & 並行処理 (Distributed Systems & Concurrency)<a hidden class=anchor aria-hidden=true href=#柱-3-分散システム--並行処理-distributed-systems--concurrency>#</a></h3><ul><li><strong>復旧力の高いコントロールプレーン</strong>: Go + Neo4j ルーティングエンジンにより、帯域幅を90%削減。</li><li><strong>レスキュー・エンジニアリング</strong>: 麻痺したプラットフォームを安定化させ、「分散モノリス」の危機を打破。</li></ul><h2 id=技術レキシコン-technical-lexicon>技術レキシコン (Technical Lexicon)<a hidden class=anchor aria-hidden=true href=#技術レキシコン-technical-lexicon>#</a></h2><ul><li><strong>専門分野</strong>: C/C++, Go, Assembly, Linux Kernel, eBPF, Cryptography (SMシリーズ).</li><li><strong>インフラ</strong>: Docker, Kubernetes, CI/CD Hardening, Zero-Copy IPC.</li><li><strong>AIツール</strong>: 自律型コードベース監査 (Claude Code / DeepSeek / Gemini).</li></ul><hr><h2 id=エンジニアリングハイライト-engineering-highlights>エンジニアリング・ハイライト (Engineering Highlights)<a hidden class=anchor aria-hidden=true href=#エンジニアリングハイライト-engineering-highlights>#</a></h2><ul><li><strong>50倍の再定義</strong>: 同期処理パイプラインを非同期バッチアップサート（70秒 → 1.5秒）に再設計。</li><li><strong>92%のメモリ削減</strong>: 極限の埋め込み制約（120KB → 9.3KB）に対応した暗号エンジンの最適化。</li><li><strong>レスキュー・ミッション</strong>: ドキュメント皆無の環境下で、停止した電力網運用のシステムを復旧。</li></ul><hr><blockquote><p>[!TIP]
+<strong>技術実証 (Technical Proof)</strong>: <a href=/ja/projects/sm9-low-level/>8KB RAM環境におけるSM9(IBC)暗号の実装</a></p></blockquote></div><article class="first-entry home-info"><header class=entry-header><h1>シニアバックエンドアーキテクト</h1></header><div class=entry-content>ミッションクリティカルなインフラ、暗号セキュリティ、分散システムを専門とする20年の経験を持つ現役のターミナルコーダー。</div><footer class=entry-footer><div class=social-icons><a href=https://github.com/starwar6160 target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+</a><a href="https://www.linkedin.com/in/zhouwei6160/?locale=en" target=_blank rel="noopener noreferrer me" title=Linkedin><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+</a><a href=https://medium.com/@zhouwei6160 target=_blank rel="noopener noreferrer me" title=Medium><svg viewBox="0 0 76 76" fill="currentColor" stroke-width="2"><g transform="translate(0.000000,76.000000) scale(0.100000,-0.100000)"><path d="M0 380V0h380 380v380 380H380 0V380zm334 85c30-63 57-115 59-115s16 30 31 68c15 37 37 88 49 115l20 47h76l76-1-27-20-28-21V387c0-150 0-151 27-179l27-28H535 426l27 28c26 27 27 32 26 143 0 131 3 134-71-58-24-62-48-113-53-113-6 0-17 16-24 35s-36 83-64 142l-52 108-3-98c-3-97-2-99 28-133 16-19 30-39 30-44 0-6-31-10-70-10-45 0-70 4-70 11 0 6 14 27 30 46 30 33 30 35 30 151s0 118-31 155l-30 37h75 76l54-115z"/></g></svg>
+</a><a href=https://zenn.dev/zhouwei6160 target=_blank rel="noopener noreferrer me" title=Zenn><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+</a><a href=https://x.com/st22102 target=_blank rel="noopener noreferrer me" title=Twitter><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg></a></div></footer></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>8KB RAM環境におけるSM9(IBC)暗号の実装</h2></header><div class=entry-content><p>挑戦：ベアメタル上におけるIBCの「恐怖」 2013年当時、ARM Cortex-M3 (STM32F2) 上で SM9 (Identity-Based Cryptography) 規格を実装することは、多くのエンジニアにとって「不可能」と考えられていました。標準的なECCとは異なり、SM9は**ペアリング（Pairing-friendly curves）**を必要とし、256ビットの座標を1536ビットの構造に拡張する大規模な体拡大（Field Expansion）を伴うためです。
+標準的な暗号ライブラリ（OpenSSL, MIRACL）はサーバー向けに設計されており、RAMの1バイトが貴重な組込みシステムには適していません。私の任務は、肥大化した実装を徹底的に削ぎ落とし、セキュアUSBKeyやオフラインATMダイナミックロックシステムに求められる 8KB RAM以下 の制約内に収めることでした。
+1. 外科的アーキテクチャ：「メタデータの肥大化」の除去 2013年の監査で最初に発見したのは、メモリフットプリントの70%がアルゴリズムそのものではなく、インフラストラクチャによるものだということでした。
+ASN.1 形式のデコード: ヒープ空間を大量に消費する要因。 OpenSSL への依存: マイクロコントローラには不要な数千行のコード。 戦略：「純粋アルゴリズム」の抽出 私は実装をベアメタルCプリミティブへと絞り込む作業を主導しました。複雑なASN.1を廃止し、Protobuf または静的な固定サイズ構造へと切り替えました。これにより「メモリドリフト」のリスクを排除し、ヒープのフットプリントを60%以上削減しました。
+2. メモリの制御：mralloc.c によるブレークスルー 8KBの制限を達成するために、標準の malloc に頼ることはできませんでした。私は基盤となる MIRACL メモリアロケータ（mralloc.c）を改造し、ピーク時のヒープ使用量を厳密に統計・追跡する機能を組み込みました。
+/* * 2014年 8KB RAM最適化作業からのスニペット * 目的: ECDH/SM9 鍵交換におけるピークメモリの制限 */ static size_t peak_memory_usage = 0; static size_t current_usage = 0; void* mr_alloc(size_t size) { current_usage += size; if (current_usage > peak_memory_usage) { peak_memory_usage = current_usage; } // リソース制約のあるターゲットに対する厳格な執行 if (peak_memory_usage > MAX_RAM_BUDGET_BYTES) { log_critical("メモリ制限違反！ 予算を超過しました: %zu", peak_memory_usage); return NULL; } return standard_malloc(size); } 結果: 徹底的な洗練の結果、フルスタックのECDHでピーク時のアロケーションを 9,300バイト まで抑えることに成功しました。「科学者」としての視点を持ってメモリを外科的に管理することで、汎用ライブラリを遥かに凌駕する性能を引き出せることを証明しました。
+...</p></div><footer class=entry-footer><span title='2026-04-01 00:00:00 +0000 UTC'>2026年4月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to 8KB RAM環境におけるSM9(IBC)暗号の実装" href=https://portfolio.st6160.click/ja/projects/sm9-low-level/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>VC6 連結器手術：20年の時を越えるABI互換性の担保</h2></header><div class=entry-content><p>VC6 連結器手術：レガシー近代化の極致 「技術的負債」への対処とは、しばしば20年以上も手つかずのシステムと対峙することを意味します。本プロジェクトでは、レガシーな銀行インフラ（Windows XP / Visual C++ 6.0）において、現代的な暗号化要件と旧時代のABI（Application Binary Interface）制約が衝突する中での「外科的介入」を実施しました。
+1. 衝突：LNK2005とシンボル競合の解消 ミッションは、大規模な再配布パッケージ（MSVCRT.DLL）の導入や、システム全体のクラッシュを招くSxS（Side-by-Side）マニフェストエラーを引き起こすことなく、現代的な暗号アルゴリズムをレガシーなATMシステムに注入することでした。
+VC6とVS2015という異なる時代のコンパイラによる静的・動的ライブラリが混在すると、連結器（Linker）は重複するシンボル（LNK2005）で停止します。私は以下のシンボル・ハイジャック戦略を実装しました：
+最終リンクフェーズで標準の MSVCRT.LIB および LIBCMT.LIB を明示的に無視（Ignore）。 必要なシンボルを手動で再結合し、レガシーなランタイムと現代的なペイロード間の競合を解消。 これにより、バイナリを「外科的に」軽量化し、配布サイズを1.3MBからわずか230KBに圧縮しました。 2. 連結器ハイジャックと『生贄のペイロード』 Windows XP上で断続的なクラッシュを引き起こしていた脆弱なSxSマニフェスト・チェックを回避するため、ペイロードのデリバリー構造を再設計しました：
+完全静的リンク: /MT（スタティックCRT）を強制し、不要なシンボルを削除することで、外部依存関係を完全に排除。 マイクロ・ペイロード・アーキテクチャ: 現代的なセキュリティロジックを、極限まで最適化された33KBのDLLにカプセル化。 UPX圧縮の解除: 一部のレガシー端末のセキュリティフィルタがUPX圧縮ファイルをフラグ立てしていることを突き止め、圧縮を解除。生のバイナリ密度に頼ることで、ネットワークフィルタの透過率を100%に向上させました。 3. バージョン391における『幽霊デッドロック』の解決 並行処理テスト中、ログもクラッシュも残さずUIがフリーズする「不可視のデッドロック」が発生しました。
+バージョン履歴の二分探索を実施し、グローバルな send_mutex を導入した特定のコミット（バージョン391）に原因を特定。バックグラウンドのHID受信スレッドとフロントエンドの送信スレッドが、共有の G_PUSH_STRING バッファを巡って競合状態（Race Condition）に陥っていることを突き止めました。
+同期処理をスレッド親和性（Thread-Affinity）を持つキューにリファクタリングし、コア部分を安定版（バージョン376）にロールバックすることで、レガシーな通信スタックに決定論的な安定性を取り戻しました。
+主な成果 時を越える互換性: ホストOSを不安定にさせることなく、VC6と現代的なC++ロジックの間の20年の溝を埋めました。 外科的デプロイ: 連結器の手動制御により、デプロイリスクとバイナリサイズを80%以上削減。 本番環境の救済: 長年「断続的なクラッシュ」に悩まされていた国内銀行の端末ネットワークを完全に安定化させました。 [!TIP] エンジニアリングの哲学: ホストシステムのソースコードが歴史の彼方に失われているとき、**連結器（Linker）**はアーキテクチャ・ガバナンスのための最も強力な武器となります。20年前のシステムを再起動させることなくアップグレードできたとき、それは真のシニア・エンジニアリングの証明となります。</p></div><footer class=entry-footer><span title='2026-04-01 00:00:00 +0000 UTC'>2026年4月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to VC6 連結器手術：20年の時を越えるABI互換性の担保" href=https://portfolio.st6160.click/ja/projects/vc6-linker-surgery/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>USB HIDプロトコル：127バイトの『幽霊』と消えた先頭バイトの解決</h2></header><div class=entry-content><p>USB HIDプロトコル・エンジニアリング：64バイトの制約を超えて 電子暗号錠などの高セキュリティ・ハードウェアを設計する際、物理レイヤー（USB HID）の厳格な制約は、現代的なデータ形式（JSON/XML）としばしば衝突します。本プロジェクトでは、USB HIDのための独自の**断片化・再構成（F&amp;R）**プロトコルの構築と、OSドライバ・スタックに潜む致命的なバグの解決を行いました。
+1. 断片化・再構成（F&amp;R）プロトコルの設計 USB HIDは物理的に64バイトのパケット（レポート）に制限されています。700バイトを超えるセキュリティ・マニフェストを転送するため、アプリケーション・レイヤーに以下のプロトコルを実装しました：
+6バイトの制御ヘッダー: Total Length (16-bit): 再構成後の論理メッセージの総サイズ。 Current Offset (16-bit): グローバル・バッファ内での現在の断片の位置。 Block Index (16-bit): 到着順序を検証するためのシーケンス番号。 58バイトのペイロード: 各フレームは最大58バイトの実データを運び、100%決定論的なパケット組み立てを保証します。 当初は8ブロックに制限されていましたが、バッファを12ブロックに拡張し、マルチスレッド環境での競合を防ぐためにセッション・ハンドルを導入。高負荷なストレス・テスト下でもデータの整合性を維持しました。
+2. 「生贄のバイト」ハック：Windowsドライバとの戦い 大手国有インフラ企業との統合テスト中に、「メッセージの先頭バイトが消失する」という不可解な現象に直面しました。ホストが6バイトのヘッダーを送信しても、MCU側では常に5バイトしか受信できないという状態でした。
+根本原因 WindowsのHIDドライバ・スタックを深く調査した結果、隠された仕様が判明しました。OSは制御転送の第0バイトをReport IDとして解釈します。独自のファームウェアでReport IDを定義していなかったため、ドライバがヘッダーの最初の1バイトを勝手に「飲み込んで」いたのです。
+解決策：65バイト・バッファ ファームウェアの修正が困難な状況であったため、ホスト側で「外科的」な解決策を講じました：
+ホストの送信バッファを64から65バイトに拡張。 第0バイトにダミーとなる 0x00 バイトを配置。 Windowsドライバがこの 0x00 をReport IDとして「消費」することで、実際の64バイトのデータ構造（第1バイトから開始）は無傷でハードウェアに届き、完璧なデータアライメントが実現しました。 3. 「127バイトの幽霊」：ASN.1 エンコーディングの越境 また、ある大手銀行のレガシー端末から取得した14MBの16進数ダンプを詳細に解析した際、断続的な認証失敗の原因となっていた「幽霊バグ」を特定しました。
+プロトコル・スタックのバイナリ・リバースエンジニアリングを通じて、ASN.1 長さフィールドのオーバーフローが127バイトの境界で発生していることを突き止めました。BER/DERエンコーディングでは、127バイトを超える長さは複数バイト形式を必要としますが、レガシーなミドルウェアがこの長さビットを誤って切り捨てていたため、127バイトを超える全ペイロードの復号に失敗していたのです。
+ミドルウェア内にカスタム・プロトコル・バリデーターを実装し、これらの不正なASN.1構造を正規化してからコアロジックに渡すことで、銀行のホスト側ソフトウェアを書き換えることなくシステムを安定化させました。
+主な成果 100%のデータ整合性: OSとハードウェアの境界線上で、700バイト超のセキュアコマンドのゼロパケットロスを達成。 レガシー・システムの救済: 10年間「原因不明」とされていた国内大手銀行の端末エラーを、127バイトの境界条件の特定により解決。 事業への貢献 (ROI): ハードウェアの回収やファームウェアの大規模更新を回避し、ホスト側のハックとバリデーターの実装のみで数億円規模の損失を防ぎました。 [!TIP] アーキテクトの視点: 低レイヤー・エンジニアリングにおいて、「真実」はコードではなくドライバの中に隠れていることがあります。ハードウェアとソフトウェアの意見が食い違うとき、アーキテクトはデジタル考古学者のように深層を掘り下げなければなりません。</p></div><footer class=entry-footer><span title='2026-03-27 00:00:00 +0000 UTC'>2026年3月27日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to USB HIDプロトコル：127バイトの『幽霊』と消えた先頭バイトの解決" href=https://portfolio.st6160.click/ja/projects/usb-hid-protocol/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Web3 Indexer: Goによる高信頼アーキテクチャ</h2></header><div class=entry-content><p>Web3 Indexer: 産業級のGoエンジン このプロジェクトは、TypeScriptで構築された高可用性EVMブロックチェーン・データインデックスエンジンのプロトタイプを、**Go（Golang）**を用いて堅牢な産業級プロダクションシステムへと進化させたものです。
+核心的な課題 (Core Challenges) 精度のリスク: TypeScriptにおける uint256 大整数の扱いは、致命的な精度損失のリスクを抱えていた。 並行処理のボトルネック: Node.jsのシングルスレッドなイベントループでは、数千件の同時RPCリクエストの処理が困難。 レジリエンスの問題: 不安定なRPCノード（レート制限、5xxエラー）によるデータ欠落の頻発。 データ不整合: 頻繁に発生する「链の再編成（Reorg）」に対するロールバック機能の欠如。 アーキテクチャ・ソリューション 1. ネイティブなEVMサポート Project Source: starwar6160/web3-indexer-go holiman/uint256 ライブラリを使用してパイプライン全体をGoで再構築。これにより、EVMの算術演算とメモリレベルでの互換性を確保し、精度の問題を根本的に解消しました。
+2. スケールに応じた信頼性（Architectural Deep Dive） RWA（Real-World Asset）市場を支えるためには、データの「最終的な整合性」と「サブ秒の低レイテンシ」が不可欠です。
+链の再編成 (Reorg) への自己修復機能 ブロックチェーンの状態は確定（Finality）まで流動的です。
+ParentHash 形式の再帰バリデーション: シーケンサーは常に ParentHash チェーンの連続性を検証します。高さ H で不一致が検知された場合、システムは即座に緊急ロールバックを発動します。 アトミックなロールバック・ベクトル: PostgreSQLのトランザクションを活用し、高さ H 以上の全データを削除します。外部キーの「カスケード削除」により、関連する Transfers 表なども自動的に洗浄され、完璧な元帳状態を維持します。 高並列同期エンジン 従来のポーリング方式は「サンダリング・ハード（押し寄せ）」問題を引き起こします。本システムではプッシュ・プル・ハイブリッドモデルを実装しました。
+gRPC Stream の統合: リアルタイムのインデックス作成にはgRPCストリームを使用し、HTTPポーリングの往復（RTT）を介さず即座にブロック情報を受信します。 適応型ワーカープール: 信号量（Semaphore）ベースのワーカープールにより、RPCのレイテンシや 429 エラーに応じて、並列実行数を動的に調整します。 LRU によるメタデータ・キャッシュ: 頻繁に参照されるコントラクトのABIやブロックヘッダーを LRUキャッシュ に保持し、バックフィル時のDB I/Oを40%削減しました。 期待される成果 (Key Outcomes) 10倍のスループット向上: 単一インスタンスで50以上の並列同期ルーチンを安定してサポート。 デプロイの軽量化: Dockerイメージサイズを 200MB から 約20MB へと大幅削減（マルチステージビルドと依存関係ゼロのバイナリ）。 高可用性: 公開RPCエンドポイントが不安定な環境下でも、99.9%のデータ耐久性を維持。 日本市場における価値 (Business Value) 分散型金融（DeFi）やRWAにおいて、データの取り込み遅延や不正確さは、ユーザーの直接的な経済的損失やブランドへの致命的な不信感につながります。このアーキテクチャは、99.9%のデータ耐久性と精度を保証することで、トレーディング・アルゴリズムの整合性を守り、数百万ドル規模の清算不一致を未然に防ぎます。
+...</p></div><footer class=entry-footer><span title='2026-03-20 00:00:00 +0000 UTC'>2026年3月20日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to Web3 Indexer: Goによる高信頼アーキテクチャ" href=https://portfolio.st6160.click/ja/projects/web3-indexer/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>物理エントロピー：CPUジッタによる確定論的攻撃の打破</h2></header><div class=entry-content><p>物理エントロピー vs 確定論的攻撃 150億ドル規模のデジタル資産が扱われるWeb3の世界では、秘密鍵の強度はそのエントロピー（不確実性）の質に完全に依存します。ソフトウェアベースの疑似乱数生成器（PRNG）や、予測可能なシステムクロックのみに依存することは、重大な脆弱性となります。本プロジェクトでは、CPUハードウェアから直接マイクロ物理ジッタを採取する**「ソフトウェア定義TRNG（真数乱数生成器）」**の設計に焦点を当てました。
+1. RDTSCジッタ：『不正確さ』をノイズに変える RDTSC（Read Time Stamp Counter）は、586時代から存在するCPUティック（時鐘周期）を読み取るための命令です。現代の周波数スケーリングやマルチコア・スケジューリングの影響で、精密な計時用としては「不正確」とされがちですが、この「非決定性」こそが、暗号学的には完璧な物理ノイズ源となります。
+ビットレベルの抽出 厳格なエントロピー監査を通じて、上位32ビット（EDX）は非常に安定しており、予測可能であることを特定しました。私の実装では、実行速度のナノ秒レベルの変動やハードウェア割り込みのタイミングを捉える**下位32ビット（EAX）**のみを厳選して抽出します。
+非決定性の誘発 サンプリングの周期性を打破するため、意図的に sleep(0) (または yield) 命令を注入します。これによりOSのスレッド・コンテキストスイッチを強制的に誘発させ、CPUスケジューラの挙動やハードウェア状態の遷移から、予測不可能なエントロピーを取り込みます。
+2. RDRANDと『ゼロトラスト』ハイブリッドモデル Intel Ivy Bridge以降のx86プラットフォームでは、CPU内部の熱ノイズを採取する RDRAND 命令（Secure Key）を利用しました。
+防御の多層化 (Defense-in-Depth) ハードウェアレベルのバックドアの可能性に関する研究を踏まえ、「単一のエントロピーソースを盲信しない」という重要なアーキテクト判断を下しました。私のシステムでは以下のハイブリッドモデルを採用しています：
+RDRAND: 高品質な物理ベースとして採取。 RDTSCジッタ: スタック状態の断片とともに混合。 SHA-256/SM3 雪崩効果パイプライン: 全ストリームをこの「蒸留機」に通して一様分布化。 この暗号学的「漂白（Whitening）」により、万が一仮想化環境やTEE（信頼実行環境）で特定のインフラソースが制限（エントロピー枯渇）されたとしても、最終的なシードの数学的な非決定性を保証します。
+3. 実利的なインパクト このエントロピー採取エンジンは、150億ドル級の秘密鍵衝突リスクを防御するために設計されました。障害点を「予測可能なソフトウェア・シード」から「カオスな物理状態」へとシフトさせることで、攻撃コストを「計算可能」な範囲から「物理的に不可能」な領域へと押し上げました。
+特定のWeb3プロトコル監査において、本アーキテクチャは標準的な /dev/urandom 呼び出しを、よりレジリエントな多源エントロピー・プールに置き換え、侵害された仮想マシン環境下でも秘密鍵の生成安全性を確保しました。
+[!IMPORTANT] エンジニアリングの教訓: 高い価値を守るセキュリティにおいて、「信頼せず、常に検証せよ」という原則は鉄則です。ハードウェアレベルのノイズを積み重ねることは、暗号プロトコルの構造的な崩壊に対する究極の防御策となります。</p></div><footer class=entry-footer><span title='2026-03-11 00:00:00 +0000 UTC'>2026年3月11日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to 物理エントロピー：CPUジッタによる確定論的攻撃の打破" href=https://portfolio.st6160.click/ja/projects/physical-entropy-rdtsc/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>カーネル・サージェリー：eBPFとCによる低遅延ネットワークの極限</h2></header><div class=entry-content><p>プロジェクトの核心：標準カーネルの限界を超えて 現代の高頻度取引（HFT）や超大規模分散システムにおいて、標準的なLinuxカーネルのデフォルト設定は「汎用的すぎて遅い」という課題があります。私の仕事は、カーネルを単なる「OS」としてではなく、精密なランタイム環境として再構築することです。
+実施した「外科手術（Surgery）」の内容 1. eBPFによる非侵襲的な「レントゲン」監視 システムのパフォーマンス低下が起きた際、従来の監視ツール自体が負荷（オーバーヘッド）となり、真因を隠してしまうことがあります。
+解決策: カスタムのeBPFプログラムを開発し、コンテキストスイッチ、ディスクI/O、ネットワークスタックのレイテンシをカーネル空間で直接フック。 成果: 0.1%以下のオーバーヘッドで、マイクロ秒単位のスタックトレースを可視化。 2. ネットワーク・スタックの極限最適化 パケットがNICに到着してからアプリケーションに届くまでのわずかなミリ秒が、システム全体のボトルネックとなります。
+実施内容: XDP (Express Data Path) によるパケットの早期フィルタリング。 Zero-copy IPC によるバッファコピーの排除。 カーネル・バイパス技術の導入により、パケット処理のレイテンシを従来の1/10に削減。 3. ハードウェア・アフィニティとアイソレーション マルチコア・プロセッサにおいて、OSのスケジューラによるプロセス移動はキャッシュミスを引き起こします。
+実施内容: cpusets と cgroups を活用し、クリティカルなパスを特定の物理コアにアイソレート（隔離）。 成果: ジッター（遅延のばらつき）を排除し、予測可能な「決定論的」なパフォーマンスを実現。 技術的な成果 (Technical Outcome) 200nsの通信レイテンシ: 一部のプロセス間通信（IPC）において、レイテンシを200ナノ秒まで圧縮。 データ処理効率の倍増: 同じハードウェアリソースで、処理可能な同時接続数を3倍に向上。 ダウンタイムのゼロ化: 稼働中のシステムを停止させることなく、eBPFを使用してライブで診断と最適化を実施。 日本市場における戦略的価値 (Strategic Value) 確実な安定性 (Reliability): 障害が発生してから直すのではなく、カーネルレベルでマージンを稼ぐことで、突発的なスパイク耐性を強化。 インフラ投資の最大化 (ROI): ハードウェアを増設するのではなく、ソフトウェアの効率を極限まで高めることで、物理的な運用コストを最小化。 ミッションクリティカルな品質: 銀行、電力網、通信インフラ等、一瞬の停止も許されない「日本の品質」に応えるための究極のチューニングを提供。 [!CAUTION] 警告: カーネルのチューニングは「劇薬」です。深い理解なしに行えばシステムを破壊しますが、正しく行えば物理の限界を超える武器になります。
+あなたのインフラの「真の能力」を解き放ちませんか？</p></div><footer class=entry-footer><span title='2026-03-01 00:00:00 +0000 UTC'>2026年3月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to カーネル・サージェリー：eBPFとCによる低遅延ネットワークの極限" href=https://portfolio.st6160.click/ja/projects/kernel-surgery/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>オフライン要塞化：Linuxカーネルの外科的カスタマイズ</h2></header><div class=entry-content><p>オフライン要塞化：カーネルの外科的補強 高度なセキュリティが求められるエアギャップ（オフライン）環境（例：国家レベルのインフラ設備）において、「市販の」オペレーティングシステムは肥大化しすぎており、不必要に広い攻撃対象領域（Attack Surface）を抱えています。本プロジェクトでは、ミッションクリティカルなハードウェア展開のために、Linux環境を最小限の構成にまで削ぎ落とす「カーネル手術」を実施しました。
+1. 戦略：徹底的なストリッピング（剥離） 標準的なディストリビューション（CentOS/Ubuntu等）を起点とし、特定のハードウェア制御ロジックと暗号サービスに不可欠なもの以外のすべてを排除することをミッションとしました。
+localmodconfig と依存関係の監査 まず localmodconfig ツールを活用し、稼働中のハードウェアによってロードされているドライバのみを特定しました。その後、以下の外科的削除を手動で実施しました：
+不要なファイルシステム: NTFS, Fat32、およびエアギャップ環境でも悪用される可能性のあるネットワークプロトコル（SCTP, DCCP等）を排除。 汎用ハードウェアサポート: 本番端末には存在し得ない数千ものデバイスドライバを削除。 デバッグ機能のオーバーヘッド: KPROBES, FTRACE, KGDB を無効化し、パフォーマンスの最大化と、リバースエンジニアリングのためのフックを排除。 2. 起動レイテンシと決定論 緊急対応シナリオにおいて、数秒の差が重要になります。外科的なカスタマイズにより、起動時間を60%削減しました。さらに重要なのは、不要なバックグラウンド・カーネルスレッドやハードウェア・ポーリングによる「ジッタ（ゆらぎ）」を排除したことで、暗号エンジンの**運用の決定論（Operational Determinism）**を高めたことです。
+オフライン環境でのツールチェーン・ブートストラップ インターネットアクセスが皆無の環境下で、ローカルなツールチェーンのブートストラップを構築しました。静的コンパイルされたGoバイナリを利用することで、レガシーなターゲットシステムにおけるライブラリ依存関係の死結を回避。グローバルなパッケージマネージャを介さずに、要塞化されたアプリケーション環境をカスタムカーネル上に構築しました。
+3. 成果：「正規軍」水準のエンジニアリング この「正規軍」グレードのエンジニアリングにより、単に速いだけでなく、数学的に防御しやすいカーネルが誕生しました。稼働中のカーネルイメージ内のコード行数を40%以上削減することで、ゼロデイ脆弱性のリスクを大幅に低減し、ミニマリズムに基づく「信頼の起点（Root of Trust）」を確立しました。
+主要メトリクス カーネルサイズ: 標準的な～120MBから15MB以下へ。 起動時間: 45秒から12秒へとフラット化。 セキュリティ姿勢: 不要なシステムコール・パスとカーネルモジュールの80%を排除。 [!IMPORTANT] アーキテクトの評決: セキュリティにおいて「Less is More（少ないほど豊か）」は真実です。カーネルは楽しむための機能セットではなく、管理すべき脆弱性の集合体です。真の要塞化は「Deleteキー」から始まります。</p></div><footer class=entry-footer><span title='2026-03-01 00:00:00 +0000 UTC'>2026年3月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer><a class=entry-link aria-label="post link to オフライン要塞化：Linuxカーネルの外科的カスタマイズ" href=https://portfolio.st6160.click/ja/projects/kernel-hardening/></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://portfolio.st6160.click/ja/>Home</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>
