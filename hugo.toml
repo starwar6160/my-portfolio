@@ -33,6 +33,9 @@ defaultContentLanguageInSubdir = false
     env = 'production'
     author = 'Zhou Wei'
     
+    [params.label]
+        link = "https://demo2.st6160.click/"
+
     [params.profileMode]
         enabled = false
 
