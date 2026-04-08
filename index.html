@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Backend Architect | High-Performance Infrastructure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --text-color: #e2e2e6;
+            --accent-color: #4f46e5;
+            --secondary-color: #8b5cf6;
+            --card-bg: #16161a;
+            --border-color: #2a2a2e;
+            --muted-color: #a1a1aa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            max-width: 700px;
+            color: var(--muted-color);
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--accent-color);
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--muted-color);
+            font-size: 0.95rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .pillar {
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .pillar h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--muted-color);
+            font-size: 0.9rem;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate-fade-in">
+        <header>
+            <h1>Portfolio</h1>
+            <div class="subtitle">Senior Backend Architect / Principal Engineer</div>
+            <p class="hero-desc">
+                20-year veteran active coder specializing in solving mission-critical architectural bottlenecks. Operating at the convergence of cryptographic security, distributed systems, and bare-metal performance.
+            </p>
+        </header>
+
+        <section id="pillars">
+            <h2>The Three Pillars</h2>
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <h3>01 Cryptographic Security</h3>
+                    <p>Hand-implemented cryptographic primitives (ECC/Hash/Identity-based) under extreme resource constraints. Expertise in Threshold Secret Sharing, Side-Channel Resistance, and Key Derivation.</p>
+                </div>
+                <div class="pillar">
+                    <h3>02 High-Performance Infra</h3>
+                    <p>Mastering Linux kernel tuning (eBPF, Cgroups), zero-copy IPC (0.2µs latency), and storage engineering for hyper-scale data clusters processing billions of records.</p>
+                </div>
+                <div class="pillar">
+                    <h3>03 Distributed Systems</h3>
+                    <p>Architecting resilient consensus layers, resolving consistency issues in "distributed monoliths," and implementing high-throughput async data pipelines.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise">
+            <h2>Technical Lexicon</h2>
+            <div class="skills-container">
+                <span class="skill-tag">C/C++ (Expert)</span>
+                <span class="skill-tag">Go (Senior)</span>
+                <span class="skill-tag">Python (Async/FastAPI)</span>
+                <span class="skill-tag">Linux Kernel Tuning</span>
+                <span class="skill-tag">eBPF</span>
+                <span class="skill-tag">SM2/SM3/SM4/SM9</span>
+                <span class="skill-tag">Threshold Secret Sharing</span>
+                <span class="skill-tag">Docker/Kubernetes</span>
+                <span class="skill-tag">Zero-Copy IPC</span>
+                <span class="skill-tag">Assembly</span>
+                <span class="skill-tag">CI/CD Hardening</span>
+                <span class="skill-tag">AI-Augmented Development</span>
+            </div>
+        </section>
+
+        <section id="highlights">
+            <h2>Engineering ROI</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Rescue Engineer Persona</h3>
+                    <p>Stabilized paralyzed legacy platforms, reverse-engineering undocumented HPUX/SCADA systems and eradicating catastrophic concurrency bottlenecks.</p>
+                </div>
+                <div class="card">
+                    <h3>50x Throughput Boost</h3>
+                    <p>Re-engineered bottlenecked synchronous pipelines into asynchronous batch-upsert architectures, reducing latency from 70s to 1.5s.</p>
+                </div>
+                <div class="card">
+                    <h3>Extreme Resource Optimization</h3>
+                    <p>Hand-rolled crypto primitives for ARM Cortex-M3 under 8KB RAM, crushing peak memory usage by 92% compared to standard libraries.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Portfolio Summary. Pure Technical Capabilities.</p>
+        </footer>
+    </div>
+</body>
+</html>
