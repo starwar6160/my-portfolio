@@ -1,4 +1,4 @@
-baseURL = 'https://st6160.click/'
+baseURL = 'https://demo2.st6160.click/'
 languageCode = 'en-us'
 title = 'Senior Backend Architect'
 theme = 'PaperMod'
@@ -9,16 +9,17 @@ theme = 'PaperMod'
     description = 'High-Performance Infrastructure & Cryptographic Security'
     author = 'Zhou Wei'
     
+    # Disable profileMode to show the content of _index.md
     [params.profileMode]
-        enabled = true
-        title = "Senior Backend Architect"
-        subtitle = "20-year veteran active coder specializing in mission-critical infrastructure, cryptographic security, and distributed systems."
-        imageWidth = 120
-        imageHeight = 120
+        enabled = false
+    
+    [params.homeInfoParams]
+        Title = "Senior Backend Architect"
+        Content = "20-year veteran active coder specializing in mission-critical infrastructure, cryptographic security, and distributed systems."
 
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/starwar6160"
     [[params.socialIcons]]
         name = "linkedin"
-        url = "https://www.linkedin.com/in/zhouwei6160/"
+        url = "https://www.linkedin.com/in/zhouwei6160/?locale=en"
