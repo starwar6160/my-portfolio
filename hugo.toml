@@ -29,6 +29,11 @@ defaultContentLanguageInSubdir = false
                 Title = "シニアバックエンドアーキテクト"
                 Content = "ミッションクリティカルなインフラ、暗号セキュリティ、分散システムを専門とする20年の経験を持つ現役のターミナルコーダー。"
 
+    [[menu.main]]
+        name = "Web3 Indexer Demo"
+        url = "https://demo2.st6160.click/"
+        weight = 10
+
 [params]
     env = 'production'
     author = 'Zhou Wei'
