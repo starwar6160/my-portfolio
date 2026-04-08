@@ -1,0 +1,21 @@
+baseURL = 'https://starwar6160.github.io/my-portfolio/'
+languageCode = 'en-us'
+title = 'Senior Backend Architect'
+theme = 'PaperMod'
+
+[params]
+    env = 'production'
+    title = 'Senior Backend Architect'
+    description = 'High-Performance Infrastructure & Cryptographic Security'
+    author = 'Zhou Wei'
+    
+    [params.homeInfoParams]
+        Title = "Portfolio: Senior Backend Architect"
+        Content = "20-year veteran active coder specializing in mission-critical infrastructure."
+
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/starwar6160"
+    [[params.socialIcons]]
+        name = "linkedin"
+        url = "https://www.linkedin.com/in/zhouwei6160/"
