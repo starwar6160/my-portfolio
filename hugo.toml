@@ -33,6 +33,18 @@ defaultContentLanguageInSubdir = false
         name = "Web3 Indexer Demo"
         url = "https://demo2.st6160.click/"
         weight = 10
+    [[menu.main]]
+        name = "Case Studies"
+        url = "/cases"
+        weight = 20
+    [[menu.main]]
+        name = "Tech Projects"
+        url = "/projects"
+        weight = 30
+    [[menu.main]]
+        name = "Docs"
+        url = "/docs"
+        weight = 40
 
 [params]
     env = 'production'
