@@ -40,7 +40,7 @@ Traditional points systems rely on "numbers in a database" protected by password
 - **Sidecar Sentinel**: A modernized Go-based microservice that calculates hashes independently of the legacy Java backend.
 - **Immutable Storage**: Persist the Hash Chain in AWS S3 Object Lock, ensuring 99.9999% immutability.
 
-## 4. Architectural Vision
+## 5. Architectural Vision
 This audit proves the value of **External Technical Due Diligence**. By applying modern SRE methodologies to legacy enterprise systems, we can uncover massive cost savings and security hardening opportunities without requiring a full, risky system rewrite.
 
 ## Commercial Value Delivered

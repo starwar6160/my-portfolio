@@ -62,3 +62,12 @@ defaultContentLanguageInSubdir = false
     [[params.socialIcons]]
         name = "linkedin"
         url = "https://www.linkedin.com/in/zhouwei6160/?locale=en"
+    [[params.socialIcons]]
+        name = "medium"
+        url = "https://medium.com/@zhouwei6160"
+    [[params.socialIcons]]
+        name = "zenn"
+        url = "https://zenn.dev/zhouwei6160"
+    [[params.socialIcons]]
+        name = "twitter"
+        url = "https://x.com/st22102"
