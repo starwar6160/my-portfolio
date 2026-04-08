@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Security on Senior Backend Architect</title>
+    <link>https://portfolio.st6160.click/tags/security/</link>
+    <description>Recent content in Security on Senior Backend Architect</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://portfolio.st6160.click/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Technical Whitepaper: Deterministic Computing</title>
+      <link>https://portfolio.st6160.click/docs/technical-whitepaper/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/docs/technical-whitepaper/</guid>
+      <description>Deterministic Runtime Design under System Optimization and Extreme Constraints.</description>
+    </item>
+    <item>
+      <title>Technical Audit: Toyoko INN Performance &amp; Security</title>
+      <link>https://portfolio.st6160.click/cases/toyoko-inn-audit/</link>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/cases/toyoko-inn-audit/</guid>
+      <description>External performance auditing of a massive reservation system (143.9B JPY scale), identifying 800M JPY in potential salvageable revenue through architectural optimization.</description>
+    </item>
+    <item>
+      <title>Kernel Surgery: Stripping Linux 3.6.1 to 3.0MB</title>
+      <link>https://portfolio.st6160.click/projects/kernel-surgery/</link>
+      <pubDate>Mon, 15 Oct 2012 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/projects/kernel-surgery/</guid>
+      <description>A deep-dive into building a hyper-secure, 3.0MB Linux kernel in a strictly air-gapped environment for cryptographic appliances.</description>
+    </item>
+  </channel>
+</rss>

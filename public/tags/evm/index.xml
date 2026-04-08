@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>EVM on Senior Backend Architect</title>
+    <link>https://portfolio.st6160.click/tags/evm/</link>
+    <description>Recent content in EVM on Senior Backend Architect</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://portfolio.st6160.click/tags/evm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web3 Indexer: Go Engine Architecture</title>
+      <link>https://portfolio.st6160.click/projects/web3-indexer/</link>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/projects/web3-indexer/</guid>
+      <description>Re-engineering a high-availability EVM blockchain indexer from TypeScript to Go, achieving 10x throughput and 99.9% data durability.</description>
+    </item>
+  </channel>
+</rss>
