@@ -6,6 +6,28 @@
     <description>Recent content in 技術事例 on Home</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
+    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://portfolio.st6160.click/ja/cases/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ディープダイブ：RWAトークン化プロトコルにおけるアーキテクチャの欠陥</title>
+      <link>https://portfolio.st6160.click/ja/cases/web3-rwa-audit/</link>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/ja/cases/web3-rwa-audit/</guid>
+      <description>東京のWeb3スタートアップにおけるP0級アーキテクチャ監査のポストモーテム。アマチュアなエンジニアリング慣行が、プロトコルレベルの破綻をどのように招くかを明らかにします。</description>
+    </item>
+    <item>
+      <title>東横INN：全国規模のシステム監査とセキュリティ強化</title>
+      <link>https://portfolio.st6160.click/ja/cases/toyoko-inn-audit/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/ja/cases/toyoko-inn-audit/</guid>
+      <description>日本最大級のホテルチェーンにおける、数千回に及ぶログ分析を通じたセキュリティ脆弱性の特定と、事業継続性を確保するためのシステム・ハードニング（要塞化）。</description>
+    </item>
+    <item>
+      <title>ETL最適化：バッチ処理を70秒から1.5秒へ（50倍の高速化）</title>
+      <link>https://portfolio.st6160.click/ja/cases/etl-optimization/</link>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/ja/cases/etl-optimization/</guid>
+      <description>同期的なレガシーパイプラインを、高並列・非同期なバッチアップサートアーキテクチャに再設計。ミッションクリティカルなデータ整合性を維持しつつ、スループットを50倍向上させた事例。</description>
+    </item>
   </channel>
 </rss>

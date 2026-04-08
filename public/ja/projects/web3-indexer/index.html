@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Web3 Indexer: Goによる高信頼アーキテクチャ | Home</title>
+<meta name="keywords" content="Go, EVM, Blockchain, Concurrency, SRE">
+<meta name="description" content="TypeScriptプロトタイプをGo言語で再構築し、10倍のスループットと99.9%のデータ耐久性を実現。链の再編成（Reorg）にも耐えうる産業級のインデックスエンジン。">
+<meta name="author" content="Zhou Wei">
+<link rel="canonical" href="https://portfolio.st6160.click/ja/projects/web3-indexer/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.4ef2299ae814559c4055cd3d15919aff78737e44fa7af337c506246832ba458a.css" integrity="sha256-TvIpmugUVZxAVc09FZGa/3hzfkT6evM3xQYkaDK6RYo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://portfolio.st6160.click/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://portfolio.st6160.click/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://portfolio.st6160.click/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://portfolio.st6160.click/apple-touch-icon.png">
+<link rel="mask-icon" href="https://portfolio.st6160.click/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://portfolio.st6160.click/projects/web3-indexer/">
+<link rel="alternate" hreflang="ja" href="https://portfolio.st6160.click/ja/projects/web3-indexer/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://portfolio.st6160.click/ja/projects/web3-indexer/">
+  <meta property="og:site_name" content="Home">
+  <meta property="og:title" content="Web3 Indexer: Goによる高信頼アーキテクチャ">
+  <meta property="og:description" content="TypeScriptプロトタイプをGo言語で再構築し、10倍のスループットと99.9%のデータ耐久性を実現。链の再編成（Reorg）にも耐えうる産業級のインデックスエンジン。">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2026-03-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-20T00:00:00+00:00">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="EVM">
+    <meta property="article:tag" content="Blockchain">
+    <meta property="article:tag" content="Concurrency">
+    <meta property="article:tag" content="SRE">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Web3 Indexer: Goによる高信頼アーキテクチャ">
+  <meta name="twitter:description" content="TypeScriptプロトタイプをGo言語で再構築し、10倍のスループットと99.9%のデータ耐久性を実現。链の再編成（Reorg）にも耐えうる産業級のインデックスエンジン。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "技術プロジェクト",
+      "item": "https://portfolio.st6160.click/ja/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Web3 Indexer: Goによる高信頼アーキテクチャ",
+      "item": "https://portfolio.st6160.click/ja/projects/web3-indexer/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Web3 Indexer: Goによる高信頼アーキテクチャ",
+  "name": "Web3 Indexer: Goによる高信頼アーキテクチャ",
+  "description": "TypeScriptプロトタイプをGo言語で再構築し、10倍のスループットと99.9%のデータ耐久性を実現。链の再編成（Reorg）にも耐えうる産業級のインデックスエンジン。",
+  "keywords": [
+    "Go", "EVM", "Blockchain", "Concurrency", "SRE"
+  ],
+  "articleBody": "Web3 Indexer: 産業級のGoエンジン このプロジェクトは、TypeScriptで構築された高可用性EVMブロックチェーン・データインデックスエンジンのプロトタイプを、**Go（Golang）**を用いて堅牢な産業級プロダクションシステムへと進化させたものです。\n核心的な課題 (Core Challenges) 精度のリスク: TypeScriptにおける uint256 大整数の扱いは、致命的な精度損失のリスクを抱えていた。 並行処理のボトルネック: Node.jsのシングルスレッドなイベントループでは、数千件の同時RPCリクエストの処理が困難。 レジリエンスの問題: 不安定なRPCノード（レート制限、5xxエラー）によるデータ欠落の頻発。 データ不整合: 頻繁に発生する「链の再編成（Reorg）」に対するロールバック機能の欠如。 アーキテクチャ・ソリューション 1. ネイティブなEVMサポート Project Source: starwar6160/web3-indexer-go holiman/uint256 ライブラリを使用してパイプライン全体をGoで再構築。これにより、EVMの算術演算とメモリレベルでの互換性を確保し、精度の問題を根本的に解消しました。\n2. スケールに応じた信頼性（Architectural Deep Dive） RWA（Real-World Asset）市場を支えるためには、データの「最終的な整合性」と「サブ秒の低レイテンシ」が不可欠です。\n链の再編成 (Reorg) への自己修復機能 ブロックチェーンの状態は確定（Finality）まで流動的です。\nParentHash 形式の再帰バリデーション: シーケンサーは常に ParentHash チェーンの連続性を検証します。高さ H で不一致が検知された場合、システムは即座に緊急ロールバックを発動します。 アトミックなロールバック・ベクトル: PostgreSQLのトランザクションを活用し、高さ H 以上の全データを削除します。外部キーの「カスケード削除」により、関連する Transfers 表なども自動的に洗浄され、完璧な元帳状態を維持します。 高並列同期エンジン 従来のポーリング方式は「サンダリング・ハード（押し寄せ）」問題を引き起こします。本システムではプッシュ・プル・ハイブリッドモデルを実装しました。\ngRPC Stream の統合: リアルタイムのインデックス作成にはgRPCストリームを使用し、HTTPポーリングの往復（RTT）を介さず即座にブロック情報を受信します。 適応型ワーカープール: 信号量（Semaphore）ベースのワーカープールにより、RPCのレイテンシや 429 エラーに応じて、並列実行数を動的に調整します。 LRU によるメタデータ・キャッシュ: 頻繁に参照されるコントラクトのABIやブロックヘッダーを LRUキャッシュ に保持し、バックフィル時のDB I/Oを40%削減しました。 期待される成果 (Key Outcomes) 10倍のスループット向上: 単一インスタンスで50以上の並列同期ルーチンを安定してサポート。 デプロイの軽量化: Dockerイメージサイズを 200MB から 約20MB へと大幅削減（マルチステージビルドと依存関係ゼロのバイナリ）。 高可用性: 公開RPCエンドポイントが不安定な環境下でも、99.9%のデータ耐久性を維持。 日本市場における価値 (Business Value) 分散型金融（DeFi）やRWAにおいて、データの取り込み遅延や不正確さは、ユーザーの直接的な経済的損失やブランドへの致命的な不信感につながります。このアーキテクチャは、99.9%のデータ耐久性と精度を保証することで、トレーディング・アルゴリズムの整合性を守り、数百万ドル規模の清算不一致を未然に防ぎます。\nまた、デプロイ効率の劇的な向上は、エンジニアリングチームのイテレーション速度を加速させ、激しい市場競争の中での俊敏性（Agility）を維持しつつ、クラウドホスティングコストの削減にも寄与します。\n",
+  "wordCount" : "82",
+  "inLanguage": "ja",
+  "datePublished": "2026-03-20T00:00:00Z",
+  "dateModified": "2026-03-20T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Zhou Wei"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://portfolio.st6160.click/ja/projects/web3-indexer/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Home",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://portfolio.st6160.click/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Home (Alt + H)">Home</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                    <ul class="lang-switch"><li>|</li>
+                        <li>
+                            <a href="https://portfolio.st6160.click/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://demo2.st6160.click/" title="Web3 Indexer Demo">
+                    <span>Web3 Indexer Demo</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://portfolio.st6160.click/ja/cases" title="Case Studies">
+                    <span>Case Studies</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://portfolio.st6160.click/ja/projects" title="Tech Projects">
+                    <span>Tech Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://portfolio.st6160.click/ja/docs" title="Docs">
+                    <span>Docs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Web3 Indexer: Goによる高信頼アーキテクチャ
+    </h1>
+    <div class="post-description">
+      TypeScriptプロトタイプをGo言語で再構築し、10倍のスループットと99.9%のデータ耐久性を実現。链の再編成（Reorg）にも耐えうる産業級のインデックスエンジン。
+    </div>
+    <div class="post-meta"><span title='2026-03-20 00:00:00 +0000 UTC'>2026年3月20日</span>&nbsp;·&nbsp;<span>Zhou Wei</span>&nbsp;|&nbsp;<span>言語:</span>
+<ul class="i18n_list">
+    <li>
+        <a href="https://portfolio.st6160.click/projects/web3-indexer/">En</a>
+    </li>
+</ul>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="web3-indexer-産業級のgoエンジン">Web3 Indexer: 産業級のGoエンジン<a hidden class="anchor" aria-hidden="true" href="#web3-indexer-産業級のgoエンジン">#</a></h1>
+<p>このプロジェクトは、TypeScriptで構築された高可用性EVMブロックチェーン・データインデックスエンジンのプロトタイプを、**Go（Golang）**を用いて堅牢な産業級プロダクションシステムへと進化させたものです。</p>
+<h2 id="核心的な課題-core-challenges">核心的な課題 (Core Challenges)<a hidden class="anchor" aria-hidden="true" href="#核心的な課題-core-challenges">#</a></h2>
+<ul>
+<li><strong>精度のリスク</strong>: TypeScriptにおける <code>uint256</code> 大整数の扱いは、致命的な精度損失のリスクを抱えていた。</li>
+<li><strong>並行処理のボトルネック</strong>: Node.jsのシングルスレッドなイベントループでは、数千件の同時RPCリクエストの処理が困難。</li>
+<li><strong>レジリエンスの問題</strong>: 不安定なRPCノード（レート制限、5xxエラー）によるデータ欠落の頻発。</li>
+<li><strong>データ不整合</strong>: 頻繁に発生する「链の再編成（Reorg）」に対するロールバック機能の欠如。</li>
+</ul>
+<h2 id="アーキテクチャソリューション">アーキテクチャ・ソリューション<a hidden class="anchor" aria-hidden="true" href="#アーキテクチャソリューション">#</a></h2>
+<h3 id="1-ネイティブなevmサポート">1. ネイティブなEVMサポート<a hidden class="anchor" aria-hidden="true" href="#1-ネイティブなevmサポート">#</a></h3>
+<p><a href="https://github.com/starwar6160/web3-indexer-go">Project Source: starwar6160/web3-indexer-go</a>
+<code>holiman/uint256</code> ライブラリを使用してパイプライン全体をGoで再構築。これにより、EVMの算術演算とメモリレベルでの互換性を確保し、精度の問題を根本的に解消しました。</p>
+<h3 id="2-スケールに応じた信頼性architectural-deep-dive">2. スケールに応じた信頼性（Architectural Deep Dive）<a hidden class="anchor" aria-hidden="true" href="#2-スケールに応じた信頼性architectural-deep-dive">#</a></h3>
+<p>RWA（Real-World Asset）市場を支えるためには、データの「最終的な整合性」と「サブ秒の低レイテンシ」が不可欠です。</p>
+<h4 id="链の再編成-reorg-への自己修復機能">链の再編成 (Reorg) への自己修復機能<a hidden class="anchor" aria-hidden="true" href="#链の再編成-reorg-への自己修復機能">#</a></h4>
+<p>ブロックチェーンの状態は確定（Finality）まで流動的です。</p>
+<ul>
+<li><strong>ParentHash 形式の再帰バリデーション</strong>: シーケンサーは常に <code>ParentHash</code> チェーンの連続性を検証します。高さ <em>H</em> で不一致が検知された場合、システムは即座に緊急ロールバックを発動します。</li>
+<li><strong>アトミックなロールバック・ベクトル</strong>: PostgreSQLのトランザクションを活用し、高さ <em>H</em> 以上の全データを削除します。外部キーの「カスケード削除」により、関連する <code>Transfers</code> 表なども自動的に洗浄され、完璧な元帳状態を維持します。</li>
+</ul>
+<h4 id="高並列同期エンジン">高並列同期エンジン<a hidden class="anchor" aria-hidden="true" href="#高並列同期エンジン">#</a></h4>
+<p>従来のポーリング方式は「サンダリング・ハード（押し寄せ）」問題を引き起こします。本システムではプッシュ・プル・ハイブリッドモデルを実装しました。</p>
+<ul>
+<li><strong>gRPC Stream の統合</strong>: リアルタイムのインデックス作成にはgRPCストリームを使用し、HTTPポーリングの往復（RTT）を介さず即座にブロック情報を受信します。</li>
+<li><strong>適応型ワーカープール</strong>: <strong>信号量（Semaphore）ベースのワーカープール</strong>により、RPCのレイテンシや 429 エラーに応じて、並列実行数を動的に調整します。</li>
+<li><strong>LRU によるメタデータ・キャッシュ</strong>: 頻繁に参照されるコントラクトのABIやブロックヘッダーを <strong>LRUキャッシュ</strong> に保持し、バックフィル時のDB I/Oを40%削減しました。</li>
+</ul>
+<hr>
+<h2 id="期待される成果-key-outcomes">期待される成果 (Key Outcomes)<a hidden class="anchor" aria-hidden="true" href="#期待される成果-key-outcomes">#</a></h2>
+<ul>
+<li><strong>10倍のスループット向上</strong>: 単一インスタンスで50以上の並列同期ルーチンを安定してサポート。</li>
+<li><strong>デプロイの軽量化</strong>: Dockerイメージサイズを 200MB から <strong>約20MB</strong> へと大幅削減（マルチステージビルドと依存関係ゼロのバイナリ）。</li>
+<li><strong>高可用性</strong>: 公開RPCエンドポイントが不安定な環境下でも、<strong>99.9%のデータ耐久性</strong>を維持。</li>
+</ul>
+<h2 id="日本市場における価値-business-value">日本市場における価値 (Business Value)<a hidden class="anchor" aria-hidden="true" href="#日本市場における価値-business-value">#</a></h2>
+<p>分散型金融（DeFi）やRWAにおいて、データの取り込み遅延や不正確さは、ユーザーの直接的な経済的損失やブランドへの致命的な不信感につながります。このアーキテクチャは、99.9%のデータ耐久性と精度を保証することで、トレーディング・アルゴリズムの整合性を守り、数百万ドル規模の清算不一致を未然に防ぎます。</p>
+<p>また、デプロイ効率の劇的な向上は、エンジニアリングチームのイテレーション速度を加速させ、激しい市場競争の中での俊敏性（Agility）を維持しつつ、クラウドホスティングコストの削減にも寄与します。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://portfolio.st6160.click/ja/tags/go/">Go</a></li>
+      <li><a href="https://portfolio.st6160.click/ja/tags/evm/">EVM</a></li>
+      <li><a href="https://portfolio.st6160.click/ja/tags/blockchain/">Blockchain</a></li>
+      <li><a href="https://portfolio.st6160.click/ja/tags/concurrency/">Concurrency</a></li>
+      <li><a href="https://portfolio.st6160.click/ja/tags/sre/">SRE</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://portfolio.st6160.click/ja/">Home</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

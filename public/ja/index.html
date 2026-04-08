@@ -8,7 +8,7 @@
 <meta name="robots" content="index, follow">
 <title>Home</title>
 
-<meta name="description" content="高性能ランタイム／プロトコル層システムアーキテクト。ミッションクリティカルな課題を解決する20年の経験。">
+<meta name="description" content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。">
 <meta name="author" content="Zhou Wei">
 <link rel="canonical" href="https://portfolio.st6160.click/ja/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.4ef2299ae814559c4055cd3d15919aff78737e44fa7af337c506246832ba458a.css" integrity="sha256-TvIpmugUVZxAVc09FZGa/3hzfkT6evM3xQYkaDK6RYo=" rel="preload stylesheet" as="style">
@@ -75,14 +75,14 @@
 
 </script><meta property="og:url" content="https://portfolio.st6160.click/ja/">
   <meta property="og:site_name" content="Home">
-  <meta property="og:title" content="シニアバックエンドアーキテクト ポートフォリオ">
-  <meta property="og:description" content="高性能ランタイム／プロトコル層システムアーキテクト。ミッションクリティカルな課題を解決する20年の経験。">
+  <meta property="og:title" content="シニア・バックエンド・アーキテクト ポートフォリオ">
+  <meta property="og:description" content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。">
   <meta property="og:locale" content="ja_jp">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="シニアバックエンドアーキテクト ポートフォリオ">
-  <meta name="twitter:description" content="高性能ランタイム／プロトコル層システムアーキテクト。ミッションクリティカルな課題を解決する20年の経験。">
+  <meta name="twitter:title" content="シニア・バックエンド・アーキテクト ポートフォリオ">
+  <meta name="twitter:description" content="ミッションクリティカルなアーキテクチャのボトルネックを解決する、20年の経験を持つシニア・アーキテクト。">
 
 <script type="application/ld+json">
 {
@@ -163,39 +163,44 @@
     </nav>
 </header>
 <main class="main"> 
-<div class="post-content"><h1 id="シニアバックエンドアーキテクト--プリンシパルエンジニア">シニアバックエンドアーキテクト / プリンシパルエンジニア<a hidden class="anchor" aria-hidden="true" href="#シニアバックエンドアーキテクト--プリンシパルエンジニア">#</a></h1>
-<p>ミッションクリティカルな環境や計算資源の極限的な制約において、アーキテクチャの根底（カーネル、メモリ層、バイナリ/リンカー）からボトルネックを解消することに自身の価値を見出しています。</p>
-<h2 id="インフラストラクチャにおける3つの柱">インフラストラクチャにおける3つの柱<a hidden class="anchor" aria-hidden="true" href="#インフラストラクチャにおける3つの柱">#</a></h2>
+<div class="post-content"><h1 id="シニアバックエンドアーキテクト--プリンシパルエンジニア">シニア・バックエンド・アーキテクト / プリンシパル・エンジニア<a hidden class="anchor" aria-hidden="true" href="#シニアバックエンドアーキテクト--プリンシパルエンジニア">#</a></h1>
+<p>行政的なマネジメント業務に埋もれることなく、複雑かつミッションクリティカルなアーキテクチャのボトルネックを直接解決することで、エンジニアリング投資利益率（ROI）を最大化します。暗号セキュリティ、分散システム、およびベアメタル・パフォーマンスの境界線で活動しています。</p>
+<h2 id="インフラを支える3つの柱">インフラを支える3つの柱<a hidden class="anchor" aria-hidden="true" href="#インフラを支える3つの柱">#</a></h2>
 <h3 id="柱-1-暗号セキュリティ-cryptographic-security">柱 1: 暗号セキュリティ (Cryptographic Security)<a hidden class="anchor" aria-hidden="true" href="#柱-1-暗号セキュリティ-cryptographic-security">#</a></h3>
 <ul>
-<li><strong>暗号プリミティブのハンド実装</strong>: ARM Cortex-M3等の極限制約下（&lt;8KB RAM）で、ECC、SM2/SM3/SM4/SM9をスクラッチで実装。</li>
-<li><strong>しきい値秘密分散</strong>: (5,3) Shamirしきい値秘密分散スキームおよびKDFベースの鍵多様化の実装。</li>
-<li><strong>サイドチャネル攻撃耐性</strong>: タイミング攻撃を防ぐための厳格な定数時間実行パスの構築。</li>
+<li><strong>手作り暗号プリミティブ</strong>: 8KB以下のRAM環境下で、ECC、SM2/SM3/SM4/SM9をスクラッチから実装。</li>
+<li><strong>閾値秘密分散 (Threshold Secret Sharing)</strong>: (5,3) シャミアの秘密分散法およびKDFベースの鍵多様化。</li>
+<li><strong>サイドチャネル攻撃耐性</strong>: タイミング攻撃を防ぐための定数時間（Constant-time）実行パスの実装。</li>
 </ul>
 <h3 id="柱-2-高性能インフラストラクチャ-high-performance-infrastructure">柱 2: 高性能インフラストラクチャ (High-Performance Infrastructure)<a hidden class="anchor" aria-hidden="true" href="#柱-2-高性能インフラストラクチャ-high-performance-infrastructure">#</a></h3>
 <ul>
-<li><strong>決定論的計算</strong>: 実行環境の決定論的動作の保証、バイトコードレイアウトおよびメモリ管理の最適化。</li>
-<li><strong>カーネル・サージェリー</strong>: Linuxカーネルチューニング（eBPF, Cgroups）によるサブマイクロ秒（200ns）のIPC実現。</li>
-<li><strong>ストレージエンジニアリング</strong>: 107億レコードを処理するクラスタのI/O最適化。</li>
+<li><strong>決定論的コンピューティング</strong>: VM実行の最適化とバイトコードレベルのパフォーマンスチューニング。</li>
+<li><strong>カーネル・サージェリー</strong>: Linuxカーネル・チューニング（eBPF, Cgroups）およびサブマイクロ秒のIPC（200ns）。</li>
+<li><strong>ストレージ・エンジニアリング</strong>: 107億件のレコードを処理するハイパースケール・クラスターの最適化。</li>
 </ul>
-<h3 id="柱-3-分散システムと並行処理-distributed-systems--concurrency">柱 3: 分散システムと並行処理 (Distributed Systems &amp; Concurrency)<a hidden class="anchor" aria-hidden="true" href="#柱-3-分散システムと並行処理-distributed-systems--concurrency">#</a></h3>
+<h3 id="柱-3-分散システム--並行処理-distributed-systems--concurrency">柱 3: 分散システム &amp; 並行処理 (Distributed Systems &amp; Concurrency)<a hidden class="anchor" aria-hidden="true" href="#柱-3-分散システム--並行処理-distributed-systems--concurrency">#</a></h3>
 <ul>
-<li><strong>レジリエントな制御プレーン</strong>: Go+Neo4jを用いた分散ルーティングエンジンの設計。制御プレーンの帯域を90%削減。</li>
-<li><strong>レスキューエンジニアリング</strong>: 麻痺したレガシー・プラットフォームの修復と「分散モノリス」危機の解決。</li>
+<li><strong>復旧力の高いコントロールプレーン</strong>: Go + Neo4j ルーティングエンジンにより、帯域幅を90%削減。</li>
+<li><strong>レスキュー・エンジニアリング</strong>: 麻痺したプラットフォームを安定化させ、「分散モノリス」の危機を打破。</li>
 </ul>
-<h2 id="技術スタック-technical-lexicon">技術スタック (Technical Lexicon)<a hidden class="anchor" aria-hidden="true" href="#技術スタック-technical-lexicon">#</a></h2>
+<h2 id="技術レキシコン-technical-lexicon">技術レキシコン (Technical Lexicon)<a hidden class="anchor" aria-hidden="true" href="#技術レキシコン-technical-lexicon">#</a></h2>
 <ul>
-<li><strong>専門技能</strong>: C/C++, Go, Assembly, Linux Kernel Tuning, eBPF, Cryptography (SMシリーズ).</li>
+<li><strong>専門分野</strong>: C/C++, Go, Assembly, Linux Kernel, eBPF, Cryptography (SMシリーズ).</li>
 <li><strong>インフラ</strong>: Docker, Kubernetes, CI/CD Hardening, Zero-Copy IPC.</li>
-<li><strong>AIツール</strong>: AIエージェント（Claude Code / DeepSeek）を活用したコードベース監査の自動化。</li>
+<li><strong>AIツール</strong>: 自律型コードベース監査 (Claude Code / DeepSeek / Gemini).</li>
 </ul>
 <hr>
-<h2 id="成果のハイライト-engineering-highlights">成果のハイライト (Engineering Highlights)<a hidden class="anchor" aria-hidden="true" href="#成果のハイライト-engineering-highlights">#</a></h2>
+<h2 id="エンジニアリングハイライト-engineering-highlights">エンジニアリング・ハイライト (Engineering Highlights)<a hidden class="anchor" aria-hidden="true" href="#エンジニアリングハイライト-engineering-highlights">#</a></h2>
 <ul>
-<li><strong>スループット50倍向上</strong>: 同期型データ融合パイプラインを非同期バッチアップサート型に刷新（70秒 → 1.5秒）。</li>
-<li><strong>メモリ消費量92%削減</strong>: 極限の組み込み環境向けに暗号エンジンを最適化（120KB → 9.3KB）。</li>
-<li><strong>レスキューミッション</strong>: ドキュメントのないレガシー環境やOS破壊状況下でのシステム復旧。</li>
+<li><strong>50倍の再定義</strong>: 同期処理パイプラインを非同期バッチアップサート（70秒 → 1.5秒）に再設計。</li>
+<li><strong>92%のメモリ削減</strong>: 極限の埋め込み制約（120KB → 9.3KB）に対応した暗号エンジンの最適化。</li>
+<li><strong>レスキュー・ミッション</strong>: ドキュメント皆無の環境下で、停止した電力網運用のシステムを復旧。</li>
 </ul>
+<hr>
+<blockquote>
+<p>[!TIP]
+<strong>技術実証 (Technical Proof)</strong>: <a href="/ja/projects/sm9-low-level/">8KB RAM環境におけるSM9(IBC)暗号の実装</a></p>
+</blockquote>
 
 
 </div>
@@ -256,6 +261,62 @@
 </div>
 
     </footer>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ディープダイブ：RWAトークン化プロトコルにおけるアーキテクチャの欠陥
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>はじめに 2026年第1四半期、私は東京を拠点とするコンプライアンス重視のWeb3スタートアップから、緊急のアーキテクチャ監査の依頼を受けました。このプロジェクトは、現物資産をERC-1155トークンとして分割し、不動産市場に革命を起こすことを目的としていました。
+表面上、プラットフォームは洗練されたUIを備え、一見「MVP（最小実行可能製品）」として機能しているように見えました。しかし、その内部構造は「紙の防弾チョッキ」のようなものでした。見た目は堅牢ですが、保護すべき数百万ドルのTVL（預かり資産）を守る能力は根本的に欠如していました。
+私が発見したのは単なるいくつかのバグではなく、論理ミス一つが即座に財務的破綻に直結する分野における、**エンジニアリング・ディシプリン（規律）**の構造的な欠如でした。
+1. 「1ユニット」価格の脆弱性（プロトコルレベルの破綻） 最も深刻なP0脆弱性は、AssetFactory.solコントラクトの主要な購入関数に存在しました。このロジックは、ユーザーが不動産の分割所有権を購入できるように設計されていました。
+脆弱性の内容 コントラクトは、1ユニットあたりの「価格（cost）」を正しく取得していました。しかし、根本的な乗算処理、つまり「総支払額が要求された数量に見合っているか」のチェックを怠っていました。
+攻撃シナリオの図解 [ 攻撃者 ] ⮕ purchase(propertyId=1, amount=10,000) を呼び出し │ ▼ [ AssetFactory.sol ] │ ├─ 取得: ユニット単価 = 0.1 ETH │ ├─ チェック: msg.value == ユニット単価? (✅ 0.1 ETH が提供された) │ ⚠️ 警告: 単価 × 数量 (1,000 ETHが必要) のチェックを失念！ │ ├─ 状態: トランザクション承認 ✅ │ └─ アクション: 10,000ユニットを攻撃者にミント ⮕ [在庫が枯渇] 単価1ビット分のコストを支払うだけで、攻撃者は高価値不動産資産の全在庫を奪い取ることが可能でした。これは、文脈（意図）を理解できない自動AIスキャナーが見落としがちな、人間のアーキテクトが数秒で見抜くべき「ビジネスロジックの破綻」の典型例です。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-20 00:00:00 +0000 UTC'>2026年3月20日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
+  <a class="entry-link" aria-label="post link to ディープダイブ：RWAトークン化プロトコルにおけるアーキテクチャの欠陥" href="https://portfolio.st6160.click/ja/cases/web3-rwa-audit/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">東横INN：全国規模のシステム監査とセキュリティ強化
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>プロジェクト概要 本プロジェクトは、日本全国に数百の拠点を展開する東横INNの基幹インフラに対する包括的なセキュリティ監査および設計の最適化です。
+20年以上の歴史を持つシステムを現代のサイバー脅威から守るため、単なるパッチ当てではなく、アーキテクチャ・レベルでの脆弱性特定と、現場のオペレーションを停滞させない実利的なセキュリティ対策の導入が求められました。
+課題 (The Bottlenecks) 分散型インフラの脆弱性: 全国の各ホテルに分散するエッジデバイスと中央サーバー間の通信における中間者攻撃（MitM）のリスク。 ログの断片化: 複数のレガシー・サブシステムから生成される非構造化ログにより、インシデントの予兆検知が困難な状態。 ダウンタイムの許容不可: 24時間365日稼働する宿泊予約システムにおいて、セキュリティ更新に伴うシステム停止は事業損失に直結する。 実施したアーキテクチャ戦略 1. データの整合性を担保する「ハッシュチェーン」の導入 改ざん検知を確実なものにするため、バッチ処理における整合性検証システムを設計しました。各データチャンクを暗号学的に連結するハッシュチェーン構造を導入することで、万が一データベースが直接侵害された場合でも、不正な変更を即座に特定可能にしました。
+2. 「正規軍（Regular Army）」基準のコード監査 場当たり的な修正（Bricklaying）を排除し、決定論的な計算モデルを追求しました。
+全てのシェルスクリプトおよびCプリミティブに対する静的/動的解析の実施。 認証フローにおける非決定論的な動作（レースコンディション）の徹底的な排除。 3. ハードウェア・アンカーを活用したセキュリティ（提案） 将来的な拡張性を見据え、物理的なハードウェア・トークン（安全チップ）を根拠とした信頼の起点（Root of Trust）の構築を提言しました。
+日本市場における事業価値 (Business Value) 「信頼」というブランド資産の保護: 日本のホスピタリティ産業において、顧客データの漏洩は金銭的損失以上の壊滅的なブランド毀損を招きます。本監査により、そのリスクを構造的に低減しました。 法規制への適合 (Compliance)：個人情報保護法（APPI）を含む国内の厳格なセキュリティ基準をクリアし、将来的なIT監査に対する確固たる技術基盤を提供。 持続可能な保守性: 属人的な管理から、コードとポリシーに基づく自動検証へと移行することで、長期的な運用コストの削減を実現しました。 [!TIP] アーキテクトの視点: セキュリティとは、ビジネスのスピードを落とす「ブレーキ」ではなく、より速く安全に走るための「サスペンション」であるべきです。
+エンタープライズ級のレガシーシステム要塞化についてご相談を承ります。
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-15 00:00:00 +0000 UTC'>2026年3月15日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
+  <a class="entry-link" aria-label="post link to 東横INN：全国規模のシステム監査とセキュリティ強化" href="https://portfolio.st6160.click/ja/cases/toyoko-inn-audit/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ETL最適化：バッチ処理を70秒から1.5秒へ（50倍の高速化）
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>プロジェクト背景 ある大規模金融データ処理システムにおいて、増大するトランザクション量により既存のETL（抽出・変換・格納）プロセスが限界に達していました。1つのバッチ処理に70秒を要しており、データ同期の遅延がビジネスの意思決定を阻害する重大なリスクとなっていました。
+私のミッションは、システムのコードを1行ずつ「解剖」し、ボトルネックを根本から排除して、リアルタイムに近いパフォーマンスを実現することでした。
+課題 (Technical Bottlenecks) 同期的な「1件ずつ」の処理: 従来のループ処理が、1件の挿入ごとにデータベースのラウンドトリップを待機していた。 データベースのロック競合: 頻繁な小規模アクセスのため、インデックスの書き換えによるデッドロックが多発。 非効率なメモリ管理: 大量データ読み込み時にGC（ガベージコレクション）が頻発し、CPU時間の30%を消費。 採用したアーキテクチャ・ソリューション 1. 「非同期バッチ・アップサート」への転換 同期処理を完全に廃止し、Worker Poolモデルを採用しました。
+特定の時間、または件数のしきい値に達するまでメモリ内のバッファにデータを蓄積。 PostgreSQLの INSERT ... ON CONFLICT (UPSERT) を活用し、1回のトランザクションで数千件を処理。 これにより、ネットワークのオーバーヘッドを99%削減しました。 2. メモリ再利用とゼロコピーの徹底 ガベージコレクションの負荷を抑えるため、Goの sync.Pool を使用してバッファを再利用。
+データのデコードプロセスにおいてメモリアロケーションを極限まで抑え、大容量データ処理時でも低遅延を維持。 3. 可観測性 (Observability) の導入 単に速くするだけでなく、常に安定して動作することを保証しました。
+Prometheus &#43; Grafanaによるカスタム・メトリクスの導入。 各ステージのレイテンシを可視化し、将来的なボトルネックの予兆を事前に把握可能に。 事業における成果 (Business Results) 劇的なスループット向上: 処理時間が 70秒から1.5秒 へ。エンジニアリングによる50倍のパフォーマンス改善を達成。 インフラコストの最適化: 以前は10台必要だった処理ノードを2台に集約。クラウドサーバーの運用コストを大幅に削減。 データ鮮度の向上: ビジネスサイドは、ほぼリアルタイムのデータに基づいて意思決定を行えるようになり、市場への反応速度が向上。 [!TIP] 黄金律: 高性能インフラとは、リソースを「追加」することではなく、既存リソースの「無駄」を数学的に削ぎ落とすことによって完成します。
+あなたのシステムのパフォーマンス限界を突破しませんか？
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-10 00:00:00 +0000 UTC'>2026年3月10日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
+  <a class="entry-link" aria-label="post link to ETL最適化：バッチ処理を70秒から1.5秒へ（50倍の高速化）" href="https://portfolio.st6160.click/ja/cases/etl-optimization/"></a>
 </article>
     </main>
     

@@ -25,7 +25,7 @@ This project involved evolving a high-availability EVM blockchain data indexing 
 The system operates as a high-performance bridge between raw blockchain state and queryable relational data.
 
 ### 2. Native EVM Support
-[Project Source: starwar6160/my-portfolio](https://github.com/starwar6160/my-portfolio) (Internal demo engine)
+[Project Source: starwar6160/web3-indexer-go](https://github.com/starwar6160/web3-indexer-go) (Internal demo engine)
 Re-engineered the entire pipeline in Go using the `holiman/uint256` library. This ensures memory-level compatibility with EVM math, eliminating precision truncation risks.
 
 ### 2. Three-Stage Decoupled Pipeline

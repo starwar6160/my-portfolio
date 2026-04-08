@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SRE on Home</title>
+    <link>https://portfolio.st6160.click/ja/tags/sre/</link>
+    <description>Recent content in SRE on Home</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://portfolio.st6160.click/ja/tags/sre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web3 Indexer: Goによる高信頼アーキテクチャ</title>
+      <link>https://portfolio.st6160.click/ja/projects/web3-indexer/</link>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/ja/projects/web3-indexer/</guid>
+      <description>TypeScriptプロトタイプをGo言語で再構築し、10倍のスループットと99.9%のデータ耐久性を実現。链の再編成（Reorg）にも耐えうる産業級のインデックスエンジン。</description>
+    </item>
+    <item>
+      <title>東横INN：全国規模のシステム監査とセキュリティ強化</title>
+      <link>https://portfolio.st6160.click/ja/cases/toyoko-inn-audit/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://portfolio.st6160.click/ja/cases/toyoko-inn-audit/</guid>
+      <description>日本最大級のホテルチェーンにおける、数千回に及ぶログ分析を通じたセキュリティ脆弱性の特定と、事業継続性を確保するためのシステム・ハードニング（要塞化）。</description>
+    </item>
+  </channel>
+</rss>

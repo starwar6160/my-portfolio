@@ -172,6 +172,60 @@
     大規模分散システム、カーネル、暗号技術の実装実績。
   </div>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">8KB RAM環境におけるSM9(IBC)暗号の実装
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>挑戦：ベアメタル上におけるIBCの「恐怖」 2013年当時、ARM Cortex-M3 (STM32F2) 上で SM9 (Identity-Based Cryptography) 規格を実装することは、多くのエンジニアにとって「不可能」と考えられていました。標準的なECCとは異なり、SM9は**ペアリング（Pairing-friendly curves）**を必要とし、256ビットの座標を1536ビットの構造に拡張する大規模な体拡大（Field Expansion）を伴うためです。
+標準的な暗号ライブラリ（OpenSSL, MIRACL）はサーバー向けに設計されており、RAMの1バイトが貴重な組込みシステムには適していません。私の任務は、肥大化した実装を徹底的に削ぎ落とし、セキュアUSBKeyやオフラインATMダイナミックロックシステムに求められる 8KB RAM以下 の制約内に収めることでした。
+1. 外科的アーキテクチャ：「メタデータの肥大化」の除去 2013年の監査で最初に発見したのは、メモリフットプリントの70%がアルゴリズムそのものではなく、インフラストラクチャによるものだということでした。
+ASN.1 形式のデコード: ヒープ空間を大量に消費する要因。 OpenSSL への依存: マイクロコントローラには不要な数千行のコード。 戦略：「純粋アルゴリズム」の抽出 私は実装をベアメタルCプリミティブへと絞り込む作業を主導しました。複雑なASN.1を廃止し、Protobuf または静的な固定サイズ構造へと切り替えました。これにより「メモリドリフト」のリスクを排除し、ヒープのフットプリントを60%以上削減しました。
+2. メモリの制御：mralloc.c によるブレークスルー 8KBの制限を達成するために、標準の malloc に頼ることはできませんでした。私は基盤となる MIRACL メモリアロケータ（mralloc.c）を改造し、ピーク時のヒープ使用量を厳密に統計・追跡する機能を組み込みました。
+/* * 2014年 8KB RAM最適化作業からのスニペット * 目的: ECDH/SM9 鍵交換におけるピークメモリの制限 */ static size_t peak_memory_usage = 0; static size_t current_usage = 0; void* mr_alloc(size_t size) { current_usage &#43;= size; if (current_usage &gt; peak_memory_usage) { peak_memory_usage = current_usage; } // リソース制約のあるターゲットに対する厳格な執行 if (peak_memory_usage &gt; MAX_RAM_BUDGET_BYTES) { log_critical(&#34;メモリ制限違反！ 予算を超過しました: %zu&#34;, peak_memory_usage); return NULL; } return standard_malloc(size); } 結果: 徹底的な洗練の結果、フルスタックのECDHでピーク時のアロケーションを 9,300バイト まで抑えることに成功しました。「科学者」としての視点を持ってメモリを外科的に管理することで、汎用ライブラリを遥かに凌駕する性能を引き出せることを証明しました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-01 00:00:00 +0000 UTC'>2026年4月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
+  <a class="entry-link" aria-label="post link to 8KB RAM環境におけるSM9(IBC)暗号の実装" href="https://portfolio.st6160.click/ja/projects/sm9-low-level/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Web3 Indexer: Goによる高信頼アーキテクチャ
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Web3 Indexer: 産業級のGoエンジン このプロジェクトは、TypeScriptで構築された高可用性EVMブロックチェーン・データインデックスエンジンのプロトタイプを、**Go（Golang）**を用いて堅牢な産業級プロダクションシステムへと進化させたものです。
+核心的な課題 (Core Challenges) 精度のリスク: TypeScriptにおける uint256 大整数の扱いは、致命的な精度損失のリスクを抱えていた。 並行処理のボトルネック: Node.jsのシングルスレッドなイベントループでは、数千件の同時RPCリクエストの処理が困難。 レジリエンスの問題: 不安定なRPCノード（レート制限、5xxエラー）によるデータ欠落の頻発。 データ不整合: 頻繁に発生する「链の再編成（Reorg）」に対するロールバック機能の欠如。 アーキテクチャ・ソリューション 1. ネイティブなEVMサポート Project Source: starwar6160/web3-indexer-go holiman/uint256 ライブラリを使用してパイプライン全体をGoで再構築。これにより、EVMの算術演算とメモリレベルでの互換性を確保し、精度の問題を根本的に解消しました。
+2. スケールに応じた信頼性（Architectural Deep Dive） RWA（Real-World Asset）市場を支えるためには、データの「最終的な整合性」と「サブ秒の低レイテンシ」が不可欠です。
+链の再編成 (Reorg) への自己修復機能 ブロックチェーンの状態は確定（Finality）まで流動的です。
+ParentHash 形式の再帰バリデーション: シーケンサーは常に ParentHash チェーンの連続性を検証します。高さ H で不一致が検知された場合、システムは即座に緊急ロールバックを発動します。 アトミックなロールバック・ベクトル: PostgreSQLのトランザクションを活用し、高さ H 以上の全データを削除します。外部キーの「カスケード削除」により、関連する Transfers 表なども自動的に洗浄され、完璧な元帳状態を維持します。 高並列同期エンジン 従来のポーリング方式は「サンダリング・ハード（押し寄せ）」問題を引き起こします。本システムではプッシュ・プル・ハイブリッドモデルを実装しました。
+gRPC Stream の統合: リアルタイムのインデックス作成にはgRPCストリームを使用し、HTTPポーリングの往復（RTT）を介さず即座にブロック情報を受信します。 適応型ワーカープール: 信号量（Semaphore）ベースのワーカープールにより、RPCのレイテンシや 429 エラーに応じて、並列実行数を動的に調整します。 LRU によるメタデータ・キャッシュ: 頻繁に参照されるコントラクトのABIやブロックヘッダーを LRUキャッシュ に保持し、バックフィル時のDB I/Oを40%削減しました。 期待される成果 (Key Outcomes) 10倍のスループット向上: 単一インスタンスで50以上の並列同期ルーチンを安定してサポート。 デプロイの軽量化: Dockerイメージサイズを 200MB から 約20MB へと大幅削減（マルチステージビルドと依存関係ゼロのバイナリ）。 高可用性: 公開RPCエンドポイントが不安定な環境下でも、99.9%のデータ耐久性を維持。 日本市場における価値 (Business Value) 分散型金融（DeFi）やRWAにおいて、データの取り込み遅延や不正確さは、ユーザーの直接的な経済的損失やブランドへの致命的な不信感につながります。このアーキテクチャは、99.9%のデータ耐久性と精度を保証することで、トレーディング・アルゴリズムの整合性を守り、数百万ドル規模の清算不一致を未然に防ぎます。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-20 00:00:00 +0000 UTC'>2026年3月20日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
+  <a class="entry-link" aria-label="post link to Web3 Indexer: Goによる高信頼アーキテクチャ" href="https://portfolio.st6160.click/ja/projects/web3-indexer/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">カーネル・サージェリー：eBPFとCによる低遅延ネットワークの極限
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>プロジェクトの核心：標準カーネルの限界を超えて 現代の高頻度取引（HFT）や超大規模分散システムにおいて、標準的なLinuxカーネルのデフォルト設定は「汎用的すぎて遅い」という課題があります。私の仕事は、カーネルを単なる「OS」としてではなく、精密なランタイム環境として再構築することです。
+実施した「外科手術（Surgery）」の内容 1. eBPFによる非侵襲的な「レントゲン」監視 システムのパフォーマンス低下が起きた際、従来の監視ツール自体が負荷（オーバーヘッド）となり、真因を隠してしまうことがあります。
+解決策: カスタムのeBPFプログラムを開発し、コンテキストスイッチ、ディスクI/O、ネットワークスタックのレイテンシをカーネル空間で直接フック。 成果: 0.1%以下のオーバーヘッドで、マイクロ秒単位のスタックトレースを可視化。 2. ネットワーク・スタックの極限最適化 パケットがNICに到着してからアプリケーションに届くまでのわずかなミリ秒が、システム全体のボトルネックとなります。
+実施内容: XDP (Express Data Path) によるパケットの早期フィルタリング。 Zero-copy IPC によるバッファコピーの排除。 カーネル・バイパス技術の導入により、パケット処理のレイテンシを従来の1/10に削減。 3. ハードウェア・アフィニティとアイソレーション マルチコア・プロセッサにおいて、OSのスケジューラによるプロセス移動はキャッシュミスを引き起こします。
+実施内容: cpusets と cgroups を活用し、クリティカルなパスを特定の物理コアにアイソレート（隔離）。 成果: ジッター（遅延のばらつき）を排除し、予測可能な「決定論的」なパフォーマンスを実現。 技術的な成果 (Technical Outcome) 200nsの通信レイテンシ: 一部のプロセス間通信（IPC）において、レイテンシを200ナノ秒まで圧縮。 データ処理効率の倍増: 同じハードウェアリソースで、処理可能な同時接続数を3倍に向上。 ダウンタイムのゼロ化: 稼働中のシステムを停止させることなく、eBPFを使用してライブで診断と最適化を実施。 日本市場における戦略的価値 (Strategic Value) 確実な安定性 (Reliability): 障害が発生してから直すのではなく、カーネルレベルでマージンを稼ぐことで、突発的なスパイク耐性を強化。 インフラ投資の最大化 (ROI): ハードウェアを増設するのではなく、ソフトウェアの効率を極限まで高めることで、物理的な運用コストを最小化。 ミッションクリティカルな品質: 銀行、電力網、通信インフラ等、一瞬の停止も許されない「日本の品質」に応えるための究極のチューニングを提供。 [!CAUTION] 警告: カーネルのチューニングは「劇薬」です。深い理解なしに行えばシステムを破壊しますが、正しく行えば物理の限界を超える武器になります。
+あなたのインフラの「真の能力」を解き放ちませんか？
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-01 00:00:00 +0000 UTC'>2026年3月1日</span>&nbsp;·&nbsp;<span>Zhou Wei</span></footer>
+  <a class="entry-link" aria-label="post link to カーネル・サージェリー：eBPFとCによる低遅延ネットワークの極限" href="https://portfolio.st6160.click/ja/projects/kernel-surgery/"></a>
+</article>
     </main>
     
 <footer class="footer">
