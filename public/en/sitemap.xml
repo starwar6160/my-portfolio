@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://demo2.st6160.click/</loc>
+    <loc>https://demo2.st6160.click/en/</loc>
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -12,10 +12,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://demo2.st6160.click/"
+                href="https://demo2.st6160.click/en/"
                 />
   </url><url>
-    <loc>https://demo2.st6160.click/categories/</loc>
+    <loc>https://demo2.st6160.click/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja-jp"
@@ -24,10 +24,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://demo2.st6160.click/categories/"
+                href="https://demo2.st6160.click/en/categories/"
                 />
   </url><url>
-    <loc>https://demo2.st6160.click/tags/</loc>
+    <loc>https://demo2.st6160.click/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja-jp"
@@ -36,7 +36,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://demo2.st6160.click/tags/"
+                href="https://demo2.st6160.click/en/tags/"
                 />
   </url>
 </urlset>

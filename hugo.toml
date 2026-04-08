@@ -4,6 +4,9 @@ title = 'Senior Backend Architect'
 theme = 'PaperMod'
 
 defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+relativeURLs = true
+canonifyURLs = false
 
 [languages]
     [languages.en]
