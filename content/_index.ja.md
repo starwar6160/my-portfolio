@@ -51,3 +51,9 @@ disableHLJS: false
 ---
 > [!TIP]
 > **技術実証 (Technical Proof)**: [8KB RAM環境におけるSM9(IBC)暗号の実装](/projects/sm9-low-level)
+
+---
+### 安全な通信 (Secure Communication)
+機密性の高いお問い合わせについては、PGP暗号化メールをご利用いただけます。  
+**フィンガープリント**: `1BE2 0DFE DD3D 1B1E A66E  A0DE 1BA8 7F41 1AE4 A518`  
+**公開鍵**: [PGP公開鍵をダウンロード](/Zhou_Wei_0x1BA87F411AE4A518_public.asc)

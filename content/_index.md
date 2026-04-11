@@ -51,3 +51,9 @@ I provide maximum engineering ROI by solving complex, mission-critical architect
 ---
 > [!TIP]
 > **View Technical Proof**: [Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments](/projects/sm9-low-level)
+
+---
+### Secure Communication
+For confidential inquiries, you can reach me via PGP encrypted email.
+**Fingerprint**: `1BE2 0DFE DD3D 1B1E A66E  A0DE 1BA8 7F41 1AE4 A518`  
+**Public Key**: [Download PGP Public Key](/Zhou_Wei_0x1BA87F411AE4A518_public.asc)
