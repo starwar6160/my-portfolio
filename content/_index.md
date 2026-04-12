@@ -44,13 +44,24 @@ I provide maximum engineering ROI by solving complex, mission-critical architect
 - **Rescue Mission**: Restored paralyzed grid operations in zero-documentation environments.
 
 ---
-> [!IMPORTANT]
-> **Featured Case Study**: [Engineering the Unbreakable Bridge: Hardening Cross-Language Interfaces](/cases/cross-language-bridge)  
-> *A deep dive into the 5 core mechanisms for preventing memory corruption, stack imbalances, and exception escapes in polyglot systems.*
 
----
-> [!TIP]
-> **View Technical Proof**: [Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments](/projects/sm9-low-level)
+### 🛡️ Featured Technical Case Studies: The Dual-Pillar Narrative
+
+> **"Bridging the gap between 12KB embedded constraints and hyper-scale distributed systems."**
+
+| **The Foundation** (System Sovereignty) | **The Architecture** (Defensive Stability) |
+| :--- | :--- |
+| **[In the 12KB Trenches](/cases/system-sovereignty-12kb)** | **[The Ticking Time Bomb of Bridges](/cases/cross-language-bridge)** |
+| *Lessons from the "System Underworld" where RAM was a luxury.* | *How to defuse cross-language memory corruption.* |
+| `C` `Assembly` `Memory Forensics` `Crypto` | `C++` `C#/.NET` `Java/JNI` `Lifecycle` |
+| [日本語版 (Zenn)](https://zenn.dev/zhouwei6160/articles/f845bf605fb754) | [日本語版 (Zenn)](https://zenn.dev/zhouwei6160/articles/4e654583f53e64) |
+
+#### Hardcore Forensic Proofs
+```c
+#define MR_STATIC 32
+// Manual RAM control in 12KB SRAM: 
+// Forcing stack-based allocation to survive 0x05E3 "Hex Ghosts".
+```
 
 ---
 ### Secure Communication

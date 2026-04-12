@@ -2,7 +2,7 @@
 title: "Engineering the Unbreakable Bridge: Hardening Cross-Language Interfaces"
 date: 2026-04-10
 categories: ["Case Studies"]
-tags: ["Architecture", "C++", "C#", "Java", "Interoperability", "Reliability"]
+tags: ["Architecture", "C++", "C#/.NET", "Java/JNI", "Lifecycle", "Memory Safety"]
 description: "A senior architect's field manual for hardening the most fragile layer in enterprise systems: the boundary between C++ and managed languages."
 ---
 

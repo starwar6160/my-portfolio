@@ -2,7 +2,7 @@
 title: "「言語の壁」で死ぬシステム ― C++ × C#/Java 跨言語インターフェースの防崩設計 5 原則"
 date: 2026-04-10
 categories: ["Case Studies"]
-tags: ["アーキテクチャ", "C++", "C#", "Java", "インターオペラビリティ", "システム信頼性"]
+tags: ["Architecture", "C++", "C#/.NET", "Java/JNI", "Lifecycle", "Memory Safety"]
 description: "金融端末・暗号SDK・組み込みセキュリティ機器の現場で10年以上にわたり蓄積してきた「言語間インターフェース障害」の実戦記録をもとに、設計原則と具体的な対処法を体系化したものです。"
 ---
 

@@ -44,13 +44,24 @@ disableHLJS: false
 - **レスキュー・ミッション**: ドキュメント皆無の環境下で、停止した電力網運用のシステムを復旧。
 
 ---
-> [!IMPORTANT]
-> **注目ケーススタディ**: [「言語の壁」で死ぬシステム ― 跨言語インターフェースの防崩設計 5 原則](/ja/cases/cross-language-bridge)  
-> *メモリ破損、スタック不整合、例外流出を防ぎ、ポリグロット・システムの安定性を極限まで高める5つの核心メカニズム。*
 
----
-> [!TIP]
-> **技術実証 (Technical Proof)**: [8KB RAM環境におけるSM9(IBC)暗号の実装](/projects/sm9-low-level)
+### 🛡️ 注目技術ケーススタディ：二層のナラティブ (Dual-Pillar Narrative)
+
+> **「12KBの組み込み制約から、超大規模な分散システムまで。その間にある技術的断絶を埋める。」**
+
+| **System Sovereignty** (底层主権) | **Architectural Stability** (防御式アーキテクチャ) |
+| :--- | :--- |
+| **[12KBの戦壕から見たシステム主権](/ja/cases/system-sovereignty-12kb)** | **[「言語の壁」で死ぬシステム](/ja/cases/cross-language-bridge)** |
+| *メモリが贅沢品だった「システムの深淵」から得た教訓。* | *言語を跨ぐメモリ破損をいかに防ぐか。* |
+| `C` `Assembly` `Memory Forensics` `Crypto` | `C++` `C#/.NET` `Java/JNI` `Lifecycle` |
+| [English Version (Medium)](https://medium.com/@zhouwei6160/in-the-12kb-trenches-a-30-year-retrospective-on-system-sovereignty-and-security-defense-710e05f389d5) | [English Version (Medium)](https://medium.com/@zhouwei6160/why-your-cross-language-bridge-is-a-ticking-time-bomb-and-the-5-mechanisms-that-defuse-it-e616ca124359) |
+
+#### ハードコア・フォレンジックの証明
+```c
+#define MR_STATIC 32
+// 12KB SRAMにおける手動メモリ制御: 
+// 「Hex Ghosts (0xE3)」を回避しスタックベースの割り当てを強制。
+```
 
 ---
 ### 安全な通信 (Secure Communication)
