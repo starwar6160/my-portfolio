@@ -17,6 +17,74 @@ function isInternalIP(ip: string): boolean {
   return INTERNAL_IP_PREFIXES.some(prefix => ip.startsWith(prefix));
 }
 
+// Bot/scanner detection patterns
+const BOT_PATTERNS = {
+  // Scanner paths commonly targeted by vulnerability scanners
+  scannerPaths: [
+    '.env',
+    '.env.bak',
+    '.env.local',
+    '.env.production',
+    '.git',
+    '.svn',
+    'phpinfo.php',
+    'info.php',
+    'server-status',
+    'server-info',
+    'administrator',
+    'wp-admin',
+    'xmlrpc.php',
+    'README.md',
+    'LICENSE',
+    '.htaccess',
+    'web.config',
+    'composer.json',
+    'package.json.bak',
+    '_environment',
+    'brevo',
+    'mailpit',
+    'solr',
+    'actuator',
+  ],
+
+  // Known scanner user agents
+  scannerUserAgents: [
+    /scanner/i,
+    /bot/i,
+    /crawler/i,
+    /spider/i,
+    /curl/i,
+    /wget/i,
+    /python/i,
+    /go-http-client/i,
+    /nikto/i,
+    /nmap/i,
+    /masscan/i,
+    /zgrab/i,
+    /http.rb/i,
+  ],
+};
+
+// Check if request is from a bot/scanner
+function isBotScanner(url: string, userAgent: string): boolean {
+  // Check for scanner paths
+  const urlLower = url.toLowerCase();
+  for (const path of BOT_PATTERNS.scannerPaths) {
+    if (urlLower.includes(path.toLowerCase())) {
+      return true;
+    }
+  }
+
+  // Check for scanner user agents
+  for (const pattern of BOT_PATTERNS.scannerUserAgents) {
+    if (pattern.test(userAgent)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 // Admin and API paths that require special logging
 const ADMIN_PATHS = [
   '/admin/',
@@ -37,6 +105,17 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
     // Don't log anything from internal IPs (using prefix matching)
     if (isInternalIP(ip)) {
       // Silently skip logging for internal IPs
+      return await next();
+    }
+
+    // Check if this is a bot/scanner request
+    const isScanner = isBotScanner(url, userAgent);
+
+    if (isScanner) {
+      // Log scanner requests separately for security monitoring
+      // but don't count them in analytics
+      console.warn(`🤖 Scanner detected: ${ip} -> ${url}`);
+      // Optionally: log to separate scanner table for WAF rule creation
       return await next();
     }
 
