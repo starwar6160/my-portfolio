@@ -18,11 +18,17 @@ const COMPANY_PATTERNS = {
   'NVIDIA': /\b(nvidia|geforce)\b/i,
 };
 
-// Internal IPs to exclude from statistics (add your own IPs here)
-const INTERNAL_IPS = [
-  '240d:1a:41e:2b00:4427:2857:eee3:3d79', // Your IPv6
-  '219.113.86.5', // Add other internal IPs if needed
+// Internal IP prefixes to exclude from statistics
+const INTERNAL_IP_PREFIXES = [
+  '240d:1a:41e:2b00', // Your IPv6 prefix (covers all addresses in this subnet)
+  '219.113.86.5', // Specific IPv4 if needed
+  '2a06:98c0', // Cloudflare bots/health checks
 ];
+
+// Check if IP matches any internal prefix
+function isInternalIP(ip: string): boolean {
+  return INTERNAL_IP_PREFIXES.some(prefix => ip.startsWith(prefix));
+}
 
 export const onRequest: PagesFunction<Env> = async ({ request, env }) => {
   // Simple password authentication via query parameter
@@ -46,20 +52,20 @@ export const onRequest: PagesFunction<Env> = async ({ request, env }) => {
   }
 
   try {
-    // Build WHERE clause to exclude internal IPs
-    const internalIPFilter = INTERNAL_IPS.map(() => '?').join(',');
-    const excludeInternalSQL = INTERNAL_IPS.length > 0
-      ? `WHERE ip NOT IN (${internalIPFilter})`
+    // Build WHERE clause to exclude internal IPs using LIKE prefix matching
+    const excludeConditions = INTERNAL_IP_PREFIXES.map(prefix => `ip NOT LIKE '${prefix}%'`);
+    const excludeInternalSQL = INTERNAL_IP_PREFIXES.length > 0
+      ? `WHERE ${excludeConditions.join(' AND ')}`
       : '';
 
     // Get basic stats (excluding internal IPs)
     const totalVisits = await env.DB.prepare(
       `SELECT COUNT(*) as count FROM logs ${excludeInternalSQL}`
-    ).bind(...INTERNAL_IPS).first<{ count: number }>();
+    ).first<{ count: number }>();
 
     const uniqueIPs = await env.DB.prepare(
       `SELECT COUNT(DISTINCT ip) as count FROM logs ${excludeInternalSQL}`
-    ).bind(...INTERNAL_IPS).first<{ count: number }>();
+    ).first<{ count: number }>();
 
     // Get visits by country
     const countryStats = await env.DB.prepare(

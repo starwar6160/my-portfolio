@@ -5,11 +5,17 @@ interface Env {
   ADMIN_PASSWORD?: string;
 }
 
-// Internal IPs to completely exclude from logging (your IPs)
-const INTERNAL_IPS = [
-  '240d:1a:41e:2b00:4427:2857:eee3:3d79', // Your IPv6
-  '219.113.86.5', // Add other internal IPs if needed
+// Internal IP prefixes to completely exclude from logging
+const INTERNAL_IP_PREFIXES = [
+  '240d:1a:41e:2b00', // Your IPv6 prefix (covers all addresses in this subnet)
+  '219.113.86.5', // Specific IPv4 if needed
+  '2a06:98c0', // Cloudflare bots/health checks
 ];
+
+// Check if IP matches any internal prefix
+function isInternalIP(ip: string): boolean {
+  return INTERNAL_IP_PREFIXES.some(prefix => ip.startsWith(prefix));
+}
 
 // Admin and API paths that require special logging
 const ADMIN_PATHS = [
@@ -28,11 +34,8 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
     // Get country from Cloudflare's geolocation data
     const country = (request as any).cf?.country || 'Unknown';
 
-    // Check if IP is internal (your IPs)
-    const isInternalIP = INTERNAL_IPS.some(internalIP => ip === internalIP);
-
-    // Don't log anything from internal IPs
-    if (isInternalIP) {
+    // Don't log anything from internal IPs (using prefix matching)
+    if (isInternalIP(ip)) {
       // Silently skip logging for internal IPs
       return await next();
     }
