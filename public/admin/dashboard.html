@@ -256,8 +256,12 @@
       <!-- Stats Cards -->
       <div class="stats-grid" id="statsGrid" style="display: none;">
         <div class="stat-card">
-          <h3>Total Visits</h3>
+          <h3>Total Requests</h3>
           <div class="value" id="totalVisits">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Page Views</h3>
+          <div class="value" id="pageViewsOnly">0</div>
         </div>
         <div class="stat-card">
           <h3>Unique Visitors</h3>
@@ -266,10 +270,6 @@
         <div class="stat-card">
           <h3>Company Visits</h3>
           <div class="value" id="companyVisits">0</div>
-        </div>
-        <div class="stat-card">
-          <h3>Avg per Visitor</h3>
-          <div class="value" id="avgVisits">0</div>
         </div>
       </div>
 
@@ -395,15 +395,11 @@
 
         // Update stats cards
         document.getElementById('totalVisits').textContent = data.stats.totalVisits.toLocaleString();
+        document.getElementById('pageViewsOnly').textContent = data.stats.pageViewsOnly.toLocaleString();
         document.getElementById('uniqueVisitors').textContent = data.stats.uniqueIPs.toLocaleString();
 
         const totalCompanyVisits = Object.values(data.companyVisits).reduce((a, b) => a + b, 0);
         document.getElementById('companyVisits').textContent = totalCompanyVisits.toLocaleString();
-
-        const avg = data.stats.uniqueIPs > 0
-          ? (data.stats.totalVisits / data.stats.uniqueIPs).toFixed(1)
-          : '0';
-        document.getElementById('avgVisits').textContent = avg;
 
         // Show all sections
         document.getElementById('loading').style.display = 'none';

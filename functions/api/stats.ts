@@ -67,6 +67,28 @@ export const onRequest: PagesFunction<Env> = async ({ request, env }) => {
       `SELECT COUNT(DISTINCT ip) as count FROM logs ${excludeInternalSQL}`
     ).first<{ count: number }>();
 
+    // Get page views only (HTML pages, not static resources)
+    const pageViewsOnly = await env.DB.prepare(
+      `SELECT COUNT(*) as count FROM logs ${excludeInternalSQL} AND (
+        url LIKE '%.html' OR
+        url LIKE '%.htm' OR
+        url NOT LIKE '%.' OR
+        url = '/' OR
+        url LIKE '%/%'
+      ) AND (
+        url NOT LIKE '%.css' AND
+        url NOT LIKE '%.js' AND
+        url NOT LIKE '%.png' AND
+        url NOT LIKE '%.jpg' AND
+        url NOT LIKE '%.jpeg' AND
+        url NOT LIKE '%.gif' AND
+        url NOT LIKE '%.ico' AND
+        url NOT LIKE '%.svg' AND
+        url NOT LIKE '%.woff' AND
+        url NOT LIKE '%.ttf'
+      )`
+    ).first<{ count: number }>();
+
     // Get visits by country
     const countryStats = await env.DB.prepare(
       'SELECT country, COUNT(*) as count FROM logs GROUP BY country ORDER BY count DESC LIMIT 20'
@@ -125,10 +147,10 @@ export const onRequest: PagesFunction<Env> = async ({ request, env }) => {
       }
     }
 
-    // Get hourly distribution for today
+    // Get hourly distribution for today (JST timezone)
     const hourlyStats = await env.DB.prepare(
       `SELECT
-        CAST(strftime('%H', timestamp) AS INTEGER) as hour,
+        CAST(strftime('%H', datetime(timestamp, '+9 hours')) AS INTEGER) as hour,
         COUNT(*) as visits
       FROM logs
       WHERE DATE(timestamp) = DATE('now')
@@ -194,6 +216,7 @@ export const onRequest: PagesFunction<Env> = async ({ request, env }) => {
       stats: {
         totalVisits: totalVisits?.count || 0,
         uniqueIPs: uniqueIPs?.count || 0,
+        pageViewsOnly: pageViewsOnly?.count || 0,
       },
       byCountry: countryStats.results || [],
       topPages: topPages.results || [],
