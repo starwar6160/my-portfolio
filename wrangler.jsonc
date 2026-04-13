@@ -5,10 +5,15 @@
   "observability": {
     "enabled": true
   },
-  "assets": {
-    "directory": "."
-  },
+  "pages_build_output_dir": "./public",
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "visitor_log",
+      "database_id": "dec47004-d3c8-4cfa-b5e6-03b6c229ccae"
+    }
   ]
 }
