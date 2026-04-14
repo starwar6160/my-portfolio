@@ -21,68 +21,156 @@ function isInternalIP(ip: string): boolean {
 const BOT_PATTERNS = {
   // Scanner paths commonly targeted by vulnerability scanners
   scannerPaths: [
+    // Config files
     '.env',
     '.env.bak',
     '.env.local',
     '.env.production',
     '.git',
     '.svn',
+    '.s3cfg',
+    'config.js',
+    'aws.config.js',
+    'aws-config.js',
+    'aws.json',
+    'aws-credentials',
+    '.aws/config',
+    '.aws/credentials',
+    'application.yml',
+    'database.yml',
+    '_environment',
+    '_profiler',
+
+    // Info disclosure
     'phpinfo.php',
     'info.php',
     'server-status',
     'server-info',
+    'debug.log',
+    'error.log',
+
+    // Admin panels
     'administrator',
     'wp-admin',
     'xmlrpc.php',
+    'admin',
+    'login',
+    'signin',
+
+    // Common files
     'README.md',
     'LICENSE',
     '.htaccess',
     'web.config',
     'composer.json',
     'package.json.bak',
-    '_environment',
+    'package-lock.json',
+
+    // Framework specific
     'brevo',
     'mailpit',
     'solr',
     'actuator',
+    'api/docs',
+    'swagger',
+    'graphql',
+
+    // Resume/Job scraping patterns
+    '/CV',
+    '/resume',
+    '/cv',
+    '/portfolio',
+    '/jobs',
+    '/careers',
+    '/about',
+    '/contact',
   ],
 
   // Known scanner user agents
   scannerUserAgents: [
+    // General bots
     /scanner/i,
     /bot/i,
     /crawler/i,
     /spider/i,
+
+    // CLI tools
     /curl/i,
     /wget/i,
     /python/i,
+    /python-requests/i,
     /go-http-client/i,
+    /http.rb/i,
+    /java/i,
+    /okhttp/i,
+
+    // Security scanners
     /nikto/i,
     /nmap/i,
     /masscan/i,
     /zgrab/i,
-    /http.rb/i,
+    /sqlmap/i,
+    /dirbuster/i,
+    /gobuster/i,
+    /feroxbuster/i,
+    /wpscan/i,
+
+    // SEO/Resume scrapers
+    /semantic-bot/i,
+    /semrush/i,
+    /ahrefsbot/i,
+    /majestic12/i,
+    /dotbot/i,
+    /barkrowler/i,
+    /linkedinbot/i,
+    /twitterbot/i,
+    /facebookexternalhit/i,
+
+    // Generic patterns
+    /^\s*$/,  // Empty user agent
+    /-/i,     // Single dash
   ],
+
+  // Behavior patterns (request frequency, path patterns)
+  scannerBehaviors: {
+    // High frequency requests from single IP (>10 requests in 1 minute)
+    highFrequency: true,
+
+    // Only requesting resources without HTML pages
+    resourcesOnly: true,
+
+    // Sequential path scanning (e.g., /config1, /config2, /config3)
+    sequentialScanning: true,
+  },
 };
 
 // Check if request is from a bot/scanner
-function isBotScanner(url: string, userAgent: string): boolean {
-  // Check for scanner paths
+function isBotScanner(url: string, userAgent: string): 'block' | 'ignore' | 'allow' {
   const urlLower = url.toLowerCase();
+  const uaLower = userAgent.toLowerCase();
+
+  // Check for scanner paths (high confidence - block)
   for (const path of BOT_PATTERNS.scannerPaths) {
     if (urlLower.includes(path.toLowerCase())) {
-      return true;
+      return 'block';  // Definitely malicious scanner
     }
   }
 
   // Check for scanner user agents
   for (const pattern of BOT_PATTERNS.scannerUserAgents) {
     if (pattern.test(userAgent)) {
-      return true;
+      // SEO bots and social media crawlers - ignore but don't block
+      if (uaLower.includes('linkedin') || uaLower.includes('twitter') ||
+          uaLower.includes('facebook') || uaLower.includes('semantic-bot') ||
+          uaLower.includes('semrush') || uaLower.includes('ahrefs')) {
+        return 'ignore';  // SEO/social crawler, don't log
+      }
+      // Security scanners and generic bots - block
+      return 'block';
     }
   }
 
-  return false;
+  return 'allow';  // Real visitor
 }
 
 // Admin and API paths that require special logging
@@ -108,17 +196,21 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
       return await next();
     }
 
-    // Check if this is a bot/scanner request
-    const isScanner = isBotScanner(url, userAgent);
+    // Check if this is a bot/scanner request with three levels
+    const scannerAction = isBotScanner(url, userAgent);
 
-    if (isScanner) {
-      // Log scanner requests separately for security monitoring
-      // but don't count them in analytics
-      console.warn(`🤖 Scanner detected: ${ip} -> ${url}`);
-      // Optionally: log to separate scanner table for WAF rule creation
-      return await next();
+    if (scannerAction === 'block') {
+      // Definitely malicious scanner - log warning and ignore
+      console.warn(`🚫 Malicious scanner blocked: ${ip} -> ${url} (${userAgent})`);
+      return await next();  // Don't log, don't count
     }
 
+    if (scannerAction === 'ignore') {
+      // SEO/social crawler - silently ignore
+      return await next();  // Don't log, don't count
+    }
+
+    // scannerAction === 'allow' - Real visitor, continue to logging
     // Check if this is an admin/API path
     const isAdminPath = ADMIN_PATHS.some(path => url.includes(path));
 
