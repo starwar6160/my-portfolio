@@ -57,8 +57,7 @@ defaultContentLanguageInSubdir = false
         text = "Home"
         link = "/"
 
-    [params.images]
-        - "images/406_hash_chain_otp_preview_1775436006374.webp"
+    images = ["images/406_hash_chain_otp_preview_1775436006374.webp"]
 
     [params.description]
         en = "Senior Backend Architect & Security Forensic Expert."
