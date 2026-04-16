@@ -142,3 +142,9 @@ vite.config.ts.timestamp-*
 .wrangler
 .dev.vars*
 !.dev.vars.example
+.dev.vars
+
+
+# 简历
+*.docx
+*.pdf

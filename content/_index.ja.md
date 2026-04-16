@@ -31,8 +31,8 @@ disableHLJS: false
 
 ## 技術レキシコン (Technical Lexicon)
 
-- **専門分野**: C/C++, Go, Assembly, Linux Kernel, eBPF, Cryptography (SMシリーズ).
-- **インフラ**: Docker, Kubernetes, CI/CD Hardening, Zero-Copy IPC.
+- **専門分野**: C/C++, Go, Assembly, Linux Kernel, eBPF, Cryptography (SMシリーズ), **Malware Forensics**.
+- **インフラ**: Docker, Kubernetes, CI/CD Hardening, Zero-Copy IPC, **128GB Linux Lab**.
 - **AIツール**: 自律型コードベース監査 (Claude Code / DeepSeek / Gemini).
 
 ---
@@ -42,6 +42,12 @@ disableHLJS: false
 - **50倍の再定義**: 同期処理パイプラインを非同期バッチアップサート（70秒 → 1.5秒）に再設計。
 - **92%のメモリ削減**: 極限の埋め込み制約（120KB → 9.3KB）に対応した暗号エンジンの最適化。
 - **レスキュー・ミッション**: ドキュメント皆無の環境下で、停止した電力網運用のシステムを復旧。
+
+---
+
+> [!CAUTION]
+> **Active Cyber-Defense Alert (アクティブ・サイバーディフェンス)**: [Web3採用詐欺を暴く：Next.js課題に潜む高度な難読化ペイロード](/ja/cases/web3-scam-exposure)  
+> *「技術テスト」に隠された巧妙なソーシャルエンジニアリング・ペイロードを特定・無力化。128GB RAMの隔離ラボ環境にて詳細なフォレンジック調査を実施。*
 
 ---
 

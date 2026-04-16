@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'Home'
 theme = 'PaperMod'
 
+[minify]
+    minifyOutput = true
+
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
 
@@ -53,6 +56,13 @@ defaultContentLanguageInSubdir = false
     [params.label]
         text = "Home"
         link = "/"
+
+    [params.images]
+        - "images/406_hash_chain_otp_preview_1775436006374.webp"
+
+    [params.description]
+        en = "Senior Backend Architect & Security Forensic Expert."
+        ja = "シニア・バックエンド・アーキテクト & セキュリティ・フォレンジック・エキスパート。"
 
     [params.profileMode]
         enabled = false

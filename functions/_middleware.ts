@@ -5,6 +5,9 @@ interface Env {
   ADMIN_PASSWORD?: string;
 }
 
+// Session timeout in minutes (30 minutes of inactivity = new session)
+const SESSION_TIMEOUT_MINUTES = 30;
+
 // Internal IP prefixes to completely exclude from logging
 const INTERNAL_IP_PREFIXES = [
   '240d:1a:41e:2b00', // Your IPv6 prefix (covers all addresses in this subnet)
@@ -15,6 +18,24 @@ const INTERNAL_IP_PREFIXES = [
 // Check if IP matches any internal prefix
 function isInternalIP(ip: string): boolean {
   return INTERNAL_IP_PREFIXES.some(prefix => ip.startsWith(prefix));
+}
+
+// Check if URL is an HTML page (not a static resource)
+function isHTMLPage(url: string): boolean {
+  const urlLower = url.toLowerCase();
+  // Exclude static resources
+  if (urlLower.endsWith('.css') || urlLower.endsWith('.js') ||
+      urlLower.endsWith('.png') || urlLower.endsWith('.jpg') ||
+      urlLower.endsWith('.jpeg') || urlLower.endsWith('.gif') ||
+      urlLower.endsWith('.svg') || urlLower.endsWith('.ico') ||
+      urlLower.endsWith('.woff') || urlLower.endsWith('.woff2') ||
+      urlLower.endsWith('.ttf') || urlLower.endsWith('.eot') ||
+      urlLower.endsWith('.txt') || urlLower.endsWith('.xml')) {
+    return false;
+  }
+  // Include HTML pages and directory paths (likely pages)
+  return urlLower.endsWith('.html') || urlLower.endsWith('.htm') ||
+         !urlLower.includes('.') || urlLower.endsWith('/');
 }
 
 // Bot/scanner detection patterns
@@ -130,18 +151,6 @@ const BOT_PATTERNS = {
     /^\s*$/,  // Empty user agent
     /-/i,     // Single dash
   ],
-
-  // Behavior patterns (request frequency, path patterns)
-  scannerBehaviors: {
-    // High frequency requests from single IP (>10 requests in 1 minute)
-    highFrequency: true,
-
-    // Only requesting resources without HTML pages
-    resourcesOnly: true,
-
-    // Sequential path scanning (e.g., /config1, /config2, /config3)
-    sequentialScanning: true,
-  },
 };
 
 // Check if request is from a bot/scanner
@@ -210,7 +219,7 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
       return await next();  // Don't log, don't count
     }
 
-    // scannerAction === 'allow' - Real visitor, continue to logging
+    // scannerAction === 'allow' - Real visitor, continue to session-based logging
     // Check if this is an admin/API path
     const isAdminPath = ADMIN_PATHS.some(path => url.includes(path));
 
@@ -219,19 +228,64 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
       console.warn(`⚠️ Admin access detected from external IP: ${ip} to ${url}`);
     }
 
-    // Log all external IP visits
+    // Session-based logging using D1 database
     if (env.DB) {
-      // Async database write using waitUntil to avoid blocking the response
-      // This ensures the visitor's page load is not affected by logging
-      const logPromise = env.DB.prepare(
-        'INSERT INTO logs (ip, url, user_agent, country, referer) VALUES (?, ?, ?, ?, ?)'
-      )
-        .bind(ip, url, userAgent, country, referer)
-        .run();
+      // Extract URL path for cleaner storage
+      const urlObj = new URL(url);
+      const path = urlObj.pathname;
 
-      // Use waitUntil to handle the promise in the background
-      // This returns immediately without waiting for the database write
-      (self as any).waitUntil(logPromise);
+      // Check if this is an HTML page or static resource
+      const isPage = isHTMLPage(path);
+
+      // Use waitUntil to handle database operations in background
+      (self as any).waitUntil((async () => {
+        try {
+          // Check if there's an active session for this IP (within timeout)
+          const sessionTimeout = new Date(Date.now() - SESSION_TIMEOUT_MINUTES * 60 * 1000).toISOString();
+
+          const existingSession = await env.DB.prepare(
+            `SELECT id, landing_page, hits, pages_viewed, session_start
+             FROM sessions
+             WHERE ip = ? AND last_seen > ?
+             ORDER BY last_seen DESC
+             LIMIT 1`
+          ).bind(ip, sessionTimeout).first<{
+            id: number;
+            landing_page: string;
+            hits: number;
+            pages_viewed: number;
+            session_start: string;
+          }>();
+
+          if (existingSession) {
+            // Update existing session
+            const newHits = existingSession.hits + 1;
+            const newPagesViewed = isPage ? existingSession.pages_viewed + 1 : existingSession.pages_viewed;
+
+            await env.DB.prepare(
+              `UPDATE sessions
+               SET hits = ?, pages_viewed = ?, last_seen = CURRENT_TIMESTAMP
+               WHERE id = ?`
+            ).bind(newHits, newPagesViewed, existingSession.id).run();
+          } else {
+            // Create new session
+            // Check if this IP has visited before (for is_first_visit flag)
+            const pastVisits = await env.DB.prepare(
+              `SELECT COUNT(*) as count FROM sessions WHERE ip = ?`
+            ).bind(ip).first<{ count: number }>();
+
+            const isFirstVisit = (!pastVisits || pastVisits.count === 0) ? 1 : 0;
+
+            await env.DB.prepare(
+              `INSERT INTO sessions (ip, landing_page, user_agent, country, referer, is_first_visit)
+               VALUES (?, ?, ?, ?, ?, ?)`
+            ).bind(ip, path, userAgent, country, referer, isFirstVisit).run();
+          }
+        } catch (error) {
+          // Silently ignore logging errors to avoid breaking the site
+          console.error('Session logging error:', error);
+        }
+      })());
     }
   } catch (error) {
     // Silently ignore logging errors to avoid breaking the site

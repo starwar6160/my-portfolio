@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Analytics Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .login-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-container button:hover {
+      background: #5568d3;
+    }
+
+    .login-error {
+      color: #e74c3c;
+      text-align: center;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .dashboard {
+      display: none;
+    }
+
+    .dashboard.active {
+      display: block;
+    }
+
+    .dashboard-header {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .dashboard-header h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .dashboard-header p {
+      color: #666;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .stat-card h3 {
+      color: #666;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .stat-card .value {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .stat-card .subtitle {
+      font-size: 14px;
+      color: #999;
+      margin-top: 5px;
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .chart-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .chart-container h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .table-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .table-container h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #333;
+    }
+
+    tr:hover {
+      background: #f8f9fa;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-first {
+      background: #10b981;
+      color: white;
+    }
+
+    .badge-returning {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .referer-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    .referer-direct { background: #6b7280; color: white; }
+    .referer-linkedin { background: #0077b5; color: white; }
+    .referer-google { background: #4285f4; color: white; }
+    .referer-twitter { background: #1da1f2; color: white; }
+    .referer-facebook { background: #1877f2; color: white; }
+    .referer-other { background: #8b5cf6; color: white; }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: white;
+      font-size: 18px;
+    }
+
+    .error {
+      background: #e74c3c;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .refresh-btn {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .refresh-btn:hover {
+      background: #5568d3;
+    }
+
+    @media (max-width: 768px) {
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Login Form -->
+    <div class="login-container" id="loginForm">
+      <h1>Session Analytics Dashboard</h1>
+      <div class="login-error" id="loginError">Invalid password</div>
+      <input type="password" id="passwordInput" placeholder="Enter admin password" />
+      <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+      <div class="dashboard-header">
+        <h1>🎯 Session-Based Analytics</h1>
+        <p>30-minute session deduplication with referer tracking</p>
+        <button class="refresh-btn" onclick="loadData()">Refresh Data</button>
+        <button class="refresh-btn" onclick="logout()">Logout</button>
+      </div>
+
+      <div id="loading" class="loading">Loading analytics data...</div>
+      <div id="error" class="error" style="display: none;"></div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid" id="statsGrid" style="display: none;">
+        <div class="stat-card">
+          <h3>Total Sessions</h3>
+          <div class="value" id="totalSessions">0</div>
+          <div class="subtitle" id="avgHits">Avg 0 hits/session</div>
+        </div>
+        <div class="stat-card">
+          <h3>Unique Visitors</h3>
+          <div class="value" id="uniqueVisitors">0</div>
+          <div class="subtitle" id="newVisitorRate">0% new visitors</div>
+        </div>
+        <div class="stat-card">
+          <h3>Total Page Views</h3>
+          <div class="value" id="totalPageViews">0</div>
+          <div class="subtitle" id="avgPageViews">Avg 0 pages/session</div>
+        </div>
+        <div class="stat-card">
+          <h3>Total Hits</h3>
+          <div class="value" id="totalHits">0</div>
+          <div class="subtitle" id="hitPageRatio">0 pages/hit ratio</div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts-grid" id="chartsGrid" style="display: none;">
+        <div class="chart-container">
+          <h2>Sessions Over Time (Last 7 Days)</h2>
+          <canvas id="timeChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2>Traffic Sources (Referer)</h2>
+          <canvas id="refererChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2>Top Countries</h2>
+          <canvas id="countryChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2>Hourly Distribution (Today)</h2>
+          <canvas id="hourlyChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Recent Sessions Table -->
+      <div class="table-container" id="sessionsContainer" style="display: none;">
+        <h2>🎯 Recent Sessions (Last 100)</h2>
+        <p style="color: #666; margin-bottom: 15px; font-size: 14px;">
+          ✨ Session-based view: Each visitor appears once with aggregated behavior
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Start Time</th>
+              <th>Duration</th>
+              <th>IP</th>
+              <th>Landing Page</th>
+              <th>Source</th>
+              <th>Activity</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody id="sessionsTable">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Top Landing Pages Table -->
+      <div class="table-container" id="pagesContainer" style="display: none;">
+        <h2>Top Landing Pages</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Page</th>
+              <th>Sessions</th>
+              <th>Unique Visitors</th>
+              <th>Avg Hits</th>
+            </tr>
+          </thead>
+          <tbody id="pagesTable">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let password = '';
+    let timeChart = null;
+    let refererChart = null;
+    let countryChart = null;
+    let hourlyChart = null;
+
+    // Check for saved password on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedPassword = localStorage.getItem('analyticsPassword');
+      if (savedPassword) {
+        password = savedPassword;
+        document.getElementById('passwordInput').value = savedPassword;
+        loadData();
+      }
+    });
+
+    function login() {
+      password = document.getElementById('passwordInput').value;
+      localStorage.setItem('analyticsPassword', password);
+      loadData();
+    }
+
+    function logout() {
+      password = '';
+      localStorage.removeItem('analyticsPassword');
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('dashboard').classList.remove('active');
+      document.getElementById('passwordInput').value = '';
+    }
+
+    async function loadData() {
+      if (!password) {
+        alert('Please enter a password');
+        return;
+      }
+
+      try {
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('error').style.display = 'none';
+
+        const response = await fetch(`/api/session-stats?password=${encodeURIComponent(password)}`);
+
+        if (!response.ok) {
+          if (response.status === 401) {
+            localStorage.removeItem('analyticsPassword');
+            document.getElementById('loginError').style.display = 'block';
+            return;
+          }
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        localStorage.setItem('analyticsPassword', password);
+
+        // Show dashboard
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('dashboard').classList.add('active');
+
+        // Calculate stats
+        const avgHits = data.stats.totalSessions > 0
+          ? (data.stats.totalHits / data.stats.totalSessions).toFixed(1)
+          : 0;
+        const newVisitorRate = data.stats.uniqueIPs > 0
+          ? ((data.stats.newVisitors / data.stats.uniqueIPs) * 100).toFixed(1)
+          : 0;
+        const avgPageViews = data.stats.totalSessions > 0
+          ? (data.stats.totalPageViews / data.stats.totalSessions).toFixed(1)
+          : 0;
+        const hitPageRatio = data.stats.totalHits > 0
+          ? ((data.stats.totalPageViews / data.stats.totalHits) * 100).toFixed(1)
+          : 0;
+
+        // Update stats cards
+        document.getElementById('totalSessions').textContent = data.stats.totalSessions.toLocaleString();
+        document.getElementById('avgHits').textContent = `Avg ${avgHits} hits/session`;
+        document.getElementById('uniqueVisitors').textContent = data.stats.uniqueIPs.toLocaleString();
+        document.getElementById('newVisitorRate').textContent = `${newVisitorRate}% new visitors`;
+        document.getElementById('totalPageViews').textContent = data.stats.totalPageViews.toLocaleString();
+        document.getElementById('avgPageViews').textContent = `Avg ${avgPageViews} pages/session`;
+        document.getElementById('totalHits').textContent = data.stats.totalHits.toLocaleString();
+        document.getElementById('hitPageRatio').textContent = `${hitPageRatio}% page/hit ratio`;
+
+        // Show all sections
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('statsGrid').style.display = 'grid';
+        document.getElementById('chartsGrid').style.display = 'grid';
+        document.getElementById('sessionsContainer').style.display = 'block';
+        document.getElementById('pagesContainer').style.display = 'block';
+
+        // Render charts
+        renderTimeChart(data.timeSeries);
+        renderRefererChart(data.refererStats);
+        renderCountryChart(data.byCountry);
+        renderHourlyChart(data.hourlyStats);
+
+        // Render tables
+        renderSessionsTable(data.recentSessions);
+        renderPagesTable(data.topLandingPages);
+
+      } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('error').textContent = `Error: ${error.message}`;
+      }
+    }
+
+    function renderTimeChart(timeSeries) {
+      const ctx = document.getElementById('timeChart').getContext('2d');
+
+      if (timeChart) {
+        timeChart.destroy();
+      }
+
+      const sortedData = [...timeSeries].reverse();
+
+      timeChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: sortedData.map(d => d.date),
+          datasets: [
+            {
+              label: 'Sessions',
+              data: sortedData.map(d => d.sessions),
+              borderColor: '#667eea',
+              backgroundColor: 'rgba(102, 126, 234, 0.1)',
+              fill: true,
+              tension: 0.4,
+            },
+            {
+              label: 'Unique Visitors',
+              data: sortedData.map(d => d.unique_visitors),
+              borderColor: '#764ba2',
+              backgroundColor: 'rgba(118, 75, 162, 0.1)',
+              fill: true,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    }
+
+    function renderRefererChart(refererStats) {
+      const ctx = document.getElementById('refererChart').getContext('2d');
+
+      if (refererChart) {
+        refererChart.destroy();
+      }
+
+      const sources = refererStats.map(r => r.source);
+      const sessions = refererStats.map(r => r.sessions);
+      const uniqueVisitors = refererStats.map(r => r.unique_visitors);
+
+      refererChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: sources,
+          datasets: [
+            {
+              label: 'Sessions',
+              data: sessions,
+              backgroundColor: 'rgba(102, 126, 234, 0.8)',
+            },
+            {
+              label: 'Unique Visitors',
+              data: uniqueVisitors,
+              backgroundColor: 'rgba(118, 75, 162, 0.8)',
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    }
+
+    function renderCountryChart(countryStats) {
+      const ctx = document.getElementById('countryChart').getContext('2d');
+
+      if (countryChart) {
+        countryChart.destroy();
+      }
+
+      const topCountries = countryStats.slice(0, 10);
+
+      countryChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: topCountries.map(c => c.country || 'Unknown'),
+          datasets: [{
+            label: 'Sessions',
+            data: topCountries.map(c => c.sessions),
+            backgroundColor: 'rgba(102, 126, 234, 0.8)',
+          }],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    }
+
+    function renderHourlyChart(hourlyStats) {
+      const ctx = document.getElementById('hourlyChart').getContext('2d');
+
+      if (hourlyChart) {
+        hourlyChart.destroy();
+      }
+
+      // Fill in missing hours with 0
+      const hourlyData = Array(24).fill(0);
+      hourlyStats.forEach(h => {
+        hourlyData[h.hour] = h.sessions;
+      });
+
+      hourlyChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: Array.from({ length: 24 }, (_, i) => `${i}:00`),
+          datasets: [{
+            label: 'Sessions',
+            data: hourlyData,
+            backgroundColor: 'rgba(118, 75, 162, 0.8)',
+          }],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    }
+
+    function renderSessionsTable(sessions) {
+      const tbody = document.getElementById('sessionsTable');
+      tbody.innerHTML = '';
+
+      sessions.forEach(session => {
+        const row = document.createElement('tr');
+
+        // Convert UTC to JST
+        const startTime = new Date(session.session_start + 'Z').toLocaleString('ja-JP', {
+          timeZone: 'Asia/Tokyo',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        });
+
+        // Calculate session duration
+        const start = new Date(session.session_start + 'Z');
+        const end = new Date(session.last_seen + 'Z');
+        const durationMs = end.getTime() - start.getTime();
+        const durationMins = Math.floor(durationMs / 60000);
+        const durationSecs = Math.floor((durationMs % 60000) / 1000);
+
+        let durationStr;
+        if (durationMins > 0) {
+          durationStr = `${durationMins}m ${durationSecs}s`;
+        } else {
+          durationStr = `${durationSecs}s`;
+        }
+
+        // Get referer badge
+        const refererBadge = getRefererBadge(session.referer);
+
+        // Create activity summary
+        let activitySummary = '';
+        if (session.pages_viewed === 1 && session.hits <= 5) {
+          activitySummary = '<span style="color: #999;">Quick view</span>';
+        } else if (session.pages_viewed >= 3) {
+          activitySummary = `<span style="color: #10b981; font-weight: 600;">Deep browse (${session.pages_viewed} pages)</span>`;
+        } else if (session.hits >= 10) {
+          activitySummary = `<span style="color: #3b82f6;">Active (${session.hits} requests)</span>`;
+        } else {
+          activitySummary = `<span style="color: #666;">${session.pages_viewed} page${session.pages_viewed > 1 ? 's' : ''}, ${session.hits} hit${session.hits > 1 ? 's' : ''}</span>`;
+        }
+
+        // Get visitor type badge
+        const typeBadge = session.is_first_visit
+          ? '<span class="badge badge-first">New</span>'
+          : '<span class="badge badge-returning">Returning</span>';
+
+        row.innerHTML = `
+          <td>${startTime}</td>
+          <td style="color: #666; font-size: 13px;">${durationStr}</td>
+          <td style="font-family: monospace; font-size: 12px;">${truncate(session.ip, 20)}</td>
+          <td title="${session.landing_page}">${truncateUrl(session.landing_page, 30)}</td>
+          <td>${refererBadge}</td>
+          <td>${activitySummary}</td>
+          <td>${typeBadge}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function renderPagesTable(pages) {
+      const tbody = document.getElementById('pagesTable');
+      tbody.innerHTML = '';
+
+      pages.forEach(page => {
+        const row = document.createElement('tr');
+        const avgHits = page.sessions > 0 ? (page.total_hits / page.sessions).toFixed(1) : 0;
+
+        row.innerHTML = `
+          <td title="${page.landing_page}">${truncateUrl(page.landing_page, 60)}</td>
+          <td>${page.sessions.toLocaleString()}</td>
+          <td>${page.unique_visitors.toLocaleString()}</td>
+          <td>${avgHits}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function getRefererBadge(referer) {
+      if (!referer || referer === 'Direct') {
+        return '<span class="referer-badge referer-direct">Direct</span>';
+      }
+
+      const refererLower = referer.toLowerCase();
+
+      if (refererLower.includes('linkedin')) {
+        return '<span class="referer-badge referer-linkedin">LinkedIn</span>';
+      } else if (refererLower.includes('google')) {
+        return '<span class="referer-badge referer-google">Google</span>';
+      } else if (refererLower.includes('twitter')) {
+        return '<span class="referer-badge referer-twitter">Twitter</span>';
+      } else if (refererLower.includes('facebook')) {
+        return '<span class="referer-badge referer-facebook">Facebook</span>';
+      } else {
+        return '<span class="referer-badge referer-other">Other</span>';
+      }
+    }
+
+    function truncate(str, max) {
+      if (!str) return '';
+      return str.length > max ? str.substring(0, max) + '...' : str;
+    }
+
+    function truncateUrl(url, max) {
+      if (!url) return '/';
+      return truncate(url, max);
+    }
+
+    // Allow Enter key to submit password
+    document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        login();
+      }
+    });
+  </script>
+</body>
+</html>

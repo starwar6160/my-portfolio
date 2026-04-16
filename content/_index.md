@@ -31,8 +31,8 @@ I provide maximum engineering ROI by solving complex, mission-critical architect
 
 ## Technical Lexicon
 
-- **Expertise**: C/C++, Go, Assembly, Linux Kernel, eBPF, Cryptography (SM-series).
-- **Infrastructure**: Docker, Kubernetes, CI/CD Hardening, Zero-Copy IPC.
+- **Expertise**: C/C++, Go, Assembly, Linux Kernel, eBPF, Cryptography (SM-series), **Malware Forensics**.
+- **Infrastructure**: Docker, Kubernetes, CI/CD Hardening, Zero-Copy IPC, **128GB Linux Lab**.
 - **AI Tooling**: Autonomous Codebase Auditing (Claude Code / DeepSeek).
 
 ---
@@ -42,6 +42,12 @@ I provide maximum engineering ROI by solving complex, mission-critical architect
 - **50x Throughput Boost**: Re-engineered synchronous pipelines into async batch-upsert architectures (70s → 1.5s).
 - **92% Memory Reduction**: Optimized crypto engines for extreme embedded constraints (120KB → 9.3KB).
 - **Rescue Mission**: Restored paralyzed grid operations in zero-documentation environments.
+
+---
+
+> [!CAUTION]
+> **Active Cyber-Defense Alert**: [Rethinking Web3 Job Scams: Forensics of a Next.js Trojan](/cases/web3-scam-exposure)  
+> *Identified and neutralized a sophisticated social engineering payload hidden in a "Technical Test". Audit performed in 128GB RAM isolated lab.*
 
 ---
 
