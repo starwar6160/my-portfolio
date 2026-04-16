@@ -45,22 +45,16 @@ disableHLJS: false
 
 ---
 
-> [!CAUTION]
-> **Active Cyber-Defense Alert (アクティブ・サイバーディフェンス)**: [Web3採用詐欺を暴く：Next.js課題に潜む高度な難読化ペイロード](/ja/cases/web3-scam-exposure)  
-> *「技術テスト」に隠された巧妙なソーシャルエンジニアリング・ペイロードを特定・無力化。128GB RAMの隔離ラボ環境にて詳細なフォレンジック調査を実施。*
-
----
-
-### 🛡️ 注目技術ケーススタディ：二層のナラティブ (Dual-Pillar Narrative)
+### 🛡️ 注目技術ケーススタディ：三層のナラティブ (Triple-Pillar Narrative)
 
 > **「12KBの組み込み制約から、超大規模な分散システムまで。その間にある技術的断絶を埋める。」**
 
-| **System Sovereignty** (底层主権) | **Architectural Stability** (防御式アーキテクチャ) |
-| :--- | :--- |
-| **[12KBの戦壕から見たシステム主権](/ja/cases/system-sovereignty-12kb)** | **[「言語の壁」で死ぬシステム](/ja/cases/cross-language-bridge)** |
-| *メモリが贅沢品だった「システムの深淵」から得た教訓。* | *言語を跨ぐメモリ破損をいかに防ぐか。* |
-| `C` `Assembly` `Memory Forensics` `Crypto` | `C++` `C#/.NET` `Java/JNI` `Lifecycle` |
-| [English Version (Medium)](https://medium.com/@zhouwei6160/in-the-12kb-trenches-a-30-year-retrospective-on-system-sovereignty-and-security-defense-710e05f389d5) | [English Version (Medium)](https://medium.com/@zhouwei6160/why-your-cross-language-bridge-is-a-ticking-time-bomb-and-the-5-mechanisms-that-defuse-it-e616ca124359) |
+| **The Foundation** | **The Active Defense** | **The Architecture** |
+| :--- | :--- | :--- |
+| **[12KBの戦壕から](/ja/cases/system-sovereignty-12kb)** | **[Web3採用詐欺解析](/ja/cases/web3-scam-exposure)** | **[言語の壁を越える橋](/ja/cases/cross-language-bridge)** |
+| *システムの深淵からの教訓。* | *巧妙な採用詐欺の解明。* | *メモリ破損の防衛策。* |
+| `ベアメタル` `暗号` | `フォレンジック` `マルウェア` | `ポリグロット` `ライフサイクル` |
+| [English (Medium)](https://medium.com/@zhouwei6160/in-the-12kb-trenches-a-30-year-retrospective-on-system-sovereignty-and-security-defense-710e05f389d5) | [English (Medium)](https://medium.com/@zhouwei6160/rethinking-web3-job-scams-how-my-128gb-linux-lab-exposed-a-highly-obfuscated-payload-in-a-next-js-603f722aad8d) | [English (Medium)](https://medium.com/@zhouwei6160/why-your-cross-language-bridge-is-a-ticking-time-bomb-and-the-5-mechanisms-that-defuse-it-e616ca124359) |
 
 #### ハードコア・フォレンジックの証明
 ```c

@@ -45,22 +45,16 @@ I provide maximum engineering ROI by solving complex, mission-critical architect
 
 ---
 
-> [!CAUTION]
-> **Active Cyber-Defense Alert**: [Rethinking Web3 Job Scams: Forensics of a Next.js Trojan](/cases/web3-scam-exposure)  
-> *Identified and neutralized a sophisticated social engineering payload hidden in a "Technical Test". Audit performed in 128GB RAM isolated lab.*
-
----
-
-### 🛡️ Featured Technical Case Studies: The Dual-Pillar Narrative
+### 🛡️ Featured Technical Case Studies: The Triple-Pillar Narrative
 
 > **"Bridging the gap between 12KB embedded constraints and hyper-scale distributed systems."**
 
-| **The Foundation** (System Sovereignty) | **The Architecture** (Defensive Stability) |
-| :--- | :--- |
-| **[In the 12KB Trenches](/cases/system-sovereignty-12kb)** | **[The Ticking Time Bomb of Bridges](/cases/cross-language-bridge)** |
-| *Lessons from the "System Underworld" where RAM was a luxury.* | *How to defuse cross-language memory corruption.* |
-| `C` `Assembly` `Memory Forensics` `Crypto` | `C++` `C#/.NET` `Java/JNI` `Lifecycle` |
-| [日本語版 (Zenn)](https://zenn.dev/zhouwei6160/articles/f845bf605fb754) | [日本語版 (Zenn)](https://zenn.dev/zhouwei6160/articles/4e654583f53e64) |
+| **The Foundation** | **The Active Defense** | **The Architecture** |
+| :--- | :--- | :--- |
+| **[In the 12KB Trenches](/cases/system-sovereignty-12kb)** | **[Web3 Trojan Forensics](/cases/web3-scam-exposure)** | **[The Bridge Time Bomb](/cases/cross-language-bridge)** |
+| *Lessons from the "System Underworld".* | *Exposing recruitment scams.* | *Defusing memory corruption.* |
+| `Bare Metal` `Crypto` | `Forensics` `Malware` | `Polyglot` `Lifecycle` |
+| [日本語 (Zenn)](https://zenn.dev/zhouwei6160/articles/f845bf605fb754) | [日本語 (Zenn)](https://zenn.dev/zhouwei6160/articles/3c7561f85723af) | [日本語 (Zenn)](https://zenn.dev/zhouwei6160/articles/4e654583f53e64) |
 
 #### Hardcore Forensic Proofs
 ```c
