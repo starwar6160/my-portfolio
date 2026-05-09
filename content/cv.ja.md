@@ -9,6 +9,8 @@ layout: "simple"
 
 **エキスパート IC (Individual Contributor) | 高性能インフラ & 暗号セキュリティ**
 
+**Writer @ CoinsBench (Web3 Security & Infrastructure)**
+
 - **Email:** zhouwei6160@gmail.com
 - **GitHub:** [https://github.com/starwar6160](https://github.com/starwar6160)
 - **LinkedIn:** [https://www.linkedin.com/in/zhouwei6160/](https://www.linkedin.com/in/zhouwei6160/)

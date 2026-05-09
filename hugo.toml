@@ -51,17 +51,18 @@ defaultContentLanguageInSubdir = false
 
 [params]
     env = 'production'
-    author = 'Zhou Wei'
+    author = 'Senior Backend Architect'
     
     [params.label]
         text = "Home"
         link = "/"
 
+    showSocialIcons = true
     images = ["images/406_hash_chain_otp_preview_1775436006374.webp"]
 
     [params.description]
-        en = "Senior Backend Architect & Security Forensic Expert."
-        ja = "シニア・バックエンド・アーキテクト & セキュリティ・フォレンジック・エキスパート。"
+        en = "Senior Backend Architect | Writer @ CoinsBench (Web3 Security & Infrastructure)"
+        ja = "シニア・バックエンド・アーキテクト | Writer @ CoinsBench (Web3 Security & Infrastructure)"
 
     [params.profileMode]
         enabled = false
@@ -81,3 +82,9 @@ defaultContentLanguageInSubdir = false
     [[params.socialIcons]]
         name = "twitter"
         url = "https://x.com/st22102"
+    [[params.socialIcons]]
+        name = "telegram"
+        url = "https://t.me/deepblue6160"
+    [[params.socialIcons]]
+        name = "wechat"
+        url = "https://portfolio.st6160.click/images/wechat_qr.png"

@@ -12,6 +12,8 @@ disableHLJS: false
 # シニア・バックエンド・アーキテクト / プリンシパル・エンジニア
 
 行政的なマネジメント業務に埋もれることなく、複雑かつミッションクリティカルなアーキテクチャのボトルネックを直接解決することで、エンジニアリング投資利益率（ROI）を最大化します。暗号セキュリティ、分散システム、およびベアメタル・パフォーマンスの境界線で活動しています。
+   
+**Writer @ CoinsBench (Web3 Security & Infrastructure)**
 
 ## インフラを支える3つの柱
 
@@ -67,4 +69,4 @@ disableHLJS: false
 ### 安全な通信 (Secure Communication)
 機密性の高いお問い合わせについては、PGP暗号化メールをご利用いただけます。  
 **フィンガープリント**: `1BE2 0DFE DD3D 1B1E A66E  A0DE 1BA8 7F41 1AE4 A518`  
-**公開鍵**: [PGP公開鍵をダウンロード](/Zhou_Wei_0x1BA87F411AE4A518_public.asc)
+**公開鍵**: [PGP公開鍵をダウンロード](/0x1BA87F411AE4A518_public.asc)

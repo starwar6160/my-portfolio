@@ -13,6 +13,8 @@ disableHLJS: false
 
 I provide maximum engineering ROI by solving complex, mission-critical architectural bottlenecks without taking on administrative people-management roles. Operating at the convergence of cryptographic security, distributed systems, and bare-metal performance.
 
+**Writer @ CoinsBench (Web3 Security & Infrastructure)**
+
 ## The Three Pillars of Infrastructure
 
 ### Pillar 1: Cryptographic Security
@@ -67,4 +69,4 @@ I provide maximum engineering ROI by solving complex, mission-critical architect
 ### Secure Communication
 For confidential inquiries, you can reach me via PGP encrypted email.
 **Fingerprint**: `1BE2 0DFE DD3D 1B1E A66E  A0DE 1BA8 7F41 1AE4 A518`  
-**Public Key**: [Download PGP Public Key](/Zhou_Wei_0x1BA87F411AE4A518_public.asc)
+**Public Key**: [Download PGP Public Key](/0x1BA87F411AE4A518_public.asc)
