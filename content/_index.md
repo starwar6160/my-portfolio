@@ -1,72 +1,62 @@
 ---
-title: "Senior Backend Architect Portfolio"
-date: 2026-04-08
+title: "Senior Backend & Systems Architecture"
+date: 2026-05-20
 draft: false
 hidemeta: true
 comments: false
-description: "20-year veteran active coder specializing in solving mission-critical architectural bottlenecks."
+description: "Technical Rescue for High-Stakes Systems"
 disableShare: true
 disableHLJS: false
 ---
 
-# Senior Backend Architect / Principal Engineer
+# Senior Backend & Systems Architecture
 
-I provide maximum engineering ROI by solving complex, mission-critical architectural bottlenecks without taking on administrative people-management roles. Operating at the convergence of cryptographic security, distributed systems, and bare-metal performance.
+## Technical Rescue for High-Stakes Systems
 
-**Writer @ CoinsBench (Web3 Security & Infrastructure)**
+I help teams stabilize complex software systems where the real problem is not just implementation, but architectural drift, unclear ownership, and hard-to-reproduce failures.
 
-## The Three Pillars of Infrastructure
+My work is strongest in environments where the team needs someone who can:
 
-### Pillar 1: Cryptographic Security
-- **Hand-Rolled Cryptographic Primitives**: Implemented ECC, SM2/SM3/SM4/SM9 from scratch under <8KB RAM.
-- **Threshold Secret Sharing**: (5,3) Shamir Threshold schemes and KDF-based key diversification.
-- **Side-Channel Resistance**: Constant-time execution paths for timing attack prevention.
+- Quickly understand a large legacy codebase
+- Trace issues through code, logs, protocols, and runtime behavior
+- Reduce ambiguity with clear technical documentation
+- Deliver fixes and a practical recovery plan, not just analysis
 
-### Pillar 2: High-Performance Infrastructure
-- **Deterministic Computing**: VM execution optimization and bytecode-level performance tuning.
-- **Kernel Surgery**: Linux kernel tuning (eBPF, Cgroups) and sub-microsecond IPC (200ns).
-- **Storage Engineering**: Hyper-scale cluster optimization for 10.7 billion records.
+### What I Solve
 
-### Pillar 3: Distributed Systems & Concurrency
-- **Resilient Control Planes**: Architected Go+Neo4j routing engines with 90% bandwidth reduction.
-- **Rescue Engineering**: Stabilized paralyzed platforms and eradicated "distributed monolith" crises.
+- Legacy systems that are difficult to maintain or migrate
+- High-concurrency backend bottlenecks
+- Protocol-level bugs and integration issues
+- Security-adjacent backend and firmware problems
+- Production incidents that require fast root-cause analysis
 
-## Technical Lexicon
+### Business Value
 
-- **Expertise**: C/C++, Go, Assembly, Linux Kernel, eBPF, Cryptography (SM-series), **Malware Forensics**.
-- **Infrastructure**: Docker, Kubernetes, CI/CD Hardening, Zero-Copy IPC, **128GB Linux Lab**.
-- **AI Tooling**: Autonomous Codebase Auditing (Claude Code / DeepSeek).
+- Faster diagnosis: I compress long discovery cycles into focused technical audits
+- Lower execution risk: I help teams move from uncertainty to a concrete fix plan
+- Better system resilience: I focus on structure, boundaries, and operational stability
+- Less coordination overhead: I work document-first and async-first
 
----
+### Relevant Experience
 
-## Engineering Highlights
+- 20+ years in software engineering and systems architecture
+- C/C++, Go, distributed systems, backend infrastructure, and protocol analysis
+- Legacy system recovery, high-throughput backend work, and embedded/security-related debugging
+- Strong experience with troubleshooting difficult bugs in production-like environments
 
-- **50x Throughput Boost**: Re-engineered synchronous pipelines into async batch-upsert architectures (70s → 1.5s).
-- **92% Memory Reduction**: Optimized crypto engines for extreme embedded constraints (120KB → 9.3KB).
-- **Rescue Mission**: Restored paralyzed grid operations in zero-documentation environments.
+### Working Style
 
----
+- Japanese is available for necessary on-site coordination
+- Core communication is document-driven and asynchronous
+- I work well with teams that value technical clarity and predictable execution
+- Best fit: Fintech, SaaS platforms, Infra, SRE, security-adjacent backend, high-concurrency systems, and legacy modernization
 
-### 🛡️ Featured Technical Case Studies: The Triple-Pillar Narrative
+### Evidence
 
-> **"Bridging the gap between 12KB embedded constraints and hyper-scale distributed systems."**
+- Portfolio: https://portfolio.st6160.click/ja/portfolio-ses/
+- Medium: https://medium.com/@zhouwei6160
+- Zenn: https://zenn.dev/zhouwei6160
 
-| **The Foundation** | **The Active Defense** | **The Architecture** |
-| :--- | :--- | :--- |
-| **[In the 12KB Trenches](/cases/system-sovereignty-12kb)** | **[Web3 Trojan Forensics](/cases/web3-scam-exposure)** | **[The Bridge Time Bomb](/cases/cross-language-bridge)** |
-| *Lessons from the "System Underworld".* | *Exposing recruitment scams.* | *Defusing memory corruption.* |
-| `Bare Metal` `Crypto` | `Forensics` `Malware` | `Polyglot` `Lifecycle` |
-| [日本語 (Zenn)](https://zenn.dev/zhouwei6160/articles/f845bf605fb754) | [日本語 (Zenn)](https://zenn.dev/zhouwei6160/articles/3c7561f85723af) | [日本語 (Zenn)](https://zenn.dev/zhouwei6160/articles/4e654583f53e64) |
+### Contact
 
-#### Hardcore Forensic Proofs
-```c
-#define MR_STATIC 32
-// Manual RAM control in 12KB SRAM: 
-// Forcing stack-based allocation to survive 0x05E3 "Hex Ghosts".
-```
-
----
-### Secure Communication
-For confidential inquiries, you can reach me via PGP encrypted email.
-**Fingerprint**: `1BE2 0DFE DD3D 1B1E A66E  A0DE 1BA8 7F41 1AE4 A518`  
-**Public Key**: [Download PGP Public Key](/0x1BA87F411AE4A518_public.asc)
+If your team needs a technical specialist for architecture recovery, backend stabilization, or difficult troubleshooting work, feel free to reach out.
