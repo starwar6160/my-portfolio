@@ -11,7 +11,7 @@ disableHLJS: false
 
 # 複雑システム・レガシー・Infra
 
-日本の営業や現場で先に見せるなら、この3ページを起点にしてください。
+日本の技術担当や現場で先に見せるなら、この3ページを起点にしてください。
 
 - [技術ポートフォリオ](/ja/portfolio-ses/)
 - [複雑システム実績索引](/ja/docs/high-difficulty-ses-index/)
@@ -30,10 +30,10 @@ disableHLJS: false
 - Security / Protocol analysis
 - 分散バックエンド / ミッションクリティカルシステム
 
-### 営業が先に見せやすいページ
+### 先に見せやすいページ
 
 - [ポートフォリオ](/ja/portfolio-ses/): 技術領域と適合領域を1ページで説明
-- [実績索引](/ja/docs/high-difficulty-ses-index/): 顧客に出しやすい実績一覧
+- [実績索引](/ja/docs/high-difficulty-ses-index/): 顧客に共有しやすい実績一覧
 - [技術ブログ](/docs/): 補足資料や深掘り用の入口
 
 ### 伝え方の軸

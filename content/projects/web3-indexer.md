@@ -1,5 +1,5 @@
 ---
-title: "Web3 Indexer: Go Reliability Architecture"
+title: "Web3 Indexer: Go Reliability Profile"
 date: 2026-03-20
 description: "Re-engineering an EVM blockchain indexer from TypeScript to Go, with strong durability and resilience under reorg conditions."
 categories: ["Tech Projects"]

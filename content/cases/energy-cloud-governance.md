@@ -29,7 +29,7 @@ Operating on a 25Gbps Cloud HPC cluster, I benchmarked transport protocols to en
 
 ---
 
-## 3. Engineering Leadership & Governance
+## 3. Engineering Governance & Coordination
 
 Scaling a platform is as much about human engineering as it is about code. I instituted a "Regular Army" (正规军) engineering standard:
 
