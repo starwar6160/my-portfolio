@@ -41,7 +41,7 @@ Traditional points systems rely on "numbers in a database" protected by password
 - **Immutable Storage**: Persist the Hash Chain in AWS S3 Object Lock, ensuring 99.9999% immutability.
 
 ## 5. Architectural Vision
-This audit proves the value of **External Technical Due Diligence**. By applying modern SRE methodologies to legacy enterprise systems, we can uncover massive cost savings and security hardening opportunities without requiring a full, risky system rewrite.
+This audit proves the value of **External Technical Due Diligence**. By applying modern SRE methodologies to legacy enterprise systems, we can uncover cost savings and security hardening opportunities without requiring a full, risky system rewrite.
 
 ## Commercial Value Delivered
-This approach bridges the critical gap between deep technical troubleshooting and C-level revenue protection. By proactively identifying these performance bottlenecks before they are dismissed as generic "user drop-off", organizations can preemptively secure targeted digital revenue (conservatively ~800M JPY) and protect long-term brand equity without undertaking massive, risky capital expenditures.
+This approach bridges the critical gap between deep technical troubleshooting and business risk reduction. By proactively identifying these reliability bottlenecks before they are dismissed as generic "user drop-off", organizations can protect targeted digital revenue (conservatively ~800M JPY) and protect long-term brand equity without undertaking massive, risky capital expenditures.

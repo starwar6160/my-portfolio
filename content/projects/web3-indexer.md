@@ -1,7 +1,7 @@
 ---
 title: "Web3 Indexer: Go Reliability Architecture"
 date: 2026-03-20
-description: "Re-engineering a high-availability EVM blockchain indexer from TypeScript to Go, with strong durability and resilience under reorg conditions."
+description: "Re-engineering an EVM blockchain indexer from TypeScript to Go, with strong durability and resilience under reorg conditions."
 categories: ["Tech Projects"]
 tags: ["Go", "EVM", "Blockchain", "Concurrency", "SRE"]
 ---
@@ -41,7 +41,7 @@ Leveraged Goroutines and Buffered Channels to implement **Backpressure Control**
 - **Failover Connection Pool**: Implemented a multi-node proxy with **Exponential Backoff** logic.
 - **Traffic Shaping**: Used **Token Bucket** algorithms for precise RPC rate limiting.
 
-## Architectural Deep Dive: Reliability at Scale
+## Architectural Deep Dive: Reliability in Production
 
 To support the high-stakes RWA (Real-World Asset) market, the indexer must guarantee data eventual consistency and sub-second latency.
 
@@ -61,5 +61,5 @@ Traditional polling creates "thundering herd" problems. I implemented a push-pul
 - **Ultra-Lightweight Deployment**: Reduced Docker image size from ~200MB to **~20MB** through multi-stage builds and zero-dependency binaries.
 - **High Availability**: Maintained **99.9% data durability** even when operating under unstable public RPC endpoints.
 
-## Commercial Value Delivered
-In decentralized finance, data ingestion delays and inaccuracy translate directly into user financial loss and catastrophic brand mistrust. By guaranteeing 99.9% data durability and precision, this architecture safeguards the integrity of trading algorithms and prevents multi-million dollar clearing discrepancies. Additionally, reducing deployment bloat enables the engineering team to iterate with less operational risk while significantly lowering cloud hosting costs.
+## Operational Value
+In decentralized finance, data ingestion delays and inaccuracy translate directly into user financial loss and catastrophic brand mistrust. By improving data durability and precision, this architecture safeguards the integrity of trading algorithms and prevents multi-million dollar clearing discrepancies. Additionally, reducing deployment bloat enables the engineering team to iterate with less operational risk while lowering cloud hosting costs.

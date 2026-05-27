@@ -1,7 +1,7 @@
 ---
-title: "複雑システム向け 技術アーキテクト・ポートフォリオ"
+title: "複雑システム向け エンジニアポートフォリオ"
 date: 2026-05-20
-description: "複雑系の解析、Legacy刷新、Infra、Embedded、高信頼性システムに強みを持つ23年経験のシニアソフトウェアエンジニア／アーキテクトの実績紹介。"
+description: "複雑系の解析、Legacy刷新、Infra、Embedded、高信頼性システムに強みを持つ23年経験のシニアソフトウェアエンジニア／アーキテクトの技術紹介。"
 layout: "simple"
 ---
 
@@ -29,7 +29,7 @@ layout: "simple"
 
 ---
 
-### 3. 実績・対応事例 / Proven Track Records (Case Studies)
+### 3. 実績・対応事例 / Proven Track Records
 
 #### ① 24年運用のPHP製レガシーモノリス解析と安定化支援
 - **問題**: 仕様書と実装が乖離し、長年の変更で障害原因の切り分けが困難になっていた巨大レガシーシステム。
@@ -59,7 +59,7 @@ layout: "simple"
 - **得意領域**: Automotive、Infra / Platform、金融系 Legacy modernization、Embedded / Edge、Security / Protocol analysis、高信頼性・分散バックエンド。
 - **補足**: 技術課題の重い現場ほど、価値を出しやすいタイプです。
 
-### 6. 対応しやすい領域 / Suitable Engagements
+### 6. 対応しやすい領域 / Suitable Areas
 - レガシーシステム刷新
 - 原因不明障害の解析
 - 高負荷システムの性能改善

@@ -1,12 +1,12 @@
 ---
-title: "Energy Cloud Governance: Mission-Critical Grid Data"
+title: "Energy Cloud Governance: Grid Data Reliability"
 date: 2026-04-03
 categories: ["Case Studies"]
 tags: ["Cloud Architecture", "Big Data", "Elasticsearch", "Performance Tuning", "SRE"]
-description: "Architecting a mission-critical power data platform on Alibaba Cloud, with Elasticsearch tuning and network-level resilience."
+description: "Architecting a power data platform on Alibaba Cloud, with Elasticsearch tuning and network-level resilience."
 ---
 
-# Energy Cloud Governance: Stabilizing the Grid's Data
+# Energy Cloud Governance: Grid Data Reliability
 
 As the lead architect for a national-level Energy Cloud platform (handling power trading and microgrid management), I was responsible for transforming a prototype into an industrial-grade infrastructure capable of handling tens of billions of data points with sub-second retrieval latency.
 
@@ -43,7 +43,7 @@ Scaling a platform is as much about human engineering as it is about code. I ins
 
 - **Operational Stabilization**: Reduced routing and retrieval time from several seconds down to **65ms~137ms**.
 - **93% Data Compression**: Reduced telemetry payload sizes by implementing specialized time-series compression algorithms (Delta-of-Delta).
-- **Zero-Downtime Governance**: Achieved a stable CI/CD pipeline where every deployment is traced via dynamically injected Git hashes, ensuring 100% production accountability.
+- **Deployment Traceability**: Achieved a stable CI/CD pipeline where every deployment is traced via dynamically injected Git hashes, improving production accountability.
 
 ---
 
