@@ -1,20 +1,20 @@
 ---
-title: "高難度システム障害解析・レガシー刷新"
+title: "複雑システム・レガシー・Infra"
 date: 2026-05-27
 draft: false
 hidemeta: true
 comments: false
-description: "複雑系、Legacy、Infra、Embedded、高信頼性バックエンドに強みを持つシニアエンジニアの日本語ポータル。"
+description: "複雑系、Legacy、Infra、Embedded、高信頼性システムに強みを持つシニアエンジニアの日本語ポータル。"
 disableShare: true
 disableHLJS: false
 ---
 
-# 高難度システム障害解析・レガシー刷新
+# 複雑システム・レガシー・Infra
 
 日本の営業や現場で先に見せるなら、この3ページを起点にしてください。
 
-- [SES・派遣向けポートフォリオ](/ja/portfolio-ses/)
-- [高難度案件の索引](/ja/docs/high-difficulty-ses-index/)
+- [技術ポートフォリオ](/ja/portfolio-ses/)
+- [複雑システム実績索引](/ja/docs/high-difficulty-ses-index/)
 - [技術プロジェクト一覧](/ja/projects/)
 
 ## まず伝える価値
@@ -22,7 +22,7 @@ disableHLJS: false
 私は、標準CRUDよりも複雑なシステム解析に向いています。
 強みは、コード・ログ・挙動から構造を逆算し、問題を再現し、切り分け、修正と再発防止まで持っていくことです。
 
-### 向いている案件
+### 向いている領域
 
 - Automotive / Embedded
 - Infra / Platform / SRE
@@ -32,8 +32,8 @@ disableHLJS: false
 
 ### 営業が先に見せやすいページ
 
-- [ポートフォリオ](/ja/portfolio-ses/): 技術領域と案件適性を1ページで説明
-- [案件索引](/ja/docs/high-difficulty-ses-index/): 顧客に出しやすい実績一覧
+- [ポートフォリオ](/ja/portfolio-ses/): 技術領域と適合領域を1ページで説明
+- [実績索引](/ja/docs/high-difficulty-ses-index/): 顧客に出しやすい実績一覧
 - [技術ブログ](/docs/): 補足資料や深掘り用の入口
 
 ### 伝え方の軸
