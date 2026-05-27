@@ -1,18 +1,18 @@
 ---
-title: "Technical Audit: Toyoko INN Performance & Security"
+title: "Technical Audit: Toyoko INN Reliability & Security"
 date: 2026-03-25
-description: "External performance auditing of a massive reservation system (143.9B JPY scale), identifying 800M JPY in potential salvageable revenue through architectural optimization."
+description: "External technical auditing of a massive reservation system (143.9B JPY scale), identifying 800M JPY in potential salvageable revenue through reliability-focused optimization."
 categories: ["Case Studies"]
 tags: ["Audit", "Performance", "Security", "Hash Chain", "Architecture"]
 ---
 
-# Performance Audit: Toyoko INN Reservation System
+# Reliability Audit: Toyoko INN Reservation System
 
-This external audit was conducted to identify mission-critical performance bottlenecks and security vulnerabilities in a major hospitality reservation system. Operating with zero internal access, I developed automated Python probes to quantify the system's performance from a "real-world" user perspective.
+This external audit was conducted to identify mission-critical reliability bottlenecks and security vulnerabilities in a major hospitality reservation system. Operating with zero internal access, I developed automated Python probes to evaluate the system from a "real-world" user perspective.
 
 ## 1. Executive Summary: The Revenue Leak
 The audit revealed a **Desktop LCP (Largest Contentful Paint) of 3.72s**, significantly exceeding the 2.5s industry standard. Under weak network conditions (representative of many travelers), this latency spikes to **16.0s**, leading to extreme churn risk.
-- **Estimated Commercial Impact**: Conservative modeling suggests that optimizing LCP to under 2.0s could salvage **500M to 800M JPY** in annually lost bookings.
+- **Estimated Commercial Impact**: Conservative modeling suggests that improving the user journey could salvage **500M to 800M JPY** in annually lost bookings.
 
 ## 2. Key Technical Findings
 
@@ -30,7 +30,7 @@ The audit revealed a **Desktop LCP (Largest Contentful Paint) of 3.72s**, signif
 - **Impact**: This 3.95x expansion indicates redundant libraries and failed tree-shaking, causing "main thread lockups" on slower mobile devices.
 
 ## 3. High-Security Proposal: Hash Chain-based Secure Ledger
-Beyond frontend performance, I proposed a "mathematically honest" foundation for the 7-million-member loyalty points system.
+Beyond frontend behavior, I proposed a "mathematically honest" foundation for the 7-million-member loyalty points system.
 
 ### The Problem
 Traditional points systems rely on "numbers in a database" protected by passwords. They remain vulnerable to internal database manipulation (insider threat) and clock drift in distributed cloud environments.

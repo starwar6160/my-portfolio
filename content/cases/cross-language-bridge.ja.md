@@ -178,7 +178,7 @@ try {
 }
 ```
 
-### パフォーマンス計測（QueryPerformanceCounter, ~2.7MHz, 精度 0.1ms）
+### タイミング計測（QueryPerformanceCounter, ~2.7MHz, 精度 0.1ms）
 
 | 操作 | 合計時間 | 実 I/O | ログ・オーバーヘッド |
 |---|---|---|---|

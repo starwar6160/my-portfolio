@@ -3,7 +3,7 @@ title: "Technical Debt Governance: Dismantling the 'Microservice Tax'"
 date: 2025-12-01
 categories: ["Case Studies"]
 tags: ["Architecture", "Refactoring", "Microservices", "Go", "AI Engineering"]
-description: "Resolving 100+ P0 bugs, scaling ETL performance 50x, and restructuring a fragmented microservice architecture into a production-ready infrastructure."
+description: "Resolving 100+ P0 bugs, stabilizing an ETL pipeline, and restructuring a fragmented microservice architecture into a production-ready infrastructure."
 ---
 
 # Technical Debt: The Silent Killer of Scaling
@@ -18,12 +18,12 @@ I led an aggressive consolidation effort, collapsing redundant services back int
 
 ---
 
-## 2. The ETL Performance Leap (70s → 1.5s)
+## 2. The ETL Stabilization Leap (70s → 1.5s)
 
 The core data ingestion pipeline, built on Java/Spring Boot 3, was suffering from continuous database deadlocks and sluggish synchronization.
 
 - **The Problem**: A monolithic 1,200-line service file utilizing highly abstracted ORM inserts was choking under load.
-- **The Solution**: I refactored the pipeline using the **Strategy Pattern** to handle heterogeneous data sources and bypassed ORM abstractions for high-volume transactions. By implementing native **Batch Upsert** logic (`INSERT ... ON DUPLICATE KEY UPDATE`), the ingestion time dropped from **70 seconds to 1.5 seconds**—a 50x performance boost.
+- **The Solution**: I refactored the pipeline using the **Strategy Pattern** to handle heterogeneous data sources and bypassed ORM abstractions for high-volume transactions. By implementing native **Batch Upsert** logic (`INSERT ... ON DUPLICATE KEY UPDATE`), the ingestion time dropped from **70 seconds to 1.5 seconds**.
 
 ---
 

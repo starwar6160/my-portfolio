@@ -215,7 +215,7 @@ Additional hardening measures:
 - **Destructor injection**: A safety net `Close()` check was injected into the C++ destructor to detect unreleased handles when the Qt test application terminated without explicit cleanup — catching residual process issues.
 - **Enum-to-integer downgrade**: Authentication results were changed from C++ `enum` to raw `int` (0 = success, 1 = failure), because enum types have compiler-dependent memory layouts (4 bytes vs. 1 byte) that caused alignment faults in cross-language marshaling.
 
-### Performance Instrumentation
+### Timing Instrumentation
 
 Using `QueryPerformanceCounter` (system high-precision timer, ~2.7 MHz base frequency, 0.1 ms resolution), the following hardware operation timings were established:
 
