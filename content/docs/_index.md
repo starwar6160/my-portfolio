@@ -1,4 +1,4 @@
 ---
-title: "Documents"
-description: "Anonymized whitepapers and professional dossiers."
+title: "Reference Documents"
+description: "Anonymized whitepapers, dossiers, and supporting technical references."
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Senior Backend & Systems Architecture"
+title: "Complex Systems, Infra, and Reliability"
 date: 2026-05-20
 draft: false
 hidemeta: true
@@ -11,7 +11,7 @@ disableHLJS: false
 
 # Senior Backend & Systems Architecture
 
-## Technical Rescue for High-Stakes Systems
+## Technical Rescue for Complex, Mission-Critical Systems
 
 I help teams stabilize complex software systems where the real problem is not just implementation, but architectural drift, unclear ownership, and hard-to-reproduce failures.
 
