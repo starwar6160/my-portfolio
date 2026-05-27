@@ -28,7 +28,7 @@ disableHLJS: false
 - Infra / Platform / SRE
 - 金融系 Legacy modernization
 - Security / Protocol analysis
-- 高並列バックエンド / 分散システム
+- 分散バックエンド / ミッションクリティカルシステム
 
 ### 営業が先に見せやすいページ
 
