@@ -3,7 +3,7 @@ title: "Rethinking Web3 Job Scams: Forensics of a Next.js Trojan"
 date: 2026-04-16
 categories: ["Case Studies", "Security"]
 tags: ["Cyber Security", "Forensics", "Web3", "Next.js", "Malware Analysis"]
-description: "A deep dive into a sophisticated recruitment scam targeting Web3 developers, featuring 128GB Linux lab analysis and obfuscated payload extraction."
+description: "A deep dive into a sophisticated recruitment scam targeting Web3 developers, with Linux-lab forensics and obfuscated payload extraction."
 ---
 
 # Rethinking Web3 Job Scams: How My 128GB Linux Lab Exposed a Highly Obfuscated Payload

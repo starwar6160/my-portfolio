@@ -1,7 +1,7 @@
 ---
-title: "Web3 Indexer: Go Engine Architecture"
+title: "Web3 Indexer: Go Reliability Architecture"
 date: 2026-03-20
-description: "Re-engineering a high-availability EVM blockchain indexer from TypeScript to Go, achieving 10x throughput and 99.9% data durability."
+description: "Re-engineering a high-availability EVM blockchain indexer from TypeScript to Go, with strong durability and resilience under reorg conditions."
 categories: ["Tech Projects"]
 tags: ["Go", "EVM", "Blockchain", "Concurrency", "SRE"]
 ---
@@ -22,14 +22,14 @@ This project involved evolving a high-availability EVM blockchain data indexing 
 ```text
 [User/DApp] ⮕ [EVM RPC Node] ⮕ [Your Go Indexer] ⮕ [PostgreSQL] ⮕ [Grafana/API]
 ```
-The system operates as a high-performance bridge between raw blockchain state and queryable relational data.
+The system operates as a reliable bridge between raw blockchain state and queryable relational data.
 
 ### 2. Native EVM Support
 [Project Source: starwar6160/web3-indexer-go](https://github.com/starwar6160/web3-indexer-go) (Internal demo engine)
 Re-engineered the entire pipeline in Go using the `holiman/uint256` library. This ensures memory-level compatibility with EVM math, eliminating precision truncation risks.
 
 ### 2. Three-Stage Decoupled Pipeline
-I designed a highly scalable architectural pattern:
+I designed a resilient architectural pattern:
 - **Fetcher**: Concurrent RPC data retrieval.
 - **Sequencer**: Corrects out-of-order data streams.
 - **Processor**: Atomic database persistence and validation.
@@ -50,16 +50,16 @@ Blockchain state is not final; deep reorgs can invalidate previously indexed dat
 - **ParentHash Recursive Validation**: The sequencer continuously validates the `ParentHash` chain. If a mismatch is detected at height *H*, the system triggers an emergency rollback.
 - **Atomic Rollback Vector**: Leverages **PostgreSQL Transactions** to delete all data from blocks ≥ *H*. Thanks to Foreign Key cascades, this automatically cleanses the `Transfers` and `Metadata` tables, maintaining a perfect ledger state.
 
-### 2. High-Concurrency Synchronization Engine
+### 2. Synchronization Engine
 Traditional polling creates "thundering herd" problems. I implemented a push-pull hybrid model:
 - **gRPC Stream Integration**: For real-time indexing, the fetcher utilizes gRPC streams to receive block manifests instantly, bypassing the RTT (Round Trip Time) of standard HTTP polling.
 - **Adaptive Worker Pools**: Batch historical synchronization is managed via a **Semaphore-based Worker Pool**. It dynamically modulates the number of concurrent fetchers based on RPC latency and 429 (Too Many Requests) signals.
 - **LRU Metadata Caching**: Frequently accessed contract ABIs and block headers are cached in an **LRU (Least Recently Used) cache**, reducing database I/O by 40% during backfilling operations.
 
 ## Key Outcomes
-- **10x Throughput Boost**: The Go engine supported 50+ concurrent synchronization routines on a single instance.
+- **Operational Resilience**: The Go engine supported 50+ synchronization routines on a single instance while preserving consistency.
 - **Ultra-Lightweight Deployment**: Reduced Docker image size from ~200MB to **~20MB** through multi-stage builds and zero-dependency binaries.
 - **High Availability**: Maintained **99.9% data durability** even when operating under unstable public RPC endpoints.
 
 ## Commercial Value Delivered
-In decentralized finance, data ingestion latency and inaccuracy translate directly into user financial loss and catastrophic brand mistrust. By guaranteeing 99.9% data durability and precision, this architecture safeguards the integrity of trading algorithms and prevents multi-million dollar clearing discrepancies. Additionally, slashing the deployment bloat enables the engineering team to iterate rapidly, maintaining agility in a hyper-competitive market while significantly reducing cloud hosting costs.
+In decentralized finance, data ingestion delays and inaccuracy translate directly into user financial loss and catastrophic brand mistrust. By guaranteeing 99.9% data durability and precision, this architecture safeguards the integrity of trading algorithms and prevents multi-million dollar clearing discrepancies. Additionally, reducing deployment bloat enables the engineering team to iterate with less operational risk while significantly lowering cloud hosting costs.

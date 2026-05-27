@@ -1,12 +1,12 @@
 ---
-title: "Energy Cloud Governance: Scaling to 10 Billion Records"
+title: "Energy Cloud Governance: Mission-Critical Grid Data"
 date: 2026-04-03
 categories: ["Case Studies"]
 tags: ["Cloud Architecture", "Big Data", "Elasticsearch", "Performance Tuning", "SRE"]
-description: "Architecting a high-performance power big data platform on Alibaba Cloud, handling 10B+ records with optimized Elasticsearch clusters and network-level protocol tuning."
+description: "Architecting a mission-critical power data platform on Alibaba Cloud, with Elasticsearch tuning and network-level resilience."
 ---
 
-# Energy Cloud Governance: Scaling the Grid's Data
+# Energy Cloud Governance: Stabilizing the Grid's Data
 
 As the lead architect for a national-level Energy Cloud platform (handling power trading and microgrid management), I was responsible for transforming a prototype into an industrial-grade infrastructure capable of handling tens of billions of data points with sub-second retrieval latency.
 
@@ -20,7 +20,7 @@ In a production environment with **10.7 billion documents** (approx. 700GB), sta
 
 ---
 
-## 2. Network Resilience Under High Packet Loss
+## 2. Network Resilience Under Severe Packet Loss
 
 Operating on a 25Gbps Cloud HPC cluster, I benchmarked transport protocols to ensure data consistency over the AS163 backbone, which frequently suffers from **55% packet loss** during peak hours.
 
@@ -41,7 +41,7 @@ Scaling a platform is as much about human engineering as it is about code. I ins
 
 ## Key Achievements
 
-- **50x Performance Leap**: Scaled the routing engine and data retrieval from several seconds down to **65ms~137ms**.
+- **Operational Stabilization**: Reduced routing and retrieval time from several seconds down to **65ms~137ms**.
 - **93% Data Compression**: Reduced telemetry payload sizes by implementing specialized time-series compression algorithms (Delta-of-Delta).
 - **Zero-Downtime Governance**: Achieved a stable CI/CD pipeline where every deployment is traced via dynamically injected Git hashes, ensuring 100% production accountability.
 

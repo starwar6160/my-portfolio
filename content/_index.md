@@ -28,7 +28,7 @@ My work is strongest in environments where the team needs someone who can:
 - Distributed and mission-critical backend bottlenecks
 - Protocol-level bugs and integration issues
 - Security-adjacent backend and firmware problems
-- Production incidents that require fast root-cause analysis
+- Production incidents that require precise root-cause analysis
 
 ### Business Value
 

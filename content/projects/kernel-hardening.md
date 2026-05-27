@@ -1,12 +1,12 @@
 ---
-title: "Air-Gapped Hardening: Surgical Linux Kernel Customization"
+title: "Air-Gapped Hardening: Reliable Linux Kernel Customization"
 date: 2026-03-01
-description: "Reducing the attack surface and boot latency of air-gapped systems by stripping the Linux kernel down to its minimal functional primitives."
+description: "Reducing the attack surface of air-gapped systems by stripping the Linux kernel down to its minimal functional primitives and improving operational predictability."
 categories: ["Tech Projects"]
 tags: ["Linux", "Kernel", "Security", "SRE", "Optimization", "C"]
 ---
 
-# Air-Gapped Hardening: Surgical Kernel Customization
+# Air-Gapped Hardening: Reliable Kernel Customization
 
 In high-security, air-gapped environments (e.g., critical state-owned infrastructure), "off-the-shelf" operating systems are often too bloated, presenting an unnecessarily large attack surface. This project involved deep-kernel surgery to create a minimalist, hardened Linux environment specifically for mission-critical hardware deployment.
 
@@ -31,7 +31,7 @@ Working in an environment with **zero internet access**, I had to architect a lo
 
 ---
 
-## 3. Results: The "Regular Army" Standard
+## 3. Results: Reliability-First Engineering
 
 This "Regular Army" (正規軍) grade engineering resulted in a kernel that was not just faster, but mathematically more defensible. By reducing the source lines of code in the active kernel image by over **40%**, we significantly lowered the probability of zero-day exploitation and established a Root of Trust grounded in minimalist engineering.
 
