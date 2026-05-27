@@ -49,6 +49,23 @@ defaultContentLanguageInSubdir = false
         url = "/docs"
         weight = 40
 
+    [[languages.ja.menu.main]]
+        name = "ポートフォリオ"
+        url = "/ja/portfolio-ses/"
+        weight = 10
+    [[languages.ja.menu.main]]
+        name = "高難度案件一覧"
+        url = "/ja/docs/high-difficulty-ses-index/"
+        weight = 20
+    [[languages.ja.menu.main]]
+        name = "技術プロジェクト"
+        url = "/ja/projects/"
+        weight = 30
+    [[languages.ja.menu.main]]
+        name = "ドキュメント"
+        url = "/ja/docs/"
+        weight = 40
+
 [params]
     env = 'production'
     author = 'Senior Backend Architect'
