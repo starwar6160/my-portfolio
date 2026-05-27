@@ -118,7 +118,7 @@ To survive, we resorted to an extreme dimensionality reduction attack: **Camoufl
 #define HID_PID 0x5710
 ```
 
-However, masquerading high-concurrency cryptographic interactions as mouse and keyboard polling signals triggered severe physical timing tears.
+However, masquerading parallel cryptographic interactions as mouse and keyboard polling signals triggered severe physical timing tears.
 
 ### The Melee of Milliseconds and Microseconds: The 30ms Deadline and 80ms Gap
 

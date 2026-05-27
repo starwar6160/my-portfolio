@@ -21,7 +21,7 @@ USB HID is physically limited to **64-byte packets** (Reports). To transmit comp
 - **The 58-Byte Payload**: Each frame delivers a maximum of 58 bytes of actual data, ensuring 100% deterministic assembly.
 
 ### Architecture Evolution
-Originally limited to 8 blocks, I scaled the reassembly buffer to **12 blocks** and introduced **Session Handles** to isolate concurrent data packets in multi-threaded environments, preventing race conditions during high-concurrency stress tests.
+Originally limited to 8 blocks, I scaled the reassembly buffer to **12 blocks** and introduced **Session Handles** to isolate concurrent data packets in multi-threaded environments, preventing race conditions during stress tests.
 
 ---
 

@@ -56,7 +56,7 @@ layout: "simple"
 
 ### 5. 参画スタイル / Engagement Preference
 - **稼働形態**: リモートまたはハイブリッドを優先。
-- **得意領域**: Automotive、Infra / Platform、金融系 Legacy modernization、Embedded / Edge、Security / Protocol analysis、高並列バックエンド。
+- **得意領域**: Automotive、Infra / Platform、金融系 Legacy modernization、Embedded / Edge、Security / Protocol analysis、高信頼性・分散バックエンド。
 - **補足**: 技術課題の重い現場ほど、価値を出しやすいタイプです。
 
 ### 6. 対応しやすい案件例 / Suitable Engagements

@@ -1,13 +1,13 @@
 ---
 title: "Senior Backend Architect / Principal Engineer"
 date: 2026-04-08
-description: "Professional dossier of a 20-year veteran active coder specializing in high-performance infrastructure and cryptographic security."
+description: "Professional dossier of a 20-year veteran active coder specializing in high-reliability infrastructure and cryptographic security."
 layout: "simple"
 ---
 
 # Professional Dossier: Senior Backend Architect
 
-**Expert IC (Individual Contributor) | High-Performance Infrastructure & Cryptographic Security**
+**Expert IC (Individual Contributor) | High-Reliability Infrastructure & Cryptographic Security**
 
 **Writer @ CoinsBench (Web3 Security & Infrastructure)**
 
@@ -19,7 +19,7 @@ layout: "simple"
 
 ## EXECUTIVE SUMMARY
 
-As a **20-year veteran active coder**, I provide maximum engineering ROI by solving complex, mission-critical architectural bottlenecks without taking on administrative people-management roles. Operating at the convergence of cryptographic security, distributed systems, and bare-metal performance, I architect fault-tolerant environments from the kernel syscall up to the container orchestration layer.
+As a **20-year veteran active coder**, I provide maximum engineering ROI by solving complex, mission-critical architectural bottlenecks without taking on administrative people-management roles. Operating at the convergence of cryptographic security, distributed systems, and system-level reliability, I architect fault-tolerant environments from the kernel syscall up to the container orchestration layer.
 
 ### The "Rescue Engineer" Advantage
 When a distributed platform's throughput hits a physical wall, or a catastrophic failure occurs in a zero-documentation/legacy environment, I act as the definitive technical escalation point. I have systematically stabilized paralyzed platforms—tracing ghost-byte hardware bugs from 14MB hex dumps and diagnosing undocumented kernel panics to implement zero-downtime hotfixes.
@@ -33,12 +33,12 @@ When a distributed platform's throughput hits a physical wall, or a catastrophic
 - **Threshold Secret Sharing**: Deployed production **(5,3) Shamir Threshold Secret Sharing** schemes.
 - **Side-Channel Resistance**: Enforced constant-time execution paths and engineered hybrid entropy (TRNG).
 
-### Pillar 2: High-Performance Infrastructure
+### Pillar 2: High-Reliability Infrastructure
 - **Deterministic Computing**: Mastered bytecode layout and memory alignment for absolute operational determinism.
 - **I/O Engineering**: Benchmarked clusters processing **10.7 billion records**, quantifying and resolving 20x latency degradation.
 - **Kernel Surgery**: Linux kernel tuning (eBPF, Cgroups) and sub-microsecond IPC (**200ns** latency).
 
-### Pillar 3: Distributed Systems & Concurrency
+### Pillar 3: Distributed Systems & Parallelism
 - **SD-WAN Control Plane**: Architected Go+Neo4j routing engines, **cutting bandwidth by 90%**.
 - **Distributed Consistency**: Resolved "distributed monolith" crises and optimized WebSocket event layers.
 

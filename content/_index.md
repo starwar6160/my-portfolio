@@ -4,7 +4,7 @@ date: 2026-05-20
 draft: false
 hidemeta: true
 comments: false
-description: "Technical Rescue for High-Stakes Systems"
+description: "Technical Rescue for Complex, Mission-Critical Systems"
 disableShare: true
 disableHLJS: false
 ---
@@ -25,7 +25,7 @@ My work is strongest in environments where the team needs someone who can:
 ### What I Solve
 
 - Legacy systems that are difficult to maintain or migrate
-- High-concurrency backend bottlenecks
+- Distributed and mission-critical backend bottlenecks
 - Protocol-level bugs and integration issues
 - Security-adjacent backend and firmware problems
 - Production incidents that require fast root-cause analysis
@@ -49,7 +49,7 @@ My work is strongest in environments where the team needs someone who can:
 - Japanese is available for necessary on-site coordination
 - Core communication is document-driven and asynchronous
 - I work well with teams that value technical clarity and predictable execution
-- Best fit: Fintech, SaaS platforms, Infra, SRE, security-adjacent backend, high-concurrency systems, and legacy modernization
+- Best fit: Fintech, SaaS platforms, Infra, SRE, security-adjacent backend, distributed systems, and legacy modernization
 
 ### Evidence
 

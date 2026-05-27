@@ -8,7 +8,7 @@ tags: ["Linux Kernel", "Embedded Systems", "Security", "C", "Toolchain"]
 
 # Kernel Surgery: Minimizing Attack Surface to 3.0MB
 
-In 2012, I was tasked with building the OS foundation for a mission-critical cryptographic appliance. This project required balancing extreme security constraints with modern execution requirements, all within a strictly air-gapped environment.
+In 2012, I was tasked with building the OS foundation for a mission-critical cryptographic appliance. This project required balancing extreme security constraints with reliable execution requirements, all within a strictly air-gapped environment.
 
 ## The Challenge
 - **Air-Gapped Environment**: No internet access. All toolchains and source code had to be manually bootstrapped from physical media.
