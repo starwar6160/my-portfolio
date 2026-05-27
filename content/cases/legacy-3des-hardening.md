@@ -1,5 +1,5 @@
 ---
-title: "Legacy Hardening: Rescuing Industrial Infrastructure with 3DES/AES"
+title: "Legacy Security Hardening: 3DES/AES Rescue Layer"
 date: 2026-03-01
 tags: ["Security", "Legacy Systems", "Cryptography", "Rescue Engineering"]
 description: "Strategically upgrading a decade-old legacy infrastructure by wrapping insecure protocols in modern cryptographic layers, preventing a multi-million dollar hardware recall."

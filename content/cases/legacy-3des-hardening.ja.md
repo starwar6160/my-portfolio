@@ -1,5 +1,5 @@
 ---
-title: "レガシー硬格化：3DES/AESによる産業インフラの救済"
+title: "レガシーセキュリティ強化：3DES/AESレスキューレイヤー"
 date: 2026-03-01
 tags: ["Security", "Legacy Systems", "Cryptography", "Rescue Engineering"]
 description: "安全性の低いプロトコルを現代的な暗号化レイヤーで包み込むことで、数百万ドル規模のハードウェア回収を回避し、10年物のレガシーインフラを戦略的にアップグレードした事例。"
