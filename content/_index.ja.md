@@ -28,14 +28,15 @@ AI 工程化、Backend、Reliability、Distributed Systems を短く整理して
 n8n + LLM を使った大規模予測ワークフローの最適化。
 
 - Payload reduction: 14KB → 5KB
-- Workflow batching redesign
+- batching を使った Workflow 再設計
 - Dual-model routing (Kimi K2 + GLM)
 - Token cost reduction
 - Runtime reduction: 3h → 70-120min
 - Telegram auto-alert integration
-- Retry / fail-safe workflow optimization
+- Retry / fail-safe を含む workflow 最適化
 
 AI を demo ではなく production workflow として扱う実務ケースです。
+AI Workflow、Backend、Automation、高信頼性システムを中心に、短納期 PoC から実運用改善まで対応可能。
 
 ## What I Do
 
