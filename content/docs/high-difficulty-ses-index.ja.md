@@ -15,7 +15,7 @@ description: "日本の営業・技術担当に先に見せやすい複雑シス
 
 | 優先 | ページ | 何が強いか | 日本の現場で刺さる理由 |
 |---|---|---|---|---|
-| A | [AI-assisted Pre-sales & Solution Design](/ja/portfolio-ses/) | AI Workflow、Solution Design、多言語提案、多バージョン文書生成 | 中小企業の短納期提案、AI 工程化、営業と技術の橋渡しに使いやすい |
+| A | [AI Solution Engineering / Pre-sales](/ja/portfolio-ses/) | AI Workflow、Solution Design、多言語提案、多バージョン文書生成 | 中小企業の短納期提案、AI 工程化、営業と技術の橋渡しに使いやすい |
 | A | [SM9 低レイヤ実装](/projects/sm9-low-level/) | 8KB RAM、ASN.1、TRNG、JNI、ドライバ連携 | 組み込み暗号、低RAM制約、ハードウェア直結の難案件に強い |
 | A | [12KB の戦壕](/cases/system-sovereignty-12kb/) | 12KB RAM、`MR_STATIC`、`mrkill`、MicroLib、物理制約下の暗号実装 | 低レイヤ、ベアメタル、資源制約が厳しい現場で差が出る |
 | A | [USB HID プロトコル](/projects/usb-hid-protocol/) | 64バイト制約、Report ID、65バイト回避、Windowsドライバ互換性 | プロトコル境界、Windows周辺、デバイス制御で強い |

@@ -24,10 +24,21 @@ disableHLJS: false
 
 AI については、モデル単体よりも、入力整形、モデル選択、Token 最適化、Batching、監視、異常時の制御を含めた Workflow 全体を見ます。
 
+### Main Stack
+
+- Go / Python / TypeScript
+- Linux / Docker / AWS
+- Kafka / MQTT / WebSocket
+- MySQL / Redis
+- n8n / AI Workflow
+- OAuth2 / JWT
+- Cypress / E2E
+- GitHub / CI/CD
+
 ### 向いている領域
 
 - AI / LLM Engineering
-- AI-assisted Solution Design / Pre-sales Engineering
+- AI Solution Engineering / Pre-sales
 - Automation / Workflow
 - Backend Engineering
 - Production Reliability
