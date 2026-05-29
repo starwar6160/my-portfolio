@@ -1,15 +1,15 @@
 ---
-title: "複雑システム・レガシー・Infra"
+title: "AI Application / Backend / Complex Systems"
 date: 2026-05-27
 draft: false
 hidemeta: true
 comments: false
-description: "複雑系、Legacy、Infra、Embedded、高信頼性システムに強みを持つシニアエンジニアの日本語ポータル。"
+description: "AI Application、LLM Integration、Complex Systems、Legacy、Infra、Embedded、高信頼性バックエンドに強みを持つシニアエンジニアの日本語ポータル。"
 disableShare: true
 disableHLJS: false
 ---
 
-# 複雑システム・レガシー・Infra
+# AI Application / Backend / Complex Systems
 
 日本の技術担当や現場で先に見せるなら、この3ページを起点にしてください。
 
@@ -19,11 +19,18 @@ disableHLJS: false
 
 ## まず伝える価値
 
-私は、標準CRUDよりも複雑なシステム解析に向いています。
+私は、標準 CRUD よりも複雑なシステム解析と、AI を実運用に落とし込む工程化に向いています。
 強みは、コード・ログ・挙動から構造を逆算し、問題を再現し、切り分け、修正と再発防止まで持っていくことです。
+
+AI については、モデル単体よりも、入力整形、モデル選択、Token 最適化、Batching、監視、異常時の制御を含めた Workflow 全体を見ます。
 
 ### 向いている領域
 
+- AI / LLM Engineering
+- AI-assisted Solution Design / Pre-sales Engineering
+- Automation / Workflow
+- Backend Engineering
+- Production Reliability
 - Automotive / Embedded
 - Infra / Platform / SRE
 - 金融系 Legacy modernization
@@ -39,7 +46,7 @@ disableHLJS: false
 ### 伝え方の軸
 
 - 単価より、案件の複雑度と技術密度
-- 一般Webより、Legacy / Infra / Embedded / 障害解析
+- 一般 Web より、AI Application / Legacy / Infra / Embedded / 障害解析
 - 会議型より、文書・ログ・差分ベースの進め方
 
 必要なら、営業向けの短文紹介文と、顧客向けの長文説明文を別々に使い分けてください。
