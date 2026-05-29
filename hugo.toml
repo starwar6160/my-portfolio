@@ -17,6 +17,9 @@ defaultContentLanguageInSubdir = false
         [languages.en.params]
             title = 'Home'
             description = 'High-Performance Infrastructure & Cryptographic Security'
+            [languages.en.params.label]
+                text = "Home"
+                link = "/"
             [languages.en.params.homeInfoParams]
                 Title = "Senior Backend Architect"
                 Content = "20-year veteran active coder specializing in mission-critical infrastructure, cryptographic security, and distributed systems."
@@ -26,11 +29,14 @@ defaultContentLanguageInSubdir = false
         languageName = '日本語'
         weight = 2
         [languages.ja.params]
-            title = 'シニアバックエンドアーキテクト'
-            description = '高性能インフラストラクチャ & 暗号セキュリティ'
+            title = 'AI工程化・Backend・Complex Systems'
+            description = 'SES営業が顧客へ転送しやすい、AI Engineering、Backend、Reliability、Distributed Systems の日本語入口。'
+            [languages.ja.params.label]
+                text = "ホーム"
+                link = "/ja/"
             [languages.ja.params.homeInfoParams]
-                Title = "シニアバックエンドアーキテクト"
-                Content = "ミッションクリティカルなインフラ、暗号セキュリティ、分散システムを専門とする20年の経験を持つ現役のターミナルコーダー。"
+                Title = "AI工程化・Backend・Complex Systems"
+                Content = "AI工程化、Backend、Reliability、Distributed Systems を営業が顧客へ転送しやすい形で整理した日本語ポータル。"
 
     [[menu.main]]
         name = "Web3 Indexer Demo"
