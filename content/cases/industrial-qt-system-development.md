@@ -113,7 +113,19 @@ The specific technology changed, but the engineering problem did not:
 - stabilize the runtime
 - improve the system without breaking production
 
-## 8. Results
+## 8. Operational Value and Team Fit
+
+For an industrial customer, the main value was not "Qt expertise" by itself. It was the ability to keep an existing platform usable while reducing operational risk.
+
+- Reduced operational instability during long-running telemetry sessions
+- Improved maintainability without requiring a risky full rewrite
+- Enabled incremental modernization while preserving existing industrial workflows
+- Reduced production-side troubleshooting cost by improving reproducibility of runtime issues
+- Worked within existing operational constraints and coordinated improvements without disrupting production work
+
+This is the kind of work that fits legacy modernization, production stabilization, and difficult troubleshooting assignments.
+
+## 9. Results
 
 - Recovered a legacy Qt 4.7.3 / VS2003 build and runtime environment
 - Improved stability for an industrial SCADA platform under production constraints
@@ -171,4 +183,3 @@ Legacy SCADA stabilization work in a power / wind energy environment, focused on
 - Architecture and Stability Lessons
 - Why This Experience Still Matters Today
 - Results
-
