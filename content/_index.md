@@ -1,62 +1,116 @@
 ---
-title: "Complex Systems, Infra, and Reliability"
+title: "Enterprise AI / Backend / Reliability Architect"
 date: 2026-05-20
 draft: false
 hidemeta: true
 comments: false
-description: "Technical Rescue for Complex, Mission-Critical Systems"
+description: "AI workflow engineering, production backend reliability, and complex system recovery for teams that need measurable risk reduction."
 disableShare: true
 disableHLJS: false
 ---
 
-# Senior Backend & Systems Architecture
+# Enterprise AI / Backend / Reliability Architect
 
-## Technical Rescue for Complex, Mission-Critical Systems
+## Production AI Systems for Complex, Mission-Critical Environments
 
-I help teams stabilize complex software systems where the real problem is not just implementation, but architectural drift, unclear ownership, and hard-to-reproduce failures.
+I help teams ship AI into production without increasing operational risk.
 
-My work is strongest in environments where the team needs someone who can:
+I work across AI workflow engineering, backend reliability, and legacy recovery, with observability and runtime validation built in from the start.
 
-- Quickly understand a large legacy codebase
-- Trace issues through code, logs, protocols, and runtime behavior
-- Reduce ambiguity with clear technical documentation
-- Deliver fixes and a practical recovery plan, not just analysis
+Best fit: teams that need AI features to work inside real systems, not isolated demos.
 
-### What I Solve
+### Market Fit
 
-- Legacy systems that are difficult to maintain or migrate
-- Distributed and mission-critical backend bottlenecks
-- Protocol-level bugs and integration issues
-- Security-adjacent backend and firmware problems
-- Production incidents that require precise root-cause analysis
+I translate complex engineering work into market-recognizable roles: AI Systems Engineer, Backend Reliability Engineer, Platform Engineer, and Technical Lead for production systems.
 
-### Business Value
+I am strongest in environments that need someone who can stabilize operational risk, modernize legacy systems, and keep AI workflows measurable, auditable, and safe in production.
 
-- Faster diagnosis: I compress long discovery cycles into focused technical audits
-- Lower execution risk: I help teams move from uncertainty to a concrete fix plan
-- Better system resilience: I focus on structure, boundaries, and operational stability
-- Less coordination overhead: I work document-first and async-first
+### ATS Keywords
 
-### Relevant Experience
+- AI Systems Engineer
+- AI Platform Engineer
+- Backend Engineer
+- Platform Engineer
+- Reliability Engineer
+- Site Reliability Engineer
+- Production AI
+- Workflow Automation
+- Runtime Validation
+- Observability
+- Distributed Systems
+- Legacy Modernization
+- Incident Response
+- Token Optimization
+- Multi-model Routing
 
-- 20+ years in software engineering and systems architecture
-- C/C++, Go, distributed systems, backend infrastructure, and protocol analysis
-- Legacy system recovery, high-throughput backend work, and embedded/security-related debugging
-- Strong experience with troubleshooting difficult bugs in production-like environments
+### What I Build
 
-### Working Style
+- AI-assisted operational platforms
+- Workflow automation systems
+- High-reliability backend services
+- Real-time distributed pipelines
+- Runtime validation and observability infrastructure
+- Migration-safe modernization layers
 
-- Japanese is available for necessary on-site coordination
-- Core communication is document-driven and asynchronous
-- I work well with teams that value technical clarity and predictable execution
-- Best fit: Fintech, SaaS platforms, Infra, SRE, security-adjacent backend, distributed systems, and legacy modernization
+### Engineering Principles
 
-### Evidence
+- Reduce operational risk before adding feature depth
+- Prefer observable, auditable systems over opaque ones
+- Ship incremental change over high-risk rewrites
+- Validate at runtime instead of assuming correctness
+- Use AI to lower operational load, not hide failure modes
+- Treat documentation as part of the system
 
-- Portfolio: https://portfolio.st6160.click/ja/portfolio-ses/
-- Medium: https://medium.com/@zhouwei6160
-- Zenn: https://zenn.dev/zhouwei6160
+### Selected Work
+
+#### AI Workflow Optimization
+
+- [Case study](/cases/nb-tech-debt/)
+- Problem: a degraded workflow and fragmented backend setup slowed delivery
+- Outcome: reduced ETL latency from 70 seconds to 1.5 seconds through batching, routing, and production stabilization
+
+#### Reliability Audit for Enterprise Booking Flow
+
+- [Case study](/cases/toyoko-inn-audit/)
+- Problem: latency and bundle inflation were affecting a revenue-critical booking flow
+- Outcome: identified concrete risk-reduction actions through an external reliability audit
+
+#### Firmware and Protocol Boundary Audit
+
+- [Case study](/cases/web3-rwa-audit/)
+- Problem: a high-stakes financial protocol had a business-logic flaw and fragile trust boundaries
+- Outcome: exposed an exploit path automated scanners missed and recommended institutional-grade controls
+
+### Deep Technical Archive
+
+For readers who want the low-level proof behind the positioning:
+
+- [Deep Technical Archive](/docs/deep-technical-archive/)
+- SM9 / pairing optimization / 13KB RAM
+- Protocol reverse engineering / firmware boundary analysis
+- Deterministic runtime design / constrained systems
+
+### Suitable Roles
+
+- Senior Backend Engineer
+- AI Systems Engineer
+- Platform Engineer
+- Site Reliability Engineer
+- Staff Engineer
+- Solutions Architect
+- Technical Lead for Backend, Infra, or AI
 
 ### Contact
 
-If your team needs a technical specialist for architecture recovery, backend stabilization, or difficult troubleshooting work, feel free to reach out.
+Available for:
+
+- Senior backend roles
+- AI infrastructure engineering
+- Technical audits
+- System stabilization projects
+- High-risk migration support
+- Full-time roles
+- Contract engagements
+- Advisory / escalation support
+
+If your team needs someone who can make a complex system safer, clearer, and easier to operate, feel free to reach out.

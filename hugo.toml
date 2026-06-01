@@ -16,13 +16,13 @@ defaultContentLanguageInSubdir = false
         weight = 1
         [languages.en.params]
             title = 'Home'
-            description = 'High-Performance Infrastructure & Cryptographic Security'
+            description = 'Enterprise AI / Backend / Reliability Architect'
             [languages.en.params.label]
                 text = "Home"
                 link = "/"
             [languages.en.params.homeInfoParams]
-                Title = "Senior Backend Architect"
-                Content = "20-year veteran active coder specializing in mission-critical infrastructure, cryptographic security, and distributed systems."
+                Title = "Enterprise AI / Backend / Reliability Architect"
+                Content = "I help teams integrate AI into production systems safely, with observability, runtime validation, workflow automation, and operational resilience."
 
     [languages.ja]
         languageCode = 'ja-jp'
@@ -84,7 +84,7 @@ defaultContentLanguageInSubdir = false
     images = ["images/406_hash_chain_otp_preview_1775436006374.webp"]
 
     [params.description]
-        en = "Senior Backend Architect | Writer @ CoinsBench (Web3 Security & Infrastructure)"
+        en = "Enterprise AI / Backend / Reliability Architect | Writer @ CoinsBench (Web3 Security & Infrastructure)"
         ja = "シニア・バックエンド・アーキテクト | Writer @ CoinsBench (Web3 Security & Infrastructure)"
 
     [params.profileMode]

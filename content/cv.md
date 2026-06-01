@@ -1,13 +1,13 @@
 ---
-title: "Senior Backend Architect / Principal Engineer"
+title: "Senior AI / Backend / Platform Engineer"
 date: 2026-04-08
-description: "Professional dossier of a 20-year veteran active coder specializing in high-reliability infrastructure and cryptographic security."
+description: "Professional dossier of a 20-year veteran active coder specializing in production AI, backend reliability, platform engineering, and complex system recovery."
 layout: "simple"
 ---
 
-# Professional Dossier: Senior Backend Architect
+# Professional Dossier: Senior AI / Backend / Platform Engineer
 
-**Expert IC (Individual Contributor) | High-Reliability Infrastructure & Cryptographic Security**
+**Expert IC (Individual Contributor) | Production AI, Backend Reliability & Platform Engineering**
 
 **Writer @ CoinsBench (Web3 Security & Infrastructure)**
 
@@ -19,19 +19,19 @@ layout: "simple"
 
 ## EXECUTIVE SUMMARY
 
-As a **20-year veteran active coder**, I provide maximum engineering ROI by solving complex, mission-critical architectural bottlenecks without taking on administrative people-management roles. Operating at the convergence of cryptographic security, distributed systems, and system-level reliability, I architect fault-tolerant environments from the kernel syscall up to the container orchestration layer.
+As a **20-year veteran active coder**, I provide maximum engineering ROI by solving complex, mission-critical architectural bottlenecks without taking on administrative people-management roles. I work at the convergence of production AI, backend reliability, platform engineering, and system-level recovery, helping teams ship measurable improvements without creating hidden operational risk.
 
 ### The "Rescue Engineer" Advantage
-When a distributed platform's throughput hits a physical wall, or a catastrophic failure occurs in a zero-documentation/legacy environment, I act as the definitive technical escalation point. I have systematically stabilized paralyzed platforms—tracing ghost-byte hardware bugs from 14MB hex dumps and diagnosing undocumented kernel panics to implement zero-downtime hotfixes.
+When a distributed platform's throughput hits a physical wall, or an AI workflow becomes too fragile to operate safely in production, I act as the definitive technical escalation point. I have systematically stabilized paralyzed platforms—tracing ghost-byte hardware bugs from 14MB hex dumps, diagnosing undocumented kernel panics, and restoring legacy systems with zero-downtime hotfixes.
 
 ---
 
 ## CORE STRENGTHS
 
-### Pillar 1: Cryptographic Security
-- **Hand-Rolled Cryptographic Primitives**: Implemented SM-series algorithms on ARM Cortex-M3 under **<8KB RAM**.
-- **Threshold Secret Sharing**: Deployed production **(5,3) Shamir Threshold Secret Sharing** schemes.
-- **Side-Channel Resistance**: Enforced constant-time execution paths and engineered hybrid entropy (TRNG).
+### Pillar 1: Production AI & Workflow Engineering
+- **AI Workflow Integration**: Brought AI into production systems with batching, routing, and runtime controls.
+- **Token Economics**: Optimized AI-driven flows for cost, latency, and operational stability.
+- **Safe Automation**: Designed AI-assisted workflows that remain observable, auditable, and recoverable.
 
 ### Pillar 2: High-Reliability Infrastructure
 - **Deterministic Computing**: Mastered bytecode layout and memory alignment for absolute operational determinism.
@@ -42,6 +42,11 @@ When a distributed platform's throughput hits a physical wall, or a catastrophic
 - **SD-WAN Control Plane**: Architected Go+Neo4j routing engines, **cutting bandwidth by 90%**.
 - **Distributed Consistency**: Resolved "distributed monolith" crises and optimized WebSocket event layers.
 
+### Pillar 4: Cryptographic and Low-Level Systems
+- **Hand-Rolled Cryptographic Primitives**: Implemented SM-series algorithms on ARM Cortex-M3 under **<8KB RAM**.
+- **Threshold Secret Sharing**: Deployed production **(5,3) Shamir Threshold Secret Sharing** schemes.
+- **Side-Channel Resistance**: Enforced constant-time execution paths and engineered hybrid entropy (TRNG).
+
 ---
 
 ## PROFESSIONAL EXPERIENCE (Highlights)
@@ -51,6 +56,7 @@ When a distributed platform's throughput hits a physical wall, or a catastrophic
 - **Architected Web3 Indexer (Go)**: Designed a 3-stage pipeline (Fetcher → Sequencer → Processor) with backpressure handling.
 - **Optimized Distributed Data Pipeline by 50x**: Re-engineered synchronous fusion into async batch-upsert (70s → 1.5s).
 - **AI-Augmented Engineering**: Used AI agents (Claude Code/DeepSeek) to compress 3-hour analysis workloads into 8 minutes.
+ - **Production Workflow Controls**: Added runtime checks, batching, and observability to reduce regression risk in complex systems.
 
 ### Senior Software Architect | iSoftStone | 2019 – 2021
 - **SD-WAN Control Plane**: Built a resilient Go+Neo4j routing engine with Hash-Diff synchronization.
