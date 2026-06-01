@@ -41,6 +41,7 @@ This cluster shows how I work across protocol internals, firmware boundaries, ho
 
 ### Systems Under Operational Pressure
 
+- [Frontend Stabilization Under Production Pressure](/cases/frontend-stabilization-production-pressure/)
 - [Technical Debt Governance: Dismantling the "Microservice Tax"](/cases/nb-tech-debt/)
 - [Reliability Audit: Toyoko INN Reservation System](/cases/toyoko-inn-audit/)
 - [ETL Optimization](/cases/etl-optimization/)
@@ -54,4 +55,3 @@ If you want the shortest route:
 1. Start with the homepage for role fit and positioning.
 2. Read the case studies for applied delivery evidence.
 3. Read the deep archive when you want the low-level proof.
-

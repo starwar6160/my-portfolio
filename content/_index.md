@@ -69,6 +69,12 @@ I am strongest in environments that need someone who can stabilize operational r
 - Problem: a degraded workflow and fragmented backend setup slowed delivery
 - Outcome: reduced ETL latency from 70 seconds to 1.5 seconds through batching, routing, and production stabilization
 
+#### Frontend Stabilization Under Production Pressure
+
+- [Case study](/cases/frontend-stabilization-production-pressure/)
+- Problem: an inherited Vue 3 and TypeScript IM frontend had forced logout, WebSocket instability, white screens, and precision bugs
+- Outcome: stabilized 70+ critical issues within several days through runtime debugging, atomic patches, and test hardening
+
 #### Reliability Audit for Enterprise Booking Flow
 
 - [Case study](/cases/toyoko-inn-audit/)
