@@ -61,6 +61,12 @@ The workflow was:
 
 This mattered because the codebase had multiple coupled failure modes. A broad rewrite would have introduced more instability than it removed.
 
+### Evidence-Driven Workflow
+
+My frontend stabilization work was mostly evidence-driven. I did not rely on manual clicking or reading the whole frontend codebase line by line. Cypress covered the main user flows, backend API integration tests verified server-side contracts, and I used logs, runtime behavior, stack traces, and network timing to identify failure boundaries. Then I guided AI tools to apply small atomic patches and re-ran the same tests to confirm each fix.
+
+This is closer to frontend incident response than traditional page-by-page debugging. The goal was to make each failure reproducible, each fix narrow, and each regression visible.
+
 ## Stabilization Work
 
 ### Auth and session flow
@@ -131,4 +137,3 @@ The fixes followed backend-style reliability thinking:
 - atomic patch workflow
 - Snowflake ID precision
 - production debugging
-
