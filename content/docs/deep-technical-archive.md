@@ -42,6 +42,7 @@ This cluster shows how I work across protocol internals, firmware boundaries, ho
 ### Systems Under Operational Pressure
 
 - [Frontend Stabilization Under Production Pressure](/cases/frontend-stabilization-production-pressure/)
+- [Stabilizing and Modernizing a Legacy Industrial SCADA Platform (Qt 4.7 / VS2003)](/cases/industrial-qt-system-development/)
 - [Technical Debt Governance: Dismantling the "Microservice Tax"](/cases/nb-tech-debt/)
 - [Reliability Audit: Toyoko INN Reservation System](/cases/toyoko-inn-audit/)
 - [ETL Optimization](/cases/etl-optimization/)

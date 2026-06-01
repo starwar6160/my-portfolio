@@ -75,6 +75,12 @@ I am strongest in environments that need someone who can stabilize operational r
 - Problem: an inherited Vue 3 and TypeScript IM frontend had forced logout, WebSocket instability, white screens, and precision bugs
 - Outcome: stabilized 70+ critical issues within several days through runtime debugging, atomic patches, and test hardening
 
+#### Industrial Qt System Development in Production Environments
+
+- [Case study](/cases/industrial-qt-system-development/)
+- Problem: a legacy SCADA client built on Qt 4.7.3 and VS2003 had build-chain breakage, GDI-related crashes, and unstable telemetry visualization
+- Outcome: recovered the build environment, improved runtime stability, and raised plotting capacity from ~30,000 to ~100,000 points
+
 #### Reliability Audit for Enterprise Booking Flow
 
 - [Case study](/cases/toyoko-inn-audit/)
