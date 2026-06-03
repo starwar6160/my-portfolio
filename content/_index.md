@@ -25,7 +25,7 @@ I translate complex engineering work into market-recognizable roles: AI Systems 
 
 I am strongest in environments that need someone who can stabilize operational risk, modernize legacy systems, and keep AI workflows measurable, auditable, and safe in production.
 
-### ATS Keywords
+### Search Keywords
 
 - AI Systems Engineer
 - AI Platform Engineer
