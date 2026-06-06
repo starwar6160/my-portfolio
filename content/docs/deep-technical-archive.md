@@ -51,6 +51,12 @@ This case covers offline unlock design, hash-chained challenge-response, replay 
 
 This case covers secure device onboarding, YANG-based interface modeling, OpenDaylight validation, and transport choices for weak-network environments.
 
+### Data Ingestion and Batch Performance
+
+- [Merge-Sport: Spring Boot Data Ingestion Acceleration](/cases/spring-boot-data-ingestion-acceleration/)
+
+This case covers Spring Boot 3 ingestion tuning, batch upserts, transport migration, and integration-test hardening for a feed-driven sports data platform.
+
 ### Systems Under Operational Pressure
 
 - [Frontend Stabilization Under Production Pressure](/cases/frontend-stabilization-production-pressure/)

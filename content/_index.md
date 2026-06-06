@@ -93,6 +93,12 @@ I am strongest in environments that need someone who can stabilize operational r
 - Problem: an offline ATM lock needed an 8-digit dynamic password flow that resisted replay, cloning, and forged responses under embedded hardware constraints
 - Outcome: designed a chained unlock protocol around prior close codes, hash-based state transitions, and low-overhead embedded cryptography
 
+#### Spring Boot Data Ingestion Acceleration
+
+- [Case study](/cases/spring-boot-data-ingestion-acceleration/)
+- Problem: a Spring Boot 3 sports-data pipeline was too slow and brittle under HTTP polling, row-by-row persistence, and unstable third-party feeds
+- Outcome: redesigned the ingestion path around push-style transport, batch upserts, and database indexing, cutting a 500-record sync from about 70 seconds to 1.5 seconds
+
 #### Reliability Audit for Enterprise Booking Flow
 
 - [Case study](/cases/toyoko-inn-audit/)
