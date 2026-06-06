@@ -39,6 +39,12 @@ This cluster covers pairing optimization, stack discipline, deterministic memory
 
 This cluster shows how I work across protocol internals, firmware boundaries, host-device mismatches, and security-sensitive integration points.
 
+### Network Control Plane and Edge Forwarding
+
+- [SD-WAN Architecture Feasibility Study and Control-Plane Design](/cases/sdwan-architecture-feasibility/)
+
+This case covers secure device onboarding, YANG-based interface modeling, OpenDaylight validation, and transport choices for weak-network environments.
+
 ### Systems Under Operational Pressure
 
 - [Frontend Stabilization Under Production Pressure](/cases/frontend-stabilization-production-pressure/)

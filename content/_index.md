@@ -81,6 +81,12 @@ I am strongest in environments that need someone who can stabilize operational r
 - Problem: a legacy SCADA platform built on Qt 4.7.3 and VS2003 had build-chain breakage, GDI-related crashes, and unstable telemetry visualization
 - Outcome: recovered the build environment, improved runtime stability, and reduced operational troubleshooting cost while raising plotting capacity from ~30,000 to ~100,000 points
 
+#### SD-WAN Architecture Feasibility Study
+
+- [Case study](/cases/sdwan-architecture-feasibility/)
+- Problem: an SD-WAN control plane needed secure edge onboarding, clear interface modeling, and transport choices that could survive weak-network conditions
+- Outcome: selected RabbitMQ, EMQX/MQTT, TLS-PSK, YANG, VPP/DPDK, and QUIC/BBR into a coherent cloud-control and edge-forwarding design
+
 #### Reliability Audit for Enterprise Booking Flow
 
 - [Case study](/cases/toyoko-inn-audit/)
