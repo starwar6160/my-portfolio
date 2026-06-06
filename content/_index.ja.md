@@ -62,6 +62,17 @@ Qt 4.7.3 + VS2003 ベースのレガシー SCADA システム。UI よりも bui
 
 産業用クライアントでも、バックエンドと同じく「状態」「通信」「ライフサイクル」を強く意識するケースです。
 
+### SD-WAN アーキテクチャ調査 / 制御プレーン設計
+
+エッジ機器とクラウド制御系をつなぐ SD-WAN 基盤の実現可能性調査。
+
+- OpenDDS, RabbitMQ, EMQX/MQTT の用途分離
+- TLS-PSK と active-online control による安全な接続
+- YANG ベースの interface model 化
+- VPP / DPDK / QUIC / BBR による転送最適化
+
+ネットワーク境界でも、仕様・接続・性能を分けて設計する事例です。
+
 ## What I Do
 
 - AI Application / LLM Integration
@@ -95,6 +106,7 @@ Qt 4.7.3 + VS2003 ベースのレガシー SCADA システム。UI よりも bui
 - [技術ブログ](/docs/)
 - [フロントエンド安定化事例](/ja/cases/frontend-stabilization-production-pressure/)
 - [産業用 Qt システム事例](/ja/cases/industrial-qt-system-development/)
+- [SD-WAN 事例](/ja/cases/sdwan-architecture-feasibility/)
 
 ## Complex Systems
 

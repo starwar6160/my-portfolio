@@ -87,6 +87,12 @@ I am strongest in environments that need someone who can stabilize operational r
 - Problem: an SD-WAN control plane needed secure edge onboarding, clear interface modeling, and transport choices that could survive weak-network conditions
 - Outcome: selected RabbitMQ, EMQX/MQTT, TLS-PSK, YANG, VPP/DPDK, and QUIC/BBR into a coherent cloud-control and edge-forwarding design
 
+#### Dynamic Password Lock / Offline ATM Authentication
+
+- [Case study](/cases/dynamic-password-lock/)
+- Problem: an offline ATM lock needed an 8-digit dynamic password flow that resisted replay, cloning, and forged responses under embedded hardware constraints
+- Outcome: designed a chained unlock protocol around prior close codes, hash-based state transitions, and low-overhead embedded cryptography
+
 #### Reliability Audit for Enterprise Booking Flow
 
 - [Case study](/cases/toyoko-inn-audit/)

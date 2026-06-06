@@ -39,6 +39,12 @@ This cluster covers pairing optimization, stack discipline, deterministic memory
 
 This cluster shows how I work across protocol internals, firmware boundaries, host-device mismatches, and security-sensitive integration points.
 
+### Cryptographic Control and Offline Authorization
+
+- [Designing a Dynamic Password Lock for Offline ATM Operations](/cases/dynamic-password-lock/)
+
+This case covers offline unlock design, hash-chained challenge-response, replay resistance, and embedded crypto tradeoffs for secured access hardware.
+
 ### Network Control Plane and Edge Forwarding
 
 - [SD-WAN Architecture Feasibility Study and Control-Plane Design](/cases/sdwan-architecture-feasibility/)
