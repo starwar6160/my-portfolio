@@ -1,6 +1,6 @@
 ---
 title: "AI Pipeline Re-Architecture"
-date: 2025-12-18
+date: 2026-06-07
 categories: ["Case Studies"]
 tags: ["AI Platform", "Workflow", "n8n", "LLM", "MySQL", "Reliability", "Automation", "Cost Optimization"]
 description: "Re-engineering an n8n + LLM workflow from a prototype-grade per-record pipeline into a throughput-oriented AI platform with batching, model routing, data-lineage preservation, and dead-letter handling."

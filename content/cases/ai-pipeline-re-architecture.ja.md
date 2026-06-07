@@ -1,6 +1,6 @@
 ---
 title: "AI パイプライン再設計"
-date: 2025-12-18
+date: 2026-06-07
 categories: ["Case Studies"]
 tags: ["AI Platform", "Workflow", "n8n", "LLM", "MySQL", "Reliability", "Automation", "Cost Optimization"]
 description: "n8n + LLM のワークフローを、レコード単位のプロトタイプから、バッチ処理・モデルルーティング・データリネージ保全・DLQ を備えた本番 AI プラットフォームへ再設計した事例。"
