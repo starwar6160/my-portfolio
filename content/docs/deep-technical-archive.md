@@ -63,7 +63,7 @@ This case covers Spring Boot 3 ingestion tuning, batch upserts, transport migrat
 - [Stabilizing and Modernizing a Legacy Industrial SCADA Platform (Qt 4.7 / VS2003)](/cases/industrial-qt-system-development/)
 - [Technical Debt Governance: Dismantling the "Microservice Tax"](/cases/nb-tech-debt/)
 - [Reliability Audit: Toyoko INN Reservation System](/cases/toyoko-inn-audit/)
-- [ETL Optimization](/cases/etl-optimization/)
+- [Merge-Sport: Spring Boot Data Ingestion Acceleration](/cases/spring-boot-data-ingestion-acceleration/)
 
 This cluster demonstrates the same engineering discipline in backend, reliability, and modernization work.
 
