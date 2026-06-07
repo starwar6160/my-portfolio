@@ -73,6 +73,17 @@ Qt 4.7.3 + VS2003 ベースのレガシー SCADA システム。UI よりも bui
 
 ネットワーク境界でも、仕様・接続・性能を分けて設計する事例です。
 
+### Spring Boot データ取り込み高速化
+
+スポーツデータ同期基盤を、バッチ UPSERT と索引設計で再構成し、500件同期を 70 秒から 1.5 秒へ短縮。
+
+- バッチ UPSERT
+- 索引最適化
+- Strategy Pattern による分離
+- MDC / Testcontainers による可観測性と検証
+
+DB ラウンドトリップ、N+1 的な永続化、モノリス化した処理ロジックを整理した、本番向けの改善事例です。
+
 ## What I Do
 
 - AI Application / LLM Integration
@@ -107,6 +118,7 @@ Qt 4.7.3 + VS2003 ベースのレガシー SCADA システム。UI よりも bui
 - [フロントエンド安定化事例](/ja/cases/frontend-stabilization-production-pressure/)
 - [産業用 Qt システム事例](/ja/cases/industrial-qt-system-development/)
 - [SD-WAN 事例](/ja/cases/sdwan-architecture-feasibility/)
+- [Spring Boot データ取り込み高速化](/ja/cases/spring-boot-data-ingestion-acceleration/)
 
 ## Complex Systems
 
