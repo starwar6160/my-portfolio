@@ -22,6 +22,12 @@ It collects the work that sits below the homepage sales layer: embedded cryptogr
 
 ## Selected Deep Dives
 
+### VC Experience / Windows Legacy Systems
+
+- [VC Experience / Windows Legacy Systems](/docs/vc-experience/)
+
+This page summarizes the Windows and embedded C++ background behind the deeper low-level work.
+
 ### Engineering Cryptographic Systems in 13KB RAM
 
 - [Hand-rolling SM9 (IBC) Cryptography for 8KB RAM Environments](/projects/sm9-low-level/)

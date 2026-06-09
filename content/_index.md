@@ -81,6 +81,12 @@ I am strongest in environments that need someone who can stabilize operational r
 - Problem: a legacy SCADA platform built on Qt 4.7.3 and VS2003 had build-chain breakage, GDI-related crashes, and unstable telemetry visualization
 - Outcome: recovered the build environment, improved runtime stability, and reduced operational troubleshooting cost while raising plotting capacity from ~30,000 to ~100,000 points
 
+#### VC Experience / Windows Legacy Systems
+
+- [VC experience page](/docs/vc-experience/)
+- Problem: old Windows and embedded C++ systems needed a clear way to explain value beyond MFC maintenance
+- Outcome: framed the work as legacy Windows recovery, ActiveX / COM boundary debugging, WinCE embedded security, and industrial modernization
+
 #### SD-WAN Architecture Feasibility Study
 
 - [Case study](/cases/sdwan-architecture-feasibility/)
