@@ -1,0 +1,19 @@
+{{- if .Params.hero_image }}
+{{- $heroSrc := .Params.hero_image | absURL }}
+{{- $heroAlt := .Title | plainify }}
+{{- $heroCaption := .Params.hero_caption }}
+<figure class="case-hero">
+  <a class="case-hero__link" href="{{ $heroSrc }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $heroAlt }}">
+    <img
+      class="case-hero__image"
+      src="{{ $heroSrc }}"
+      alt="{{ $heroAlt }}"
+      loading="eager"
+      decoding="async"
+    >
+  </a>
+  {{- with $heroCaption }}
+  <figcaption class="case-hero__caption">{{ . }}</figcaption>
+  {{- end }}
+</figure>
+{{- end }}

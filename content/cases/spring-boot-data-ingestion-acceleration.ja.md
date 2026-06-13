@@ -4,6 +4,8 @@ date: 2026-06-06
 categories: ["Case Studies"]
 tags: ["Java", "Spring Boot", "Spring Boot 3", "MySQL", "Redis", "MQTT", "WebSocket", "MyBatis", "Testcontainers", "Performance Optimization"]
 description: "Spring Boot 3 のスポーツデータ取り込み基盤を、バッチ UPSERT、索引設計、Strategy Pattern、通信方式の見直しで再設計し、500件同期を 70 秒から 1.5 秒へ短縮した事例。"
+hero_image: "/images/cases/613springbootFast.jpg"
+hero_caption: "500件同期を70秒から1.5秒へ改善"
 ---
 
 # Merge-Sport: Spring Boot データ取り込み高速化

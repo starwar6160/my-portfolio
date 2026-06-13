@@ -1,0 +1,57 @@
+.case-hero {
+  width: min(100%, 1200px);
+  margin: 1.5rem auto 2rem;
+  padding: 0 0.75rem;
+  box-sizing: border-box;
+}
+
+.case-hero__link {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--code-bg);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+  transform: translateZ(0);
+  cursor: zoom-in;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.case-hero__link:hover,
+.case-hero__link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.22);
+}
+
+.case-hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.case-hero__caption {
+  margin-top: 0.7rem;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .case-hero {
+    margin: 1.1rem auto 1.6rem;
+    padding: 0;
+  }
+
+  .case-hero__link {
+    border-radius: 14px;
+  }
+
+  .case-hero__caption {
+    font-size: 0.88rem;
+    padding-inline: 0.25rem;
+  }
+}
