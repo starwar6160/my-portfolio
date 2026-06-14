@@ -26,10 +26,11 @@ For teams building hardware wallets or security-sensitive firmware, the lesson i
 
 The work followed a responsible-disclosure workflow:
 
-- findings were reported to the vendor security team
-- publication was delayed until the analysis was ready
-- repository policy updates were observed during the disclosure window
-- independent technical analysis was published afterwards
+## Timeline
+
+- 2026-05-11: findings were reported to the vendor security team
+- 2026-05-12: related repository security policy updates were observed
+- 2026-05-15: independent technical analysis was published
 
 ## Why This Case Matters
 

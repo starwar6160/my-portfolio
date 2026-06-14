@@ -18,10 +18,11 @@ description: "Medium で公開され、CoinsBench に採用されたハードウ
 
 この作業は responsible disclosure の流れで進めました。
 
-- findings を vendor security team に報告
-- 解析がまとまるまで公開を保留
-- disclosure 期間中に関連リポジトリの policy update を観測
-- その後に独立した技術分析を公開
+## Timeline
+
+- 2026-05-11: findings を vendor security team に報告
+- 2026-05-12: 関連リポジトリの security policy update を観測
+- 2026-05-15: 独立した技術分析を公開
 
 ## エグゼクティブサマリ
 
