@@ -7,22 +7,44 @@ description: "Medium で公開され、CoinsBench に採用されたハードウ
 ---
 
 # OneKey ハードウェアウォレット・ファームウェア監査
+## 信頼境界、ビルド再現性、Secure Element 分離のアーキテクチャ監査
 
 ## 公開経緯
 
 - Medium にて初回公開
 - CoinsBench に採用
-- 公開前に vendor security team へ findings を送付
+- 公開前にベンダーのセキュリティチームへ findings を送付
+- 独立したセキュリティ研究
 
 ## Security Research Process
 
 この作業は responsible disclosure の流れで進めました。
+
+## Why I Investigated This
+
+この研究は、ウォレットの信頼前提とサプライチェーン・セキュリティのモデルを独立に検証する目的で始めました。
+
+目的は、実装がユーザーに提示されているセキュリティ保証と一致しているかを確認することでした。
 
 ## Timeline
 
 - 2026-05-11: findings を vendor security team に報告
 - 2026-05-12: 関連リポジトリの security policy update を観測
 - 2026-05-15: 独立した技術分析を公開
+
+## Scope
+
+- 複数のファームウェア repository
+- ビルドチェーン分析
+- Secure Element 境界レビュー
+- 乱数健全性レビュー
+- メモリ境界分析
+
+## Findings Overview
+
+- 主な指摘 5 件
+- レビューした境界層 4 層
+- 公開に関する接点 3 件: Medium、CoinsBench、vendor disclosure
 
 ## エグゼクティブサマリ
 

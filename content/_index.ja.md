@@ -41,7 +41,7 @@ English-first technical communication is available.
 - [Spring Boot データ同期高速化](/ja/cases/spring-boot-data-ingestion-acceleration/): **70秒 → 1.5秒**
 - [Vue 3 + TypeScript 安定化](/ja/cases/frontend-stabilization-production-pressure/): **74+ 件** の重大問題を安定化
 - [SD-WAN control plane 設計](/ja/cases/sdwan-architecture-feasibility/): 同期トラフィックを **約90%削減**
-- [Web3 Security Research](/ja/cases/onekey-hardware-wallet-firmware-audit/): CoinsBench 掲載・responsible disclosure
+- [OneKey Hardware Wallet Audit](/ja/cases/onekey-hardware-wallet-firmware-audit/): CoinsBench 掲載・responsible disclosure
 - [Web3 Security / Next.js Trojan Analysis](/ja/cases/web3-scam-exposure/): 難読化ペイロードと採用課題の挙動を解析
 - [Web3 Protocol Audit](/ja/cases/web3-rwa-audit/): 分数化 RWA プロトコルの設計上の欠陥を監査
 - [SM9 低レイヤ実装](/ja/projects/sm9-low-level/): **10KB → 576B** まで圧縮

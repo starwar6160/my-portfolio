@@ -7,12 +7,14 @@ description: "Originally published on Medium and later featured in CoinsBench, t
 ---
 
 # OneKey Hardware Wallet Firmware Audit
+## Architectural Review of Trust Boundaries, Build Reproducibility, and Secure Element Isolation
 
 ## Publication Lineage
 
 - Originally published on Medium
-- Featured in CoinsBench
-- Responsible disclosure submitted before publication
+- Featured by CoinsBench
+- Responsible disclosure submitted prior to publication
+- Independent security research
 
 ## Executive Summary
 
@@ -22,15 +24,33 @@ The core issue was not a single bug. It was the accumulation of weak boundaries 
 
 For teams building hardware wallets or security-sensitive firmware, the lesson is simple: if trust is not deterministic at every layer, the device is not actually a security boundary.
 
-## Security Research Process
+## Why I Investigated This
 
-The work followed a responsible-disclosure workflow:
+This research originated from an independent review of wallet trust assumptions and supply-chain security models.
+
+The goal was to evaluate whether the implementation matched the security guarantees presented to end users.
+
+## Security Research Process
 
 ## Timeline
 
 - 2026-05-11: findings were reported to the vendor security team
 - 2026-05-12: related repository security policy updates were observed
 - 2026-05-15: independent technical analysis was published
+
+## Scope
+
+- multiple firmware repositories
+- build-chain analysis
+- secure-element boundary review
+- entropy validation review
+- memory-boundary analysis
+
+## Findings Overview
+
+- 5 primary findings
+- 4 boundary layers reviewed
+- 3 publication touchpoints: Medium, CoinsBench, vendor disclosure
 
 ## Why This Case Matters
 
