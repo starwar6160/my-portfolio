@@ -12,7 +12,16 @@ description: "Medium で公開され、CoinsBench に採用されたハードウ
 
 - Medium にて初回公開
 - CoinsBench に採用
-- セキュリティ監査 / 匿名化済みレビュー
+- 公開前に vendor security team へ findings を送付
+
+## Security Research Process
+
+この作業は responsible disclosure の流れで進めました。
+
+- findings を vendor security team に報告
+- 解析がまとまるまで公開を保留
+- disclosure 期間中に関連リポジトリの policy update を観測
+- その後に独立した技術分析を公開
 
 ## エグゼクティブサマリ
 
@@ -88,4 +97,3 @@ description: "Medium で公開され、CoinsBench に採用されたハードウ
 
 - Medium 原文: https://medium.com/coinsbench/the-deconstruction-of-trust-architectural-boundary-mismatch-in-hybrid-firmware-environments-8dc5a1506d32
 - CoinsBench 掲載: https://coinsbench.com/the-deconstruction-of-trust-an-architectural-audit-of-modern-hardware-wallet-firmware-9923115d97fd
-

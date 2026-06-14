@@ -12,7 +12,7 @@ description: "Originally published on Medium and later featured in CoinsBench, t
 
 - Originally published on Medium
 - Featured in CoinsBench
-- Technical audit / anonymized security review
+- Responsible disclosure submitted before publication
 
 ## Executive Summary
 
@@ -21,6 +21,15 @@ This audit examines a mainstream hardware wallet firmware through an engineering
 The core issue was not a single bug. It was the accumulation of weak boundaries across the build chain, the secure-element boundary, entropy handling, and path-validation logic.
 
 For teams building hardware wallets or security-sensitive firmware, the lesson is simple: if trust is not deterministic at every layer, the device is not actually a security boundary.
+
+## Security Research Process
+
+The work followed a responsible-disclosure workflow:
+
+- findings were reported to the vendor security team
+- publication was delayed until the analysis was ready
+- repository policy updates were observed during the disclosure window
+- independent technical analysis was published afterwards
 
 ## Why This Case Matters
 
@@ -90,4 +99,3 @@ It is the combination of reproducible builds, deterministic policy enforcement, 
 
 - Original Medium publication: https://medium.com/coinsbench/the-deconstruction-of-trust-architectural-boundary-mismatch-in-hybrid-firmware-environments-8dc5a1506d32
 - CoinsBench feature: https://coinsbench.com/the-deconstruction-of-trust-an-architectural-audit-of-modern-hardware-wallet-firmware-9923115d97fd
-
