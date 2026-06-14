@@ -7,6 +7,14 @@ description: "リソース制約の厳しいマイクロコントローラ上で
 
 ## 挑戦：ベアメタル上におけるIBCの「恐怖」
 
+## 営業・採用担当向け要約
+
+- 8KB RAM 制約下の SM9 / IBC 暗号実装事例です。
+- ピークメモリを 10KB から 576B まで圧縮しました。
+- 主な改善は、MIRACL allocator 改修、TRNG 統合、JNI / Linux driver 連携です。
+- Embedded、Cryptography、Low-level、制約条件下の最適化案件に適しています。
+- 詳細な技術説明は以下をご確認ください。
+
 2013年当時、**ARM Cortex-M3 (STM32F2)** 上で **SM9 (Identity-Based Cryptography)** 規格を実装することは、多くのエンジニアにとって「不可能」と考えられていました。標準的なECCとは異なり、SM9は**ペアリング（Pairing-friendly curves）**を必要とし、256ビットの座標を1536ビットの構造に拡張する大規模な体拡大（Field Expansion）を伴うためです。
 
 標準的な暗号ライブラリ（OpenSSL, MIRACL）はサーバー向けに設計されており、RAMの1バイトが貴重な組込みシステムには適していません。私の任務は、肥大化した実装を徹底的に削ぎ落とし、セキュアUSBKeyや**オフラインATMダイナミックロック**システムに求められる **8KB RAM以下** の制約内に収めることでした。
