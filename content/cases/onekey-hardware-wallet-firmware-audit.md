@@ -9,21 +9,6 @@ description: "Originally published on Medium and later featured in CoinsBench, t
 # OneKey Hardware Wallet Firmware Audit
 ## Architectural Review of Trust Boundaries, Build Reproducibility, and Secure Element Isolation
 
-## Publication Lineage
-
-- Originally published on Medium
-- Featured by CoinsBench
-- Responsible disclosure submitted prior to publication
-- Independent security research
-
-## Executive Summary
-
-This audit examines a mainstream hardware wallet firmware through an engineering lens rather than a marketing lens.
-
-The core issue was not a single bug. It was the accumulation of weak boundaries across the build chain, the secure-element boundary, entropy handling, and path-validation logic.
-
-For teams building hardware wallets or security-sensitive firmware, the lesson is simple: if trust is not deterministic at every layer, the device is not actually a security boundary.
-
 ## Why I Investigated This
 
 This research originated from an independent review of wallet trust assumptions and supply-chain security models.
@@ -32,7 +17,7 @@ The goal was to evaluate whether the implementation matched the security guarant
 
 ## Security Research Process
 
-## Timeline
+This work followed a responsible-disclosure workflow.
 
 - 2026-05-11: findings were reported to the vendor security team
 - 2026-05-12: related repository security policy updates were observed
@@ -51,6 +36,21 @@ The goal was to evaluate whether the implementation matched the security guarant
 - 5 primary findings
 - 4 boundary layers reviewed
 - 3 publication touchpoints: Medium, CoinsBench, vendor disclosure
+
+## Executive Summary
+
+This audit examines a mainstream hardware wallet firmware through an engineering lens rather than a marketing lens.
+
+The core issue was not a single bug. It was the accumulation of weak boundaries across the build chain, the secure-element boundary, entropy handling, and path-validation logic.
+
+For teams building hardware wallets or security-sensitive firmware, the lesson is simple: if trust is not deterministic at every layer, the device is not actually a security boundary.
+
+## Publication Lineage
+
+- Originally published on Medium
+- Featured by CoinsBench
+- Responsible disclosure submitted prior to publication
+- Independent security research
 
 ## Why This Case Matters
 
