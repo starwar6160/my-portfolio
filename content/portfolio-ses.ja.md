@@ -15,6 +15,14 @@ layout: "simple"
 - [技術プロジェクト](/ja/projects/)
 - [技術ブログ](/docs/)
 
+## 営業・採用担当向け要約
+
+- 23年以上の実務経験を持つ Backend / Platform / SRE 寄りのエンジニアです。
+- 107億件規模の Elasticsearch / telemetry 基盤、70秒→1.5秒の同期改善、74+ 件の安定化実績があります。
+- 低レイヤ、Legacy modernization、分散システム、AI Workflow をまたいで対応できます。
+- 日本語読解可、英語技術コミュニケーション可です。
+- 詳細な技術説明は下記の各章とケースリンクをご確認ください。
+
 AI Workflow、Backend、Automation、高信頼性システムを中心に、短納期 PoC から実運用改善まで対応可能。
 
 ### 1. 職務要約 / Executive Summary
