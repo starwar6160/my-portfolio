@@ -8,6 +8,8 @@ description: "Reverse engineering a 20-year financial trading system to reconstr
 
 # Legacy Platform Discovery & Modernization
 
+![HP-UX legacy platform discovery and modernization](/images/cases/legacy-platform-discovery-modernization.jpg)
+
 ## Executive Summary
 
 Supported a platform-modernization initiative involving the migration of a mission-critical foreign-exchange trading platform from HP-UX to Red Hat Enterprise Linux.
