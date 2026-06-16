@@ -9,7 +9,7 @@ hero_image_r2_key: "portfolio/cases/legacy-platform-discovery-modernization/615H
 
 # Legacy Platform Discovery & Modernization
 
-![HP-UX legacy platform discovery and modernization](/images/cases/legacy-platform-discovery-modernization.jpg)
+![HP-UX legacy platform discovery and modernization](https://r2.st6160.click/615HPUX_Large.jpg)
 
 ## Executive Summary
 
