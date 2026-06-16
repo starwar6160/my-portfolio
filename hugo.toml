@@ -82,6 +82,7 @@ defaultContentLanguageInSubdir = false
 
     showSocialIcons = true
     images = ["images/406_hash_chain_otp_preview_1775436006374.webp"]
+    r2ImageBaseURL = ""
 
     [params.description]
         en = "Enterprise AI / Backend / Reliability Architect | Writer @ CoinsBench (Web3 Security & Infrastructure)"

@@ -1,5 +1,10 @@
 {{- if .Params.hero_image }}
 {{- $heroSrc := .Params.hero_image | absURL }}
+{{- $heroR2Base := site.Params.r2ImageBaseURL | default "" }}
+{{- $heroR2Key := .Params.hero_image_r2_key | default "" }}
+{{- if and $heroR2Base $heroR2Key }}
+  {{- $heroSrc = printf "%s/%s" (replaceRE "/$" "" $heroR2Base) (replaceRE "^/" "" $heroR2Key) }}
+{{- end }}
 {{- $heroAlt := .Title | plainify }}
 {{- $heroCaption := .Params.hero_caption }}
 <figure class="case-hero">

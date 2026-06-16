@@ -69,6 +69,12 @@ I am strongest in environments that need someone who can stabilize operational r
 - Problem: a degraded workflow and fragmented backend setup slowed delivery
 - Outcome: reduced ETL latency from 70 seconds to 1.5 seconds through batching, routing, and production stabilization
 
+#### Distributed Real-Time IM Platform
+
+- [Case study](/cases/distributed-real-time-im-platform/)
+- Problem: the team wanted to reduce reliance on a third-party IM provider and build a controllable realtime messaging core
+- Outcome: designed a Go microservice IM platform with Kafka, EMQX, Redis, MySQL, MongoDB, and WebSocket services, supporting 16,000+ concurrent connections per node with sub-100ms latency
+
 #### Frontend Stabilization Under Production Pressure
 
 - [Case study](/cases/frontend-stabilization-production-pressure/)
@@ -131,6 +137,7 @@ For readers who want the low-level proof behind the positioning:
 - Senior Backend Engineer
 - AI Systems Engineer
 - Platform Engineer
+- Distributed Systems Engineer
 - Site Reliability Engineer
 - Staff Engineer
 - Solutions Architect

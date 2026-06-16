@@ -4,6 +4,7 @@ date: 2026-06-07
 categories: ["Case Studies"]
 tags: ["Legacy Modernization", "Reverse Engineering", "Oracle", "HP-UX", "RHEL", "Financial Systems", "Migration"]
 description: "Reverse engineering a 20-year financial trading system to reconstruct data lineage, dependency graphs, and operational behavior before a safe HP-UX to RHEL modernization."
+hero_image_r2_key: "portfolio/cases/legacy-platform-discovery-modernization/615HPUX_Large.jpg"
 ---
 
 # Legacy Platform Discovery & Modernization

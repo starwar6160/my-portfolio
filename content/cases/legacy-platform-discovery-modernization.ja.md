@@ -4,6 +4,7 @@ date: 2026-06-07
 categories: ["Case Studies"]
 tags: ["Legacy Modernization", "Reverse Engineering", "Oracle", "HP-UX", "RHEL", "Financial Systems", "Migration"]
 description: "20年以上継続運用された外為トレーディング基盤を逆解析し、データフロー、依存関係、運用実態を再構築してから HP-UX から RHEL へ近代化するための知識モデルを作成した事例。"
+hero_image_r2_key: "portfolio/cases/legacy-platform-discovery-modernization/615HPUX_Large.jpg"
 ---
 
 # レガシープラットフォーム発掘と近代化
