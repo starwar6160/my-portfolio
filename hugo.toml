@@ -112,3 +112,8 @@ defaultContentLanguageInSubdir = false
     [[params.socialIcons]]
         name = "wechat"
         url = "https://portfolio.st6160.click/images/wechat_qr.png"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true

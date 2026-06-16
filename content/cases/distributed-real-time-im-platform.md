@@ -8,6 +8,10 @@ description: "Designed and implemented a Go-based distributed IM platform with m
 
 # Distributed Real-Time IM Platform
 
+<a href="https://r2.st6160.click/616GolangIM_Large.jpg" target="_blank" rel="noopener noreferrer">
+  <img alt="Distributed Real-Time IM Platform" loading="lazy" decoding="async" src="https://r2.st6160.click/616GolangIM_Large.jpg">
+</a>
+
 ## Executive Summary
 
 The company originally depended on a third-party IM provider. That made the business expensive to operate and limited how much the messaging experience could be customized.
