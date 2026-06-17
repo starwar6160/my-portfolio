@@ -43,6 +43,10 @@ defaultContentLanguageInSubdir = false
         url = "https://demo2.st6160.click/"
         weight = 10
     [[menu.main]]
+        name = "Legacy Rescue CV"
+        url = "/legacy-rescue/"
+        weight = 15
+    [[menu.main]]
         name = "Case Studies"
         url = "/cases"
         weight = 20
@@ -59,6 +63,10 @@ defaultContentLanguageInSubdir = false
         name = "ポートフォリオ"
         url = "/ja/portfolio-ses/"
         weight = 10
+    [[languages.ja.menu.main]]
+        name = "レガシー救出職務経歴"
+        url = "/ja/legacy-rescue/"
+        weight = 15
     [[languages.ja.menu.main]]
         name = "高難度案件一覧"
         url = "/ja/docs/high-difficulty-ses-index/"
