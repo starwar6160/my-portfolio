@@ -11,6 +11,10 @@ tags: ["Visual C++", "レガシーシステム", "WinCE", "組込みセキュリ
 
 **レガシーシステム救出・モダナイゼーション | VC++ / WinCE / Qt | 組込みセキュリティ・プラットフォーム移行**
 
+<a href="https://r2.st6160.click/617HUPX_Large.jpg" target="_blank">
+  <img src="https://r2.st6160.click/617HUPX_Large.jpg" alt="HP-UX レガシーシステム発掘調査 — プラットフォーム発見・移行" style="max-width:100%; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.15);">
+</a>
+
 所在地: 神奈川県横浜市
 就労権限: エンジニア/人文国際業務（2028年4月まで）
 

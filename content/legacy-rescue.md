@@ -11,6 +11,10 @@ tags: ["Visual C++", "Legacy Systems", "WinCE", "Embedded Security", "Platform M
 
 **Legacy Systems Rescue & Modernization | VC++ / WinCE / Qt | Embedded Security & Platform Migration**
 
+<a href="https://r2.st6160.click/617HUPX_Large.jpg" target="_blank">
+  <img src="https://r2.st6160.click/617HUPX_Large.jpg" alt="HP-UX Legacy System Archaeology — Platform Discovery & Migration" style="max-width:100%; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.15);">
+</a>
+
 Location: Yokohama, Japan
 Work authorization: Engineer/Specialist in Humanities/International Services (through Apr 2028)
 
