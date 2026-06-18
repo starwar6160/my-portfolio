@@ -69,6 +69,12 @@ I am strongest in environments that need someone who can stabilize operational r
 - Problem: a degraded workflow and fragmented backend setup slowed delivery
 - Outcome: reduced ETL latency from 70 seconds to 1.5 seconds through batching, routing, and production stabilization
 
+#### AI Development Experience in Japan
+
+- [Case study](/cases/ai-development-experience-in-japan/)
+- Problem: production AI work across real-time speech systems, workflow optimization, and LLM-assisted engineering needed a single coherent narrative
+- Outcome: positioned the work as production AI engineering across automotive and enterprise systems
+
 #### Distributed Real-Time IM Platform
 
 - [Case study](/cases/distributed-real-time-im-platform/)

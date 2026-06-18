@@ -36,3 +36,13 @@ This repository is a Hugo-based portfolio site with Cloudflare Pages deployment.
 ## Security & Configuration Tips
 - Do not commit secrets. Keep local values in `.dev.vars` or environment-specific files, and confirm `wrangler.jsonc` only contains non-sensitive identifiers.
 - When changing analytics or API behavior, update the related docs in `docs/` or the root `*.md` guides at the same time.
+
+## AI / Portfolio Content Rules
+- For AI experience pages, keep English and Japanese versions as separate files and keep their structure aligned.
+- Keep the tone technical, factual, and engineering-first; avoid hype, emotional framing, or negative wording that does not help the reader understand the work.
+- Order projects by business and technical value, with the highest-value work first.
+- Remove duplicate or redundant sentences. If two lines describe the same technical action, keep the clearer single version.
+- For workflow optimization case studies, lead with the numeric result first, then explain the maintainability or operational impact.
+- For summary sections, emphasize production AI systems, LLM integration, workflow engineering, real-time applications, and AI as a force multiplier for software engineering.
+- If a standalone portfolio page benefits from quick scanning, add a short `Focus Areas` block near the top.
+- When a new case page is added, sync the homepage links and any bilingual index pages that surface selected work.
