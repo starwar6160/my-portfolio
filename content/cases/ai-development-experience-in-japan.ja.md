@@ -4,6 +4,8 @@ date: 2026-06-18
 categories: ["Case Studies"]
 tags: ["AI Platform", "LLM", "Workflow Engineering", "Real-Time Systems", "Speech", "Backend"]
 description: "日本での production AI 実務を、リアルタイム音声システム、n8n + LLM ワークフロー最適化、LLM 駆動の大規模システム開発の観点で整理した事例です。"
+hero_image: "https://r2.st6160.click/618AIProg_Large.jpg"
+hero_caption: "日本での AI 開発経験"
 ---
 
 # 日本での AI 開発経験

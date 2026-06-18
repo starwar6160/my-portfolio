@@ -4,6 +4,8 @@ date: 2026-06-18
 categories: ["Case Studies"]
 tags: ["AI Platform", "LLM", "Workflow Engineering", "Real-Time Systems", "Speech", "Backend"]
 description: "Production AI work in Japan across real-time speech systems, n8n + LLM workflow optimization, and LLM-driven engineering for large systems."
+hero_image: "https://r2.st6160.click/618AIProg_Large.jpg"
+hero_caption: "AI development work in Japan"
 ---
 
 # AI Development Experience in Japan
