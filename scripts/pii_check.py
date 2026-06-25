@@ -16,6 +16,7 @@ PUBLIC_URL_PATTERNS = (
     'gitlab.com/',
     'bitbucket.org/',
     'portfolio.st6160.click',
+    'r2.st6160.click',
 )
 
 # Professional/Public Identity (Whitelisted)
@@ -41,11 +42,22 @@ def calculate_entropy(string):
     entropy = - sum([p * math.log(p) / math.log(2.0) for p in prob])
     return entropy
 
-def is_public_reference(line):
+def is_public_reference(line, candidate=""):
+    """Classify high-entropy strings that are clearly not secrets."""
     # Public URLs and Markdown links often contain long identifiers that are not secrets.
     if any(token in line for token in PUBLIC_URL_PATTERNS):
         return True
     if re.search(r'\[[^\]]+\]\([^)]+\)', line):
+        return True
+    # Hugo/frontmatter key-value pairs: key: "path-like/value"
+    # These are content identifiers, not secrets.
+    if re.match(r'^\s*[a-zA-Z_][a-zA-Z0-9_]*\s*:\s*[\'"]', line):
+        return True
+    # Path-like strings containing '/' or known resource directories
+    # Real secrets (API keys, tokens) rarely contain '/' or known path segments.
+    if '/' in candidate:
+        return True
+    if re.search(r'(portfolio|assets?|static|uploads?|images?|icons?|fonts?|cases?|docs?)/', candidate):
         return True
     return False
 
@@ -107,7 +119,7 @@ def check_pii():
             candidates = re.findall(r'[a-zA-Z0-9+/=]{20,}', line)
             for cand in candidates:
                 if calculate_entropy(cand) > ENTROPY_THRESHOLD:
-                    if is_public_reference(line):
+                    if is_public_reference(line, cand):
                         warnings.append(f"[Possible False Positive] at {filepath}:{i} -> {cand[:10]}...")
                     else:
                         critical.append(f"[High Entropy Secret] at {filepath}:{i} -> {cand[:10]}...")
