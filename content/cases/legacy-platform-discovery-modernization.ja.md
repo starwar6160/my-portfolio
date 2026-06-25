@@ -9,7 +9,9 @@ hero_image_r2_key: "portfolio/cases/legacy-platform-discovery-modernization/615H
 
 # レガシープラットフォーム発掘と近代化
 
-![HP-UX レガシープラットフォーム発掘と近代化](https://r2.st6160.click/615HPUX_Large.jpg)
+<a href="https://r2.st6160.click/615HPUX_Large.jpg" target="_blank" rel="noopener noreferrer">
+  <img alt="HP-UX レガシープラットフォーム発掘と近代化" loading="lazy" decoding="async" src="https://r2.st6160.click/615HPUX_Large.jpg">
+</a>
 
 ## 営業・採用担当向け要約
 
