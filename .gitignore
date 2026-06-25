@@ -152,3 +152,9 @@ vite.config.ts.timestamp-*
 # Hugo generated directories
 public/
 resources/
+
+# Python cache
+__pycache__/
+
+# Local IDE/agent config (do not commit machine-specific paths)
+.claude/
