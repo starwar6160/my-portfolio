@@ -9,6 +9,14 @@ EXCLUDED_EXTENSIONS = {'.png', '.jpg', '.jpeg', '.gif', '.ico', '.pdf', '.bin', 
 EXCLUDED_DIRS = {'node_modules', 'vendor', 'themes', 'static/assets'}
 ENTROPY_THRESHOLD = 3.8  # Threshold for high-entropy secret detection
 MIN_ENTROPY_LEN = 20
+PUBLIC_URL_PATTERNS = (
+    'http://',
+    'https://',
+    'github.com/',
+    'gitlab.com/',
+    'bitbucket.org/',
+    'portfolio.st6160.click',
+)
 
 # Professional/Public Identity (Whitelisted)
 WHITELISTED_EMAILS = {'zhouwei6160@gmail.com'}
@@ -32,6 +40,14 @@ def calculate_entropy(string):
     prob = [float(string.count(c)) / len(string) for c in dict.fromkeys(list(string))]
     entropy = - sum([p * math.log(p) / math.log(2.0) for p in prob])
     return entropy
+
+def is_public_reference(line):
+    # Public URLs and Markdown links often contain long identifiers that are not secrets.
+    if any(token in line for token in PUBLIC_URL_PATTERNS):
+        return True
+    if re.search(r'\[[^\]]+\]\([^)]+\)', line):
+        return True
+    return False
 
 def get_staged_files():
     try:
@@ -59,7 +75,8 @@ def is_bip39_mnemonic(content):
 
 def check_pii():
     staged_files = get_staged_files()
-    violations = []
+    critical = []
+    warnings = []
     
     for filepath in staged_files:
         # Check Dotenv staging
@@ -83,29 +100,38 @@ def check_pii():
                     if name == 'Email (Private)':
                         if any(email in line for email in WHITELISTED_EMAILS):
                             continue
-                    violations.append(f"[{name}] at {filepath}:{i} -> {line.strip()[:50]}...")
+                    critical.append(f"[{name}] at {filepath}:{i} -> {line.strip()[:50]}...")
 
             # 2. Entropy detection (High-entropy secret detection)
             # Find candidate strings: long alphanumeric/hex/base64 strings
             candidates = re.findall(r'[a-zA-Z0-9+/=]{20,}', line)
             for cand in candidates:
                 if calculate_entropy(cand) > ENTROPY_THRESHOLD:
-                    # Filter out obvious false positives like file hashes in comments if possible
-                    violations.append(f"[High Entropy Secret] at {filepath}:{i} -> {cand[:10]}...")
+                    if is_public_reference(line):
+                        warnings.append(f"[Possible False Positive] at {filepath}:{i} -> {cand[:10]}...")
+                    else:
+                        critical.append(f"[High Entropy Secret] at {filepath}:{i} -> {cand[:10]}...")
 
-    return violations
+    return critical, warnings
 
 if __name__ == "__main__":
-    results = check_pii()
-    if results:
+    critical, warnings = check_pii()
+    if warnings:
+        print("\n" + "-" * 60)
+        print("ℹ️  GUARD NOTICE: POSSIBLE FALSE POSITIVES")
+        print("-" * 60)
+        for item in warnings:
+            print(f"- {item}")
+        print("-" * 60 + "\n")
+    if critical:
         print("\n" + "!" * 60)
         print("🏛️  GUARD SYSTEM: PII / ASSET LEAK DETECTED")
         print("!" * 60)
-        for error in results:
+        for error in critical:
             print(f"- {error}")
         print("\n" + "!" * 60)
         print("ACTION REQUIRED: Remove sensitive data before committing.")
-        print("If this is a false positive, use 'git commit --no-verify' to bypass.")
+        print("If this is a false positive, review the warning list above or use 'git commit --no-verify' to bypass.")
         print("!" * 60 + "\n")
         sys.exit(1)
     else:
