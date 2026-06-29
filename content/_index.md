@@ -151,15 +151,6 @@ For readers who want the low-level proof behind the positioning:
 
 ### Contact
 
-Available for:
+Direct contact details are kept on the [Contact page](/contact/), so the homepage stays recruiter-friendly and easy to scan.
 
-- Senior backend roles
-- AI infrastructure engineering
-- Technical audits
-- System stabilization projects
-- High-risk migration support
-- Full-time roles
-- Contract engagements
-- Advisory / escalation support
-
-If your team needs someone who can make a complex system safer, clearer, and easier to operate, feel free to reach out.
+If your team needs someone who can make a complex system safer, clearer, and easier to operate, please use the contact page to continue.

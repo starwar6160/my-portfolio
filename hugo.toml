@@ -22,7 +22,7 @@ defaultContentLanguageInSubdir = false
                 link = "/"
             [languages.en.params.homeInfoParams]
                 Title = "Enterprise AI / Backend / Reliability Architect"
-                Content = "I help teams integrate AI into production systems safely, with observability, runtime validation, workflow automation, and operational resilience."
+                Content = "I help teams integrate AI into production systems safely, with observability, runtime validation, workflow automation, and operational resilience. Direct contact details live on the Contact page."
 
     [languages.ja]
         languageCode = 'ja-jp'
@@ -36,12 +36,8 @@ defaultContentLanguageInSubdir = false
                 link = "/ja/"
             [languages.ja.params.homeInfoParams]
                 Title = "AI工程化・Backend・Complex Systems"
-                Content = "AI工程化、Backend、Reliability、Distributed Systems を営業が顧客へ転送しやすい形で整理した日本語ポータル。"
+                Content = "AI工程化、Backend、Reliability、Distributed Systems を営業が顧客へ転送しやすい形で整理した日本語ポータル。詳細な連絡先は Contact ページに分離しています。"
 
-    [[menu.main]]
-        name = "Web3 Indexer Demo"
-        url = "https://demo2.st6160.click/"
-        weight = 10
     [[menu.main]]
         name = "Legacy Rescue CV"
         url = "/legacy-rescue/"
@@ -58,6 +54,10 @@ defaultContentLanguageInSubdir = false
         name = "Docs"
         url = "/docs"
         weight = 40
+    [[menu.main]]
+        name = "Contact"
+        url = "/contact/"
+        weight = 50
 
     [[languages.ja.menu.main]]
         name = "ポートフォリオ"
@@ -79,6 +79,10 @@ defaultContentLanguageInSubdir = false
         name = "ドキュメント"
         url = "/ja/docs/"
         weight = 40
+    [[languages.ja.menu.main]]
+        name = "Contact"
+        url = "/ja/contact/"
+        weight = 50
 
 [params]
     env = 'production'
@@ -98,28 +102,6 @@ defaultContentLanguageInSubdir = false
 
     [params.profileMode]
         enabled = false
-
-    [[params.socialIcons]]
-        name = "github"
-        url = "https://github.com/starwar6160"
-    [[params.socialIcons]]
-        name = "linkedin"
-        url = "https://www.linkedin.com/in/zhouwei6160/?locale=en"
-    [[params.socialIcons]]
-        name = "medium"
-        url = "https://medium.com/@zhouwei6160"
-    [[params.socialIcons]]
-        name = "zenn"
-        url = "https://zenn.dev/zhouwei6160"
-    [[params.socialIcons]]
-        name = "twitter"
-        url = "https://x.com/st22102"
-    [[params.socialIcons]]
-        name = "telegram"
-        url = "https://t.me/deepblue6160"
-    [[params.socialIcons]]
-        name = "wechat"
-        url = "https://portfolio.st6160.click/images/wechat_qr.png"
 
 [markup]
     [markup.goldmark]
