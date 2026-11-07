@@ -13,6 +13,8 @@ disableHLJS: false
 
 English technical documentation and written collaboration are available; spoken meeting communication depends on project requirements.
 
+**[SES向け技術ポートフォリオ・対応領域と代表事例を見る →](/ja/portfolio-ses/)**
+
 ### Quick Navigation
 
 - [Hiring Manager Summary](#hiring-manager-summary)
