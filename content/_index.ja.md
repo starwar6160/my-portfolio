@@ -11,7 +11,7 @@ disableHLJS: false
 
 # 複雑システムを扱う AI / Backend エンジニア
 
-English-first technical communication is available.
+English technical documentation and written collaboration are available; spoken meeting communication depends on project requirements.
 
 ### Quick Navigation
 
@@ -30,7 +30,7 @@ English-first technical communication is available.
 
 - 23+ years engineer
 - Backend / Platform / SRE / Legacy Modernization
-- Go / Python / TypeScript
+- C/C++ / Go / Python / TypeScript
 - 分散システム、性能改善、運用安定化に強み
 - 日本語: 読解中心
 - English: Technical Communication Ready
@@ -59,7 +59,7 @@ English-first technical communication is available.
 ## About
 
 複雑システムの性能改善・安定化・近代化が専門です。  
-20年以上運用されたシステム、高負荷バックエンド、分散システム、AI プラットフォームを対象に、問題を逆算して直す仕事をしてきました。
+23年以上の実務経験を活かし、20年以上運用されたシステムや高負荷バックエンド、分散システム、AI プラットフォームを対象に、問題を逆算して直す仕事をしてきました。
 
 コード、ログ、実行時挙動から構造を逆算し、再現・切り分け・修正・再発防止までを一貫して扱います。  
 AI についても、デモではなく production workflow として、入力整形、モデル選択、失敗時制御、監視まで含めて設計します。
@@ -75,7 +75,7 @@ AI についても、デモではなく production workflow として、入力�
 
 ## 技術スタック
 
-- Go / Python / TypeScript
+- C/C++ / Go / Python / TypeScript
 - Linux / Docker / AWS
 - Kafka / MQTT / WebSocket
 - MySQL / Redis

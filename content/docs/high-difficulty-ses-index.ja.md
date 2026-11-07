@@ -16,7 +16,7 @@ AI Engineering、Backend、Distributed Systems、Legacy Modernization、低レ�
 - [プロジェクト一覧](/ja/projects/)
 - [技術ブログ](/docs/)
 
-必要なら、最初に [技術ポートフォリオ](/ja/portfolio-ses/) を見せてから、この一覧で事例を補強してください。
+各事例では、課題の背景、技術的な対応、確認できる成果を紹介しています。
 
 ## 1. AI / Workflow / Backend
 

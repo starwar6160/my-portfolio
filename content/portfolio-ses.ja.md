@@ -26,7 +26,7 @@ layout: "simple"
 AI Workflow、Backend、Automation、高信頼性システムを中心に、短納期 PoC から実運用改善まで対応可能。
 
 ### 1. 職務要約 / Executive Summary
-23年の実務経験を持つシニアソフトウェアエンジニア／アーキテクトです。低レイヤ（C/C++）、ファームウェア、Legacy modernization、Infra、Embedded、分散バックエンドに加え、近年は AI Application、LLM Integration、AI Workflow Automation を実運用に落とし込む案件に継続して取り組んでいます。
+23年以上の実務経験を持つシニアソフトウェアエンジニア／アーキテクトです。低レイヤ（C/C++）、ファームウェア、Legacy modernization、Infra、Embedded、分散バックエンドに加え、近年は AI Application、LLM Integration、AI Workflow Automation を実運用に落とし込む案件に継続して取り組んでいます。
 
 強みは、コード・ログ・挙動から構造を逆算し、再現、切り分け、修正、再発防止までを一貫して扱うことです。AI についてもデモ止まりではなく、入力整形、モデル選択、Token 最適化、バッチ化、監視、失敗時の制御まで含めて、既存システムに安全に組み込むことを重視しています。
 
@@ -50,7 +50,7 @@ AI Workflow、Backend、Automation、高信頼性システムを中心に、短�
 ---
 
 ### 3. Main Stack
-- Go / Python / TypeScript
+- C/C++ / Go / Python / TypeScript
 - Linux / Docker / AWS
 - Kafka / MQTT / WebSocket
 - MySQL / Redis
@@ -79,7 +79,7 @@ AI Workflow、Backend、Automation、高信頼性システムを中心に、短�
 - AI-assisted Development とデバッグ支援
 - 自動化 E2E テストと Runtime Validation（実行時入力検証）
 
-実運用では、500 件規模の予測タスクを対象に、Batching、入力圧縮、双モデルルーティング、処理手順の再構成を組み合わせ、全体の実行時間を約 3 時間から 70-120 分へ短縮し、Token 消費も抑制しました。
+実運用では、500 件規模の予測タスクを対象に、Batching、入力圧縮、双モデルルーティング、処理手順の再構成を組み合わせ、典型的な処理時間を約 160 分（約 2 時間 40 分）から約 8 分へ短縮し、Token 消費も抑制しました。
 
 AI に寄せるほど重要になるのは、モデルそのものよりも周辺の設計です。私は、AI を「置けば動くもの」とは見ず、既存の複雑系バックエンドの一部として、監視可能で、保守可能で、壊れ方が読める形にすることを重視しています。
 
@@ -108,7 +108,7 @@ LLM、Workflow Automation、AI-assisted Development を使い、技術案の整�
 
 ### 6. Selected Engineering Metrics
 - 16K+ realtime WebSocket connections を維持する分散バックエンド経験
-- 500 件規模の AI 予測ワークフローを約 3 時間から 70-120 分へ短縮
+- 500 件規模の AI 予測ワークフローを典型値で約 160 分から約 8 分へ短縮
 - Batching、入力圧縮、双モデルルーティングによる Token 消費最適化
 - High-concurrency MQTT / Kafka / WebSocket を前提にしたリアルタイム処理
 - Retry、fail-safe、Runtime Validation を含む本番運用前提の設計
@@ -130,33 +130,18 @@ WebSockets、AWS Lambda、Azure/AWS 連携のリアルタイム処理におい�
 
 ---
 
-### 8. 推奨する表示順 / Project Ordering
-営業・技術責任者に最初に見せる順番としては、以下を推奨します。
-
-1. AI-assisted Pre-sales & Solution Design
-1. n8n AI Workflow / 双モデルルーティング / Token 最適化
-1. 高並発 WebSocket / MQTT / Kafka / リアルタイムメッセージ基盤
-1. Go-IM 分散システムと実運用の安定化
-1. Merge-Sport のデータ融合・整形・自動化パイプライン
-1. Legacy modernization と障害解析の代表事例
-1. 自動化 E2E テスト、Runtime Validation、Zod による入力防御
-
-この順番にすると、AI だけの人ではなく、複雑システムを本番で扱えるエンジニアとして見せやすくなります。
-
----
-
-### 9. コミュニケーションスタイル / Working Style
+### 8. コミュニケーションスタイル / Working Style
 - **技術ドキュメント・チャットベース中心**: 口頭会議だけに依存せず、設計書・ログ・差分・チケットを軸に合意形成します。
 - **非同期連携に強い**: GitHub、Slack、Jira、Teams を使った確認・レビュー・課題管理に対応します。
 - **海外資料も扱える**: 英文技術資料、ベンダードキュメント、OSSの実装差分を読みながら進めることができます。
 - **現場適応**: 要件が曖昧な段階でも、論点整理と再現性の確保から入る進め方を得意とします。
 
-### 10. 対応スタイル / Engagement Preference
+### 9. 対応スタイル / Engagement Preference
 - **稼働形態**: リモートまたはハイブリッドを優先。
 - **得意領域**: AI Application、Infra / Platform、金融系 Legacy modernization、Embedded / Edge、Security / Protocol analysis、高信頼性・分散バックエンド。
 - **補足**: 技術課題の重い現場ほど、価値を出しやすいタイプです。
 
-### 11. 対応しやすい領域 / Suitable Areas
+### 10. 対応しやすい領域 / Suitable Areas
 - AI / LLM Integration
 - AI Solution Engineering / Pre-sales
 - Automation / Workflow Optimization
