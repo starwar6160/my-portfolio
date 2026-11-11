@@ -57,19 +57,28 @@
                 
                 {{- if (not site.Params.disableLangToggle) }}
                     {{- $lang := .Lang}}
+                    {{- $translations := .Translations }}
                     {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
-                    {{- with .Translations }}
+                    {{- /* Link to the page's translation when one exists; otherwise fall back to that language's home page. */}}
+                    {{- if gt (len hugo.Sites) 1 }}
                     <ul class="lang-switch">
                         {{- if $separator }}<li>|</li>{{ end }}
-                        {{- range . -}}
-                        {{- if ne $lang .Lang }}
+                        {{- range hugo.Sites -}}
+                        {{- if ne $lang .Language.Lang }}
+                        {{- $target := .Home }}
+                        {{- $isFallback := true }}
+                        {{- range first 1 (where $translations "Lang" .Language.Lang) }}
+                        {{- $target = . }}
+                        {{- $isFallback = false }}
+                        {{- end }}
+                        {{- $name := .Language.LanguageName | default (.Language.Lang | title) }}
                         <li>
-                            <a href="{{- .Permalink -}}" title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"
-                                aria-label="{{ .Language.LanguageName | default (.Lang | title) }}">
+                            <a href="{{- $target.Permalink -}}" title="{{ .Language.Params.languageAltTitle | default ($name | emojify) }}{{ if $isFallback }} (Home){{ end }}"
+                                aria-label="{{ $name }}{{ if $isFallback }} (Home){{ end }}">
                                 {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
                                 {{- .Language.LanguageName | emojify -}}
                                 {{- else }}
-                                {{- .Lang | title -}}
+                                {{- .Language.Lang | title -}}
                                 {{- end -}}
                             </a>
                         </li>

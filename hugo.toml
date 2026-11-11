@@ -38,6 +38,36 @@ defaultContentLanguageInSubdir = false
                 Title = "AI工程化・Backend・Complex Systems"
                 Content = "AI工程化、Backend、Reliability、Distributed Systems を営業が顧客へ転送しやすい形で整理した日本語ポータル。詳細な連絡先は Contact ページに分離しています。"
 
+    [languages.zh]
+        languageCode = 'zh-CN'
+        languageName = '简体中文'
+        weight = 3
+        title = '周伟｜资深后端与复杂系统工程师'
+        [languages.zh.params]
+            title = '周伟｜资深后端与复杂系统工程师'
+            description = '23年软件工程经验：复杂系统诊断与改造、性能优化、AI 工程化。常驻日本，可与中文团队远程协作。'
+            disableSpecial1stPost = true
+            [languages.zh.params.label]
+                text = "首页"
+                link = "/zh/"
+
+    [[languages.zh.menu.main]]
+        name = "技术案例"
+        url = "/zh/cases/"
+        weight = 20
+    [[languages.zh.menu.main]]
+        name = "技术项目"
+        url = "/zh/projects/"
+        weight = 30
+    [[languages.zh.menu.main]]
+        name = "技术文档"
+        url = "/zh/docs/"
+        weight = 40
+    [[languages.zh.menu.main]]
+        name = "联系方式"
+        url = "/zh/contact/"
+        weight = 50
+
     [[menu.main]]
         name = "Legacy Rescue CV"
         url = "/legacy-rescue/"
