@@ -85,19 +85,12 @@
                         {{- end -}}
                         {{- end}}
                     </ul>
-                    <script>
-                        /* Remember an explicit language choice so the root-path auto-redirect respects it. */
-                        document.addEventListener('click', function (e) {
-                            var a = e.target.closest && e.target.closest('.lang-switch a[data-lang]');
-                            if (a) { document.cookie = 'lang=' + a.getAttribute('data-lang') + '; Path=/; Max-Age=31536000; SameSite=Lax'; }
-                        });
-                    </script>
                     {{- end }}
                 {{- end }}
             </div>
         </div>
         {{- $currentPage := . }}
-        <ul id="menu">
+        <ul id="menu" class="menu">
             {{- range site.Menus.main }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
@@ -124,3 +117,10 @@
         </ul>
     </nav>
 </header>
+    <script>
+        /* Remember an explicit language choice so the root-path auto-redirect respects it. */
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest && e.target.closest('.lang-switch a[data-lang]');
+            if (a) { document.cookie = 'lang=' + a.getAttribute('data-lang') + '; Path=/; Max-Age=31536000; SameSite=Lax'; }
+        });
+    </script>
