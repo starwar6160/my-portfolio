@@ -14,6 +14,7 @@
 | HTML 页面 | `isHTMLPage` 为 true | 是：SELECT 会话，再 UPDATE 或 COUNT + INSERT | 失败时 `console.error` |
 
 - D1 写入通过 Pages Functions 上下文的 `waitUntil`（`onRequest` 参数解构）在响应返回后完成。此前代码调用的 `self.waitUntil` 在 Workers 运行时中不存在。
+- 每个请求只调用一次 `next()`；下游处理出错时异常照常抛给 Pages，不会被统计逻辑吞掉后重试。
 - 写入失败不会影响页面返回，但会以 `Session logging error for <path>: <stack>` 输出到 Cloudflare 日志；未绑定 `DB` 时输出 `D1 binding "DB" is not configured`。
 - 扫描器检测使用原始 `User-Agent` 头，因此空 UA 会被识别；D1 中存储时仍以 `Unknown` 代替空值。
 - 由于静态资源和 API 请求不再写入，`hits` 与 `pages_viewed` 现在都只统计 HTML 页面请求，二者通常相同。下文中“hits = 总请求数”的示例是旧口径。

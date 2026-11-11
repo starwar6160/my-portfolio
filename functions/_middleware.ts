@@ -208,7 +208,11 @@ const ADMIN_PATHS = [
   '/api/',
 ];
 
-export const onRequest: PagesFunction<Env> = async ({ request, next, env, waitUntil }) => {
+// Decide whether this request is a visitor page view and, if so, schedule the D1 session
+// write with waitUntil. Never throws and never calls next(): onRequest calls next() exactly
+// once, so an error from the downstream handler propagates instead of being swallowed
+// and retried.
+function scheduleSessionLogging({ request, env, waitUntil }: Parameters<PagesFunction<Env>>[0]): void {
   try {
     // Extract visitor information from request headers
     const ip = request.headers.get('CF-Connecting-IP') || 'Unknown';
@@ -223,7 +227,7 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env, waitUn
     // Don't log anything from internal IPs (using prefix matching)
     if (isInternalIP(ip)) {
       // Silently skip logging for internal IPs
-      return await next();
+      return;
     }
 
     // Check if this is a bot/scanner request with three levels
@@ -233,12 +237,12 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env, waitUn
     if (scannerAction === 'block') {
       // Likely scanner - log warning and skip D1 logging (request is NOT blocked)
       console.warn(`🚫 Scanner request not logged: ${ip} -> ${url} (${userAgent})`);
-      return await next();  // Don't log, don't count
+      return;  // Don't log, don't count
     }
 
     if (scannerAction === 'ignore') {
       // SEO/social crawler - silently ignore
-      return await next();  // Don't log, don't count
+      return;  // Don't log, don't count
     }
 
     // scannerAction === 'allow' - Real visitor, continue to session-based logging
@@ -250,7 +254,7 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env, waitUn
     // are not written to D1.
     if (isAdminPath) {
       console.warn(`⚠️ Admin access detected from external IP: ${ip} to ${url}`);
-      return await next();
+      return;
     }
 
     // Session-based logging using D1 database
@@ -267,7 +271,7 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env, waitUn
       // Static resources (CSS/JS/images/fonts/...) are not logged: each page view would
       // otherwise trigger one D1 SELECT + UPDATE/INSERT per asset.
       if (!isPage) {
-        return await next();
+        return;
       }
 
       // Use the Pages Functions context waitUntil so the D1 writes are allowed to finish
@@ -325,7 +329,10 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env, waitUn
     // Never break the page, but make the failure visible in Cloudflare logs
     console.error('Logging error:', error instanceof Error ? error.stack || error.message : error);
   }
+}
 
-  // Pass the request through to the next handler
-  return await next();
+export const onRequest: PagesFunction<Env> = async (context) => {
+  scheduleSessionLogging(context);
+  // Pass the request through to the next handler (called exactly once)
+  return context.next();
 };

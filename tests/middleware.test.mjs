@@ -133,3 +133,40 @@ test('missing DB binding: page is served and the misconfiguration is reported', 
   assert.equal(r.waitUntilCount, 0);
   assert.ok(errors.some(e => e.includes('D1 binding "DB" is not configured')));
 });
+
+test('next() is called exactly once and its error propagates (page and non-page requests)', async (t) => {
+  t.mock.method(console, 'error', () => {});
+  t.mock.method(console, 'warn', () => {});
+  for (const path of ['/', '/zh/', '/assets/css/stylesheet.css', '/.env', '/api/stats']) {
+    let nextCalls = 0;
+    const waitUntilPromises = [];
+    const boom = new Error('downstream failure');
+    await assert.rejects(
+      onRequest({
+        request: new Request(BASE + path, { headers: { 'User-Agent': CHROME, 'CF-Connecting-IP': VISITOR_IP } }),
+        env: { DB: mockDB() },
+        next: async () => { nextCalls++; throw boom; },
+        waitUntil: (p) => { waitUntilPromises.push(p); },
+      }),
+      (err) => err === boom,
+      path,
+    );
+    await Promise.all(waitUntilPromises);
+    assert.equal(nextCalls, 1, path);
+  }
+});
+
+test('an error while scheduling the log does not break the page or call next() twice', async (t) => {
+  const errors = [];
+  t.mock.method(console, 'error', (...args) => { errors.push(args.join(' ')); });
+  let nextCalls = 0;
+  const response = await onRequest({
+    request: new Request(BASE + '/zh/', { headers: { 'User-Agent': CHROME, 'CF-Connecting-IP': VISITOR_IP } }),
+    env: { DB: mockDB() },
+    next: async () => { nextCalls++; return new Response('ok'); },
+    waitUntil: () => { throw new Error('waitUntil unavailable'); },
+  });
+  assert.equal(await response.text(), 'ok');
+  assert.equal(nextCalls, 1);
+  assert.ok(errors.some(e => e.includes('Logging error') && e.includes('waitUntil unavailable')), errors.join('\n'));
+});
