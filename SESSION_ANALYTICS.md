@@ -1,5 +1,24 @@
 # 🎯 会话级别分析系统部署完成
 
+## 📏 当前统计口径（2026-11 更新，以此为准）
+
+`functions/_middleware.ts` 对每个请求的处理：
+
+| 请求类型 | 判定 | 是否写入 D1 | Cloudflare 日志 |
+|---|---|---|---|
+| 内部 IP（`INTERNAL_IP_PREFIXES`） | IP 前缀匹配 | 否 | 无 |
+| 扫描器路径 / 扫描器 UA（`block`） | `BOT_PATTERNS` | 否（请求照常返回，不是 403） | `console.warn` |
+| SEO / 社交爬虫（`ignore`） | UA 匹配 | 否 | 无 |
+| API / 管理路径（`/api/`、`/admin/`） | `ADMIN_PATHS` | 否（如仪表盘轮询 `/api/stats`） | `console.warn` |
+| 静态资源（CSS / JS / 图片 / 字体 / xml / txt 等） | `isHTMLPage` 为 false | 否 | 无 |
+| HTML 页面 | `isHTMLPage` 为 true | 是：SELECT 会话，再 UPDATE 或 COUNT + INSERT | 失败时 `console.error` |
+
+- D1 写入通过 Pages Functions 上下文的 `waitUntil`（`onRequest` 参数解构）在响应返回后完成。此前代码调用的 `self.waitUntil` 在 Workers 运行时中不存在。
+- 写入失败不会影响页面返回，但会以 `Session logging error for <path>: <stack>` 输出到 Cloudflare 日志；未绑定 `DB` 时输出 `D1 binding "DB" is not configured`。
+- 扫描器检测使用原始 `User-Agent` 头，因此空 UA 会被识别；D1 中存储时仍以 `Unknown` 代替空值。
+- 由于静态资源和 API 请求不再写入，`hits` 与 `pages_viewed` 现在都只统计 HTML 页面请求，二者通常相同。下文中“hits = 总请求数”的示例是旧口径。
+- 单元测试：`node --experimental-strip-types --test tests/middleware.test.mjs`（Node 22.6+，无需安装依赖）。
+
 ## 📊 新系统优势
 
 ### 之前的问题

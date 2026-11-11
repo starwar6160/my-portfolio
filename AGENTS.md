@@ -25,6 +25,7 @@ This repository is a Hugo-based portfolio site with Cloudflare Pages deployment.
 
 ## Testing & Validation
 - There is no dedicated automated test suite in the root. Validate changes by building the site and checking the rendered pages in `hugo server` or `npx wrangler pages dev`.
+- For `functions/_middleware.ts` changes, run `node --experimental-strip-types --test tests/middleware.test.mjs` (Node 22.6+, no dependencies). Keep tests outside `functions/`, which Pages turns into routes.
 - For content changes, verify both English and Japanese routes when applicable.
 - For security-sensitive edits, run `python scripts/pii_check.py` before staging or committing.
 

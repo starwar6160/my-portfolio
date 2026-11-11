@@ -6,9 +6,9 @@
 - **`schema.sql`**: Database schema with optimized indexes for fast queries
 
 ### Cloudflare Pages Functions
-- **`functions/_middleware.ts`**: Intercepts ALL requests and logs them to D1
+- **`functions/_middleware.ts`**: Intercepts all requests and logs HTML page views to D1 (scope: `SESSION_ANALYTICS.md`)
   - Extracts: IP, URL, User-Agent, Country
-  - Uses `waitUntil()` for zero performance impact
+  - Uses the Pages Functions context `waitUntil()` for zero performance impact
   - Non-blocking async writes
 
 - **`functions/admin/stats.ts`**: API endpoint for analytics data
@@ -69,7 +69,7 @@ npx wrangler pages deploy ./public
 
 ## Features Implemented
 
-✅ **Automatic logging** of all requests (pages, static assets, API calls)
+✅ **Automatic logging** of HTML page views (static assets and API calls are not logged)
 ✅ **Zero performance impact** using waitUntil() for async writes
 ✅ **Company detection** for Microsoft, AMD, Google, Amazon, Apple, Meta, Netflix, Intel, NVIDIA
 ✅ **Geographic tracking** via Cloudflare's country detection
@@ -123,7 +123,7 @@ The dashboard automatically highlights visits from target companies:
 
 ## Performance
 
-- **Zero blocking**: Database writes happen asynchronously using `waitUntil()`
+- **Zero blocking**: Database writes happen asynchronously using the Pages Functions context `waitUntil()`
 - **Indexed queries**: All analytics queries use indexed columns
 - **Efficient dashboard**: Only loads aggregated data and last 100 logs
 - **No impact on page load speed**: Logging happens completely in background

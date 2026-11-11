@@ -14,7 +14,7 @@
 │         functions/_middleware.ts                                 │
 │                                                                  │
 │  1. Extract visitor metadata from request headers               │
-│  2. Async write to D1 using waitUntil()                         │
+│  2. Async write to D1 using context.waitUntil()                 │
 │  3. Pass request through with next()                            │
 └─────────────────┬───────────────────────┬───────────────────────┘
                   │                       │
@@ -90,10 +90,10 @@
    - URL: Full request URL
    - User-Agent: `User-Agent` header
    - Country: `request.cf.country` (Cloudflare geo data)
-4. **Async database write** using `waitUntil()`:
+4. **Async database write** using the Pages Functions context `waitUntil()` (HTML page requests only):
    - Query runs in background
    - Doesn't block response
-   - If it fails, no impact on user experience
+   - If it fails, no impact on user experience; the error is written to Cloudflare logs via `console.error`
 5. **Pass through** to page/content
 6. **Response returned** immediately to visitor
 
@@ -116,11 +116,10 @@
 - **How**: `waitUntil()` fires the database write asynchronously
 - **Tradeoff**: If database write fails, we lose that log entry (but visitor never notices)
 
-### 2. Log Everything
-- **Why**: Complete visibility into all traffic
-- **What**: Pages, CSS, JS, images, fonts, API calls
-- **Benefit**: See what resources are most accessed, detect scraping bots
-- **Storage**: D1 is cheap, indexes keep queries fast
+### 2. Log Page Views Only
+- **What**: HTML page requests only. Static assets, API/admin requests, scanners, SEO crawlers and internal IPs are not written to D1
+- **Why**: One page view used to trigger one D1 SELECT + UPDATE/INSERT per asset; API polling from the dashboard inflated page views
+- **Details**: see the "当前统计口径" table in `SESSION_ANALYTICS.md`
 
 ### 3. Simple Password Auth
 - **Why**: Quick setup, no external dependencies

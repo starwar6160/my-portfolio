@@ -62,8 +62,8 @@ That's it! Your analytics system is now running.
 ## ✨ Features Included
 
 ### Automatic Logging
-- ✅ Logs ALL requests (pages, CSS, JS, images, fonts)
-- ✅ Zero performance impact using `waitUntil()`
+- ✅ Logs HTML page views (static assets, API calls and scanners are skipped; see `SESSION_ANALYTICS.md`)
+- ✅ Zero performance impact using the Pages Functions context `waitUntil()`
 - ✅ Captures: IP, URL, User-Agent, Country
 - ✅ Non-blocking async database writes
 

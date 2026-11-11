@@ -4,8 +4,8 @@ Complete visitor tracking and analytics system for your Cloudflare Pages portfol
 
 ## Features
 
-- **Automatic Logging**: Logs ALL requests (pages, static assets, API calls) automatically
-- **Zero Performance Impact**: Uses `waitUntil()` for non-blocking async database writes
+- **Automatic Logging**: Logs HTML page views automatically (static assets, API calls and scanners are skipped; see `SESSION_ANALYTICS.md`)
+- **Zero Performance Impact**: Uses the Pages Functions context `waitUntil()` for non-blocking async database writes
 - **Company Detection**: Identifies visits from Microsoft, AMD, Google, Amazon, Apple, etc.
 - **Real-time Analytics Dashboard**: Beautiful dashboard with charts and statistics
 - **Password Protected**: Simple password authentication for admin access
@@ -247,7 +247,7 @@ npx wrangler d1 execute visitor_log --remote --command="SELECT * FROM logs" > vi
 
 ## Performance Considerations
 
-- **Non-blocking**: Uses `waitUntil()` so logging never slows down your site
+- **Non-blocking**: Uses the Pages Functions context `waitUntil()` so logging never slows down your site
 - **Indexed Queries**: All database queries use indexed columns for speed
 - **Efficient Charts**: Dashboard loads only last 100 logs and aggregated data
 - **No Static Asset Overhead**: CSS/JS assets are cached normally

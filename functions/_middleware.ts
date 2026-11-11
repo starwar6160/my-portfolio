@@ -1,4 +1,4 @@
-import { PagesFunction } from '@cloudflare/workers-types';
+import type { PagesFunction } from '@cloudflare/workers-types';
 
 interface Env {
   DB: D1Database;
@@ -208,12 +208,13 @@ const ADMIN_PATHS = [
   '/api/',
 ];
 
-export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
+export const onRequest: PagesFunction<Env> = async ({ request, next, env, waitUntil }) => {
   try {
     // Extract visitor information from request headers
     const ip = request.headers.get('CF-Connecting-IP') || 'Unknown';
     const url = request.url;
-    const userAgent = request.headers.get('User-Agent') || 'Unknown';
+    const rawUserAgent = request.headers.get('User-Agent') || '';
+    const userAgent = rawUserAgent || 'Unknown';
     const referer = request.headers.get('Referer') || null;
 
     // Get country from Cloudflare's geolocation data
@@ -226,7 +227,8 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
     }
 
     // Check if this is a bot/scanner request with three levels
-    const scannerAction = isBotScanner(url, userAgent);
+    // Use the raw header so the empty-User-Agent rule can match (userAgent defaults to 'Unknown')
+    const scannerAction = isBotScanner(url, rawUserAgent);
 
     if (scannerAction === 'block') {
       // Likely scanner - log warning and skip D1 logging (request is NOT blocked)
@@ -243,13 +245,18 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
     // Check if this is an admin/API path
     const isAdminPath = ADMIN_PATHS.some(path => url.includes(path));
 
-    // For admin paths from external IPs, log with warning (security monitoring)
+    // For admin paths from external IPs, log with warning (security monitoring).
+    // These are not visitor page views (e.g. the dashboard polls /api/stats), so they
+    // are not written to D1.
     if (isAdminPath) {
       console.warn(`⚠️ Admin access detected from external IP: ${ip} to ${url}`);
+      return await next();
     }
 
     // Session-based logging using D1 database
-    if (env.DB) {
+    if (!env.DB) {
+      console.error('Session logging skipped: D1 binding "DB" is not configured');
+    } else {
       // Extract URL path for cleaner storage
       const urlObj = new URL(url);
       const path = urlObj.pathname;
@@ -263,8 +270,9 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
         return await next();
       }
 
-      // Use waitUntil to handle database operations in background
-      (self as any).waitUntil((async () => {
+      // Use the Pages Functions context waitUntil so the D1 writes are allowed to finish
+      // after the response is returned (there is no global self.waitUntil in Workers).
+      waitUntil((async () => {
         try {
           // Check if there's an active session for this IP (within timeout)
           const sessionTimeout = new Date(Date.now() - SESSION_TIMEOUT_MINUTES * 60 * 1000).toISOString();
@@ -308,14 +316,14 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
             ).bind(ip, path, userAgent, country, referer, isFirstVisit).run();
           }
         } catch (error) {
-          // Silently ignore logging errors to avoid breaking the site
-          console.error('Session logging error:', error);
+          // Never break the page, but make the failure visible in Cloudflare logs
+          console.error(`Session logging error for ${path}:`, error instanceof Error ? error.stack || error.message : error);
         }
       })());
     }
   } catch (error) {
-    // Silently ignore logging errors to avoid breaking the site
-    console.error('Logging error:', error);
+    // Never break the page, but make the failure visible in Cloudflare logs
+    console.error('Logging error:', error instanceof Error ? error.stack || error.message : error);
   }
 
   // Pass the request through to the next handler
