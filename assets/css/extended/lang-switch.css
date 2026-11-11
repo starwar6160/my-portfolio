@@ -1,0 +1,18 @@
+/* Space out the language switcher links (EN / JA / ZH) in the header. */
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lang-switch li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.lang-switch li a {
+    padding: 0.25rem 0.35rem;
+}
