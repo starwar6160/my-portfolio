@@ -80,15 +80,18 @@ AhrefsBot → 静默忽略
 
 ### 简历/招聘爬虫
 ```typescript
-'/CV',              // 简历
+// scannerPathPrefixes：只匹配路径开头（/resume、/resume.pdf、/jobs/ 等），
+// 不会误伤 /categories/resume/ 这类站内真实路由
 '/resume',          // 简历
-'/cv',              // 简历
-'/portfolio',       // 作品集
 '/jobs',            // 招聘信息
 '/careers',         // 职位
-'/about',           // 关于页面
-'/contact',         // 联系方式
 ```
+
+> 2026-11 更新：已移除 `/CV`、`/cv`、`/portfolio`、`/about`、`/contact`。它们是本站真实路由（如 `/cv/`、`/ja/portfolio-ses/`、`/contact/`、`/zh/contact/`），不应被跳过统计。
+> 路径匹配现在只针对 `pathname + search`，不再包含主机名（此前 `https://portfolio.st6160.click` 本身包含 `/portfolio`，导致自定义域名下所有请求都被判定为扫描器）。
+> UA 规则 `/-/i` 改为 `/^-$/`，只匹配 UA 恰好为 `-` 的情况。
+> 注意：`block` 与 `ignore` 都只是“不写入 D1”，请求本身仍正常返回，并不会返回 403。
+> 静态资源（CSS / JS / 图片 / 字体等，判定见 `isHTMLPage`）不再写入 D1，避免每次页面访问附带多次 SELECT + UPDATE/INSERT。因此 `sessions.hits` 从此只统计页面请求，不再包含静态资源请求。
 
 ### 安全扫描工具
 ```typescript
@@ -245,7 +248,7 @@ and (http.request.rate_limit > 5)
 | 类型 | 特征 | 危害 | 处理 |
 |------|------|------|------|
 | **云凭证扫描** | AWS/Azure/GCP 配置文件 | 🔴 高 | 阻断 |
-| **简历爬虫** | /CV, /resume, /portfolio | 🟡 中 | 阻断 |
+| **简历爬虫** | /resume, /jobs, /careers | 🟡 中 | 不计入统计 |
 | **漏洞扫描** | phpinfo, .env, admin | 🔴 高 | 阻断 |
 | **SEO 爬虫** | LinkedIn, Twitter, Semrush | 🟢 低 | 忽略 |
 | **安全扫描** | nikto, nmap, sqlmap | 🟡 中 | 阻断 |

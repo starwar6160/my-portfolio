@@ -96,15 +96,17 @@ const BOT_PATTERNS = {
     'swagger',
     'graphql',
 
-    // Resume/Job scraping patterns
-    '/CV',
+  ],
+
+  // Resume/Job scraping probes, matched only at the START of the path
+  // (e.g. /resume, /resume.pdf, /jobs/), so real routes such as
+  // /categories/resume/ are not affected.
+  // '/cv', '/portfolio', '/contact' and '/about' are intentionally NOT listed:
+  // they are real routes on this site (/cv/, /ja/portfolio-ses/, /contact/, /zh/contact/).
+  scannerPathPrefixes: [
     '/resume',
-    '/cv',
-    '/portfolio',
     '/jobs',
     '/careers',
-    '/about',
-    '/contact',
   ],
 
   // Known scanner user agents
@@ -149,19 +151,37 @@ const BOT_PATTERNS = {
 
     // Generic patterns
     /^\s*$/,  // Empty user agent
-    /-/i,     // Single dash
+    /^-$/,    // Single dash (anchored: an unanchored /-/ matched any UA containing a dash, e.g. Android device models)
   ],
 };
 
-// Check if request is from a bot/scanner
+// Check if request is from a bot/scanner.
+// NOTE: 'block' and 'ignore' both only skip D1 logging; the request is still served.
 function isBotScanner(url: string, userAgent: string): 'block' | 'ignore' | 'allow' {
-  const urlLower = url.toLowerCase();
+  // Match scanner paths against path + query only. Matching the full URL also matched the
+  // hostname (https://portfolio.st6160.click contains "/portfolio"), so every request was skipped.
+  let target = url;
+  let pathname = url;
+  try {
+    const u = new URL(url);
+    target = u.pathname + u.search;
+    pathname = u.pathname;
+  } catch {
+    // keep raw url
+  }
+  const urlLower = target.toLowerCase();
+  const pathLower = pathname.toLowerCase();
   const uaLower = userAgent.toLowerCase();
 
-  // Check for scanner paths (high confidence - block)
+  // Check for scanner paths (high confidence - skip logging)
   for (const path of BOT_PATTERNS.scannerPaths) {
     if (urlLower.includes(path.toLowerCase())) {
       return 'block';  // Definitely malicious scanner
+    }
+  }
+  for (const prefix of BOT_PATTERNS.scannerPathPrefixes) {
+    if (pathLower.startsWith(prefix)) {
+      return 'block';
     }
   }
 
@@ -209,8 +229,8 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
     const scannerAction = isBotScanner(url, userAgent);
 
     if (scannerAction === 'block') {
-      // Definitely malicious scanner - log warning and ignore
-      console.warn(`🚫 Malicious scanner blocked: ${ip} -> ${url} (${userAgent})`);
+      // Likely scanner - log warning and skip D1 logging (request is NOT blocked)
+      console.warn(`🚫 Scanner request not logged: ${ip} -> ${url} (${userAgent})`);
       return await next();  // Don't log, don't count
     }
 
@@ -236,6 +256,12 @@ export const onRequest: PagesFunction<Env> = async ({ request, next, env }) => {
 
       // Check if this is an HTML page or static resource
       const isPage = isHTMLPage(path);
+
+      // Static resources (CSS/JS/images/fonts/...) are not logged: each page view would
+      // otherwise trigger one D1 SELECT + UPDATE/INSERT per asset.
+      if (!isPage) {
+        return await next();
+      }
 
       // Use waitUntil to handle database operations in background
       (self as any).waitUntil((async () => {
