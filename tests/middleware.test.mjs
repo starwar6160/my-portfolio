@@ -170,3 +170,71 @@ test('an error while scheduling the log does not break the page or call next() t
   assert.equal(nextCalls, 1);
   assert.ok(errors.some(e => e.includes('Logging error') && e.includes('waitUntil unavailable')), errors.join('\n'));
 });
+
+// ---- Language auto-redirect on "/" ----
+async function invokeRoot(headers = {}, { path = '/', method = 'GET' } = {}) {
+  let nextCalls = 0;
+  const db = mockDB();
+  const waits = [];
+  const response = await onRequest({
+    request: new Request(BASE + path, {
+      method,
+      headers: { 'User-Agent': CHROME, 'CF-Connecting-IP': VISITOR_IP, ...headers },
+    }),
+    env: { DB: db },
+    next: async () => { nextCalls++; return new Response('ok'); },
+    waitUntil: (p) => { waits.push(p); },
+  });
+  await Promise.all(waits);
+  return { response, nextCalls, db };
+}
+
+test('redirect: Japanese browser on / goes to /ja/ with 302 and no logging', async () => {
+  const r = await invokeRoot({ 'Accept-Language': 'ja,en;q=0.8' });
+  assert.equal(r.response.status, 302);
+  assert.equal(r.response.headers.get('Location'), BASE + '/ja/');
+  assert.match(r.response.headers.get('Vary'), /Accept-Language/);
+  assert.equal(r.nextCalls, 0);
+  assert.equal(r.db.calls.length, 0);
+});
+
+test('redirect: any zh variant goes to /zh/ and the query string is kept', async () => {
+  for (const al of ['zh-CN', 'zh-TW,zh;q=0.9', 'zh-HK']) {
+    const r = await invokeRoot({ 'Accept-Language': al }, { path: '/?utm=x' });
+    assert.equal(r.response.status, 302, al);
+    assert.equal(r.response.headers.get('Location'), BASE + '/zh/?utm=x', al);
+  }
+});
+
+test('redirect: q-values decide the winner', async () => {
+  const r = await invokeRoot({ 'Accept-Language': 'en;q=0.5, ja;q=0.9' });
+  assert.equal(r.response.headers.get('Location'), BASE + '/ja/');
+  const en = await invokeRoot({ 'Accept-Language': 'en-US,ja;q=0.5' });
+  assert.equal(en.response.status, 200);
+});
+
+test('no redirect: English, unsupported or missing Accept-Language serve / normally', async () => {
+  for (const al of ['en-US,en;q=0.9', 'fr-FR,de;q=0.8', '*', undefined]) {
+    const r = await invokeRoot(al ? { 'Accept-Language': al } : {});
+    assert.equal(r.response.status, 200, String(al));
+    assert.equal(r.nextCalls, 1, String(al));
+    assert.match(r.response.headers.get('Vary'), /Accept-Language/);
+  }
+});
+
+test('cookie overrides the browser language in both directions', async () => {
+  const toEn = await invokeRoot({ 'Accept-Language': 'ja', Cookie: 'x=1; lang=en' });
+  assert.equal(toEn.response.status, 200);
+  const toZh = await invokeRoot({ 'Accept-Language': 'en-US', Cookie: 'lang=zh' });
+  assert.equal(toZh.response.status, 302);
+  assert.equal(toZh.response.headers.get('Location'), BASE + '/zh/');
+});
+
+test('no redirect: crawlers, non-root paths and non-GET requests', async () => {
+  const bot = await invokeRoot({ 'Accept-Language': 'ja', 'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1)' });
+  assert.equal(bot.response.status, 200);
+  const deep = await invokeRoot({ 'Accept-Language': 'ja' }, { path: '/cases/' });
+  assert.equal(deep.response.status, 200);
+  const post = await invokeRoot({ 'Accept-Language': 'ja' }, { method: 'POST' });
+  assert.equal(post.response.status, 200);
+});

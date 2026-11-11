@@ -331,8 +331,66 @@ function scheduleSessionLogging({ request, env, waitUntil }: Parameters<PagesFun
   }
 }
 
+// Language auto-redirect for the site root only ("/"). English is served at "/", Japanese at
+// "/ja/" and Simplified Chinese at "/zh/".
+const LANGUAGE_PATHS: Record<string, string> = { en: '/', ja: '/ja/', zh: '/zh/' };
+
+// Pick a supported language from an Accept-Language header: the highest-q tag whose primary
+// subtag is en/ja/zh wins (every zh-* variant maps to the Simplified Chinese site).
+function pickLang(header: string | null): string | null {
+  if (!header) return null;
+  const tags = header
+    .split(',')
+    .map((part, index) => {
+      const [tag, ...params] = part.trim().split(';');
+      const q = params.map(p => p.trim()).find(p => p.startsWith('q='));
+      const weight = q ? Number.parseFloat(q.slice(2)) : 1;
+      return { lang: tag.trim().toLowerCase().split('-')[0], weight: Number.isNaN(weight) ? 0 : weight, index };
+    })
+    .filter(t => t.weight > 0)
+    .sort((a, b) => b.weight - a.weight || a.index - b.index);
+  const match = tags.find(t => t.lang in LANGUAGE_PATHS);
+  return match ? match.lang : null;
+}
+
+// Redirect "/" to the visitor's language. A `lang` cookie (set when the visitor uses the
+// header language switcher) wins over the browser setting. Crawlers, scanners and non-page
+// methods are never redirected, so "/" stays the canonical English page for them.
+function languageRedirect(request: Request): Response | null {
+  if (request.method !== 'GET' && request.method !== 'HEAD') return null;
+  const url = new URL(request.url);
+  if (url.pathname !== '/') return null;
+  if (isBotScanner(request.url, request.headers.get('User-Agent') || '') !== 'allow') return null;
+
+  const cookieLang = /(?:^|;\s*)lang=(en|ja|zh)(?:;|$)/.exec(request.headers.get('Cookie') || '')?.[1];
+  const lang = cookieLang ?? pickLang(request.headers.get('Accept-Language'));
+  if (!lang || lang === 'en') return null;
+
+  const target = new URL(LANGUAGE_PATHS[lang], url);
+  target.search = url.search;
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: target.toString(),
+      Vary: 'Accept-Language, Cookie',
+      'Cache-Control': 'private, no-store',
+    },
+  });
+}
+
 export const onRequest: PagesFunction<Env> = async (context) => {
+  // Redirects are not page views: the target page is logged when it is requested.
+  const redirect = languageRedirect(context.request);
+  if (redirect) return redirect;
+
   scheduleSessionLogging(context);
   // Pass the request through to the next handler (called exactly once)
-  return context.next();
+  const response = await context.next();
+  if (new URL(context.request.url).pathname === '/') {
+    // The root response depends on language headers; keep shared caches from mixing them up.
+    const varied = new Response(response.body, response);
+    varied.headers.append('Vary', 'Accept-Language, Cookie');
+    return varied;
+  }
+  return response;
 };

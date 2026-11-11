@@ -73,7 +73,7 @@
                         {{- end }}
                         {{- $name := .Language.LanguageName | default (.Language.Lang | title) }}
                         <li>
-                            <a href="{{- $target.Permalink -}}" title="{{ .Language.Params.languageAltTitle | default ($name | emojify) }}{{ if $isFallback }} (Home){{ end }}"
+                            <a href="{{- $target.Permalink -}}" data-lang="{{ .Language.Lang }}" title="{{ .Language.Params.languageAltTitle | default ($name | emojify) }}{{ if $isFallback }} (Home){{ end }}"
                                 aria-label="{{ $name }}{{ if $isFallback }} (Home){{ end }}">
                                 {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
                                 {{- .Language.LanguageName | emojify -}}
@@ -85,6 +85,13 @@
                         {{- end -}}
                         {{- end}}
                     </ul>
+                    <script>
+                        /* Remember an explicit language choice so the root-path auto-redirect respects it. */
+                        document.addEventListener('click', function (e) {
+                            var a = e.target.closest && e.target.closest('.lang-switch a[data-lang]');
+                            if (a) { document.cookie = 'lang=' + a.getAttribute('data-lang') + '; Path=/; Max-Age=31536000; SameSite=Lax'; }
+                        });
+                    </script>
                     {{- end }}
                 {{- end }}
             </div>
